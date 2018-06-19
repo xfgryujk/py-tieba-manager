@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/VideoDesc.proto";
+
+message VideoInfo {
+  optional string media_subtitle = 11;
+  optional int32 play_count = 10;
+  optional uint32 thumbnail_height = 8;
+  optional string thumbnail_url = 6;
+  optional uint32 thumbnail_width = 7;
+  repeated VideoDesc video_desc = 12;
+  optional uint32 video_duration = 3;
+  optional uint32 video_height = 5;
+  optional int32 video_length = 9;
+  optional string video_md5 = 1;
+  optional int32 video_select_flag = 13;
+  optional uint32 video_type = 14;
+  optional string video_url = 2;
+  optional uint32 video_width = 4;
+}

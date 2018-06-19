@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Rpgoldicon {
+  optional string key = 1;
+  optional string value = 2;
+}

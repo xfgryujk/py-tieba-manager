@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package tbclient;
+
+message TogetherHi {
+  optional uint64 album_id = 2;
+  optional string album_name = 1;
+  optional uint32 end_time = 4;
+  optional string location = 5;
+  optional uint32 num_join = 8;
+  optional uint32 num_signup = 6;
+  repeated string pic_urls = 9;
+  repeated string potraits = 7;
+  optional uint32 start_time = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Global {
+  optional string tbmall_newprops = 1;
+}

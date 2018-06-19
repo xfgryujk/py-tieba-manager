@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message NovelFansInfo {
+  optional int32 level = 1;
+  optional string level_icon = 3;
+  optional string level_name = 2;
+}

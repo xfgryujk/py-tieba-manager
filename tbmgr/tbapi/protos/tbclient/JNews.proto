@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message JNews {
+  optional string from = 3;
+  optional int64 jid = 1;
+  optional string url = 2;
+}

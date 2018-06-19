@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Agree {
+  optional int64 agree_num = 1;
+  optional int32 agree_type = 3;
+  optional int32 has_agree = 2;
+}

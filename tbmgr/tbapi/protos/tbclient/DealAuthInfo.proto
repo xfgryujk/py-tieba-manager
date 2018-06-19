@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message DealAuthInfo {
+  optional string item_content = 2;
+  optional string item_name = 1;
+  optional string item_url = 3;
+}

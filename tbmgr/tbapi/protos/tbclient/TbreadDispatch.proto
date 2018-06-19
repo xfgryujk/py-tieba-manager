@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message TbreadDispatch {
+  optional string floor_num = 1;
+  optional string product_id = 3;
+  optional string product_type = 2;
+}

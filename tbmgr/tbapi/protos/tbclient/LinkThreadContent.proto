@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+message LinkThreadContent {
+  optional string link_abstract = 3;
+  optional string link_head_big_pic = 6;
+  optional string link_head_pic = 4;
+  optional string link_head_small_pic = 5;
+  optional string link_title = 2;
+  optional int32 link_type = 1;
+}

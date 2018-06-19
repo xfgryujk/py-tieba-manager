@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message AwardInfo {
+  optional int64 award_act_id = 2;
+  optional int64 award_id = 1;
+  optional string award_imgsrc = 4;
+  optional string award_name = 3;
+}

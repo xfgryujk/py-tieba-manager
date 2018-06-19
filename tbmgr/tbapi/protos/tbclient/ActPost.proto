@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/ActHot.proto";
+import "tbclient/LinkInfo.proto";
+
+message ActPost {
+  repeated ActHot act_hot = 1;
+  repeated LinkInfo link_info = 3;
+  optional string list_head = 2;
+}

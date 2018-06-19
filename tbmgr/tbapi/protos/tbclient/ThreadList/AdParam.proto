@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient.ThreadList;
+
+message AdParam {
+  optional int32 load_count = 1;
+  optional int32 refresh_count = 2;
+  optional string yoga_lib_version = 3 [default="1.0"];
+}

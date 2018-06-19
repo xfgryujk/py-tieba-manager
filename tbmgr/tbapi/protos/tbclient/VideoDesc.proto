@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+message VideoDesc {
+  optional string video_height = 5;
+  optional int32 video_id = 1;
+  optional string video_md5 = 2;
+  optional string video_url = 3;
+  optional string video_width = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message CartoonThread {
+  optional int64 cartoon_id = 1;
+  optional int32 chapter_id = 2;
+}

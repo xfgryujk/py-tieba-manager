@@ -1,0 +1,39 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/AdCloseInfo.proto";
+import "tbclient/ThreadPicList.proto";
+import "tbclient/VideoInfo.proto";
+
+message GoodsInfo {
+  optional string ad_source = 24;
+  optional string brand_icon = 27;
+  optional string brand_icon_wh = 28;
+  optional string button_text = 13;
+  optional string button_url = 23;
+  optional string card_desc = 14;
+  optional string card_tag = 15;
+  required AdCloseInfo close_info = 29;
+  optional int32 goods_style = 7;
+  optional int32 height = 17;
+  optional int32 id = 1;
+  optional int32 label_measure = 18;
+  optional string label_text = 10;
+  optional int32 label_visible = 9;
+  optional string lego_card = 20;
+  optional string pop_window_text = 6;
+  optional int32 rank_level = 11;
+  optional string tag_name = 22;
+  optional string tag_name_url = 25;
+  optional string tag_name_wh = 26;
+  optional string thread_content = 19;
+  optional string thread_pic = 5;
+  repeated ThreadPicList thread_pic_list = 8;
+  optional string thread_title = 4;
+  optional string thread_type = 12;
+  optional string user_name = 2;
+  optional string user_portrait = 3;
+  required VideoInfo video_info = 21;
+  optional int32 width = 16;
+}

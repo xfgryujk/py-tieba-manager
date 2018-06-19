@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message TwZhiBoUser {
+  optional uint32 anchor_level = 1;
+  optional string field_ex = 3;
+  optional uint32 in_black_list = 2;
+}

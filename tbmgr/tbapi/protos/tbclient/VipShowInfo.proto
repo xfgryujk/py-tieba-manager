@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message VipShowInfo {
+  optional string content = 2;
+  optional string link = 3;
+  optional string title = 4;
+  optional string vip_icon = 1;
+}

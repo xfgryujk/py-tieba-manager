@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message TailInfo {
+  optional string content = 4;
+  optional string icon_link = 3;
+  optional string icon_url = 2;
+  optional int32 tail_type = 1;
+}

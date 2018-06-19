@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ActBtn {
+  optional string text = 3;
+  optional uint32 type = 1;
+  optional string url = 2;
+}

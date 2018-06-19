@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message LotteryTheme {
+  optional string bgcolor = 1;
+  optional string bgimage = 2;
+}

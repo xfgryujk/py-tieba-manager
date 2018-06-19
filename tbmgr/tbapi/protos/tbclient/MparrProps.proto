@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/AvatarFrame.proto";
+import "tbclient/Level.proto";
+import "tbclient/Portrait.proto";
+import "tbclient/Props.proto";
+
+message MparrProps {
+  required AvatarFrame avatarframe = 1;
+  required Level level = 3;
+  required Portrait portrait = 2;
+  repeated Props props = 4;  
+}

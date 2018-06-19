@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ParrScores {
+  optional uint64 i_money = 9;
+  optional uint64 i_other = 10;
+  optional uint64 i_total = 8;
+  optional int32 level = 6;
+  optional int32 limit = 7;
+  optional int32 scores_fetch = 2;
+  optional int32 scores_money = 3;
+  optional int32 scores_other = 4;
+  optional int32 scores_total = 1;
+  optional int32 update_time = 5;
+}

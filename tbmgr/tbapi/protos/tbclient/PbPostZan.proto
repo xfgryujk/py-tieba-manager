@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message PbPostZan {
+  optional int32 has_zan = 2;
+  optional int64 zan_num = 1;
+}

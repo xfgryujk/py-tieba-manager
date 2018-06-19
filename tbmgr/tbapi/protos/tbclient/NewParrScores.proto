@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message NewParrScores {
+  optional uint64 i_total = 3;
+  optional uint64 scores_total = 1;
+  optional uint32 update_time = 2;
+}

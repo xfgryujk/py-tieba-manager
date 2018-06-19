@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/LinkThreadContent.proto";
+
+message LinkThreadInfo {
+  repeated LinkThreadContent link_content = 3;
+  optional string link_url = 1;
+  optional string link_url_code = 2;
+}

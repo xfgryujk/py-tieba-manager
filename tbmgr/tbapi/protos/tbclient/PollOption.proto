@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message PollOption {
+  optional int32 id = 1;
+  optional string image = 4;
+  optional int64 num = 2;
+  optional string text = 3;
+}

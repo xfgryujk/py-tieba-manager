@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/PbContent.proto";
+import "tbclient/User.proto";
+
+message SubPostList {
+  required User author = 7;
+  optional int64 author_id = 4;
+  repeated PbContent content = 2;
+  optional uint32 floor = 6;
+  optional uint64 id = 1;
+  optional int32 is_giftpost = 8;
+  optional uint32 time = 3;
+  optional string title = 5;
+}

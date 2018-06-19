@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Terminal {
+  optional int32 client = 3;
+  optional int32 pc = 1;
+  optional int32 wap = 2;
+}

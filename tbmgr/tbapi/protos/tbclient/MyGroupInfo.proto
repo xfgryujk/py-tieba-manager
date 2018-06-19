@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+message MyGroupInfo {
+  optional uint64 group_id = 1;
+  optional string group_name = 2;
+  optional uint32 max_member_num = 5;
+  optional uint32 member_num = 4;
+  optional string portrait = 3;
+}

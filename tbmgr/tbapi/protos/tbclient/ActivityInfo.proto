@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ActivityInfo {
+  optional int64 activity_id = 1;
+  optional string back_pic = 4;
+  optional int32 back_pic_height = 6;
+  optional int32 back_pic_width = 5;
+  optional string main_title = 2;
+  optional string sub_title = 3;
+  optional string subpage_link = 7;
+}

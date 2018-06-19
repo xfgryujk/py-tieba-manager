@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+message SkinInfo {
+  optional string monitor_id = 5;
+  optional string obj_id = 4;
+  optional string skin = 1;
+  optional string skin_size = 2;
+  optional string url = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message AppCode {
+  optional string button_text = 3;
+  optional string game_icon = 1;
+  optional string post_url = 2;
+}

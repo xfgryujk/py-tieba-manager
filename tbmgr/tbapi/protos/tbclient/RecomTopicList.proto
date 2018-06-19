@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+message RecomTopicList {
+  optional uint64 discuss_num = 4;
+  optional uint32 tag = 5;
+  optional string topic_desc = 6;
+  optional uint64 topic_id = 1;
+  optional string topic_name = 2;
+  optional string topic_pic = 7;
+  optional uint32 type = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message TbVipInfo {
+  optional string intro = 1;
+  optional string v_detail = 3;
+  optional string v_url = 2;
+}

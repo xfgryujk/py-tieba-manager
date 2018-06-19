@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/SignatureContent.proto";
+
+message SignatureData {
+  repeated SignatureContent content = 4;
+  optional string fontColor = 3;
+  optional string fontKeyName = 2;
+  optional int32 signature_id = 1;
+}

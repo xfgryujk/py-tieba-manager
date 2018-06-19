@@ -1,0 +1,46 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/GraffitiInfo.proto";
+import "tbclient/MemeInfo.proto";
+import "tbclient/NativeApp.proto";
+import "tbclient/TogetherHi.proto";
+
+message PbContent {
+  optional string _static = 17;
+  optional string big_cdn_src = 9;
+  optional string big_size = 7;
+  optional string big_src = 6;
+  optional string bsize = 5;
+  optional uint32 btn_type = 26;
+  optional string cdn_src = 8;
+  optional string cdn_src_active = 36;
+  optional int32 count = 28;
+  optional uint32 during_time = 13;
+  optional string dynamic = 16;
+  optional uint32 e_type = 24;
+  required GraffitiInfo graffiti_info = 29;
+  optional uint32 height = 19;
+  required TogetherHi high_together = 30;
+  optional string imgtype = 10;
+  optional uint32 is_long_pic = 34;
+  optional uint32 is_native_app = 22;
+  optional uint32 is_sub = 14;
+  optional string link = 3;
+  optional string media_subtitle = 31;
+  required MemeInfo meme_info = 33;
+  required NativeApp native_app = 23;
+  optional uint32 origin_size = 27;
+  optional string origin_src = 25;
+  optional string packet_name = 20;
+  optional string phonetype = 21;
+  optional uint32 show_original_btn = 35;
+  optional string src = 4;
+  optional string text = 2;
+  optional uint32 type = 1;
+  optional int64 uid = 15;
+  optional int32 url_type = 32;
+  optional string voice_md5 = 12;
+  optional uint32 width = 18;
+}

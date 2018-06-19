@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Voice {
+  optional int32 during_time = 2;
+  optional int32 type = 1;
+  optional string voice_md5 = 3;
+}

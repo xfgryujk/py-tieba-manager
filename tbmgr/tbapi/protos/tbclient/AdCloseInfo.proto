@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message AdCloseInfo {
+  optional string confirm_title = 4;
+  repeated string reasons = 3;
+  optional int32 support_close = 1;
+  optional string title = 2;
+}

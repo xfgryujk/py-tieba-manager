@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package tbclient;
+
+message UserVipInfo {
+  optional int32 a_score = 6;
+  optional uint32 e_time = 3;
+  optional uint32 ext_score = 4;
+  optional string icon_url = 8;
+  optional uint32 n_score = 7;
+  optional uint32 s_time = 2;
+  optional uint32 v_level = 5;
+  optional uint32 v_status = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message SpringVirtualUser {
+  optional uint32 is_virtual = 1;
+  optional string url = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message PayMemberInfo {
+  optional int32 end_time = 2;
+  optional string expire_remind = 4;
+  optional int32 props_id = 1;
+  optional string url = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message PushType {
+  optional string icon = 3;
+  optional string name = 2;
+  optional int32 type = 1;
+}

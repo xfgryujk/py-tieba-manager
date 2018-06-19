@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Portrait {
+  optional int32 end_time = 2;
+  optional int32 props_id = 1;
+  optional string url = 3;
+}

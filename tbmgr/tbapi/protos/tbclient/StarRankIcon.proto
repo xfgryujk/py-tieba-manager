@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message StarRankIcon {
+  optional string icon_link = 2;
+  optional string icon_pic_url = 1;
+}

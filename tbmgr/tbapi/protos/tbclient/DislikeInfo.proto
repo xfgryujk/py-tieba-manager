@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message DislikeInfo {
+  optional uint32 dislike_id = 2;
+  optional string dislike_reason = 1;
+}

@@ -1,0 +1,37 @@
+syntax = "proto2";
+
+package tbclient;
+
+message CommonReq {
+  optional string BDUSS = 10;
+  optional string _client_id = 3;
+  optional int32 _client_type = 1;
+  optional string _client_version = 2;
+  optional string _os_version = 25;
+  optional string _phone_imei = 5;
+  optional string _phone_newimei = 14;
+  optional int64 _timestamp = 8;
+  optional string apid = 4;
+  optional string applist = 29;
+  optional string brand = 26;
+  optional string brand_type = 27;
+  optional string cuid = 7;
+  optional string from = 6;
+  optional string ka = 15;
+  optional string lego_lib_version = 28;
+  optional string m_api = 16;
+  optional string m_cost = 18;
+  optional string m_logid = 17;
+  optional string m_result = 19;
+  optional string m_size_d = 21;
+  optional string m_size_u = 20;
+  optional string model = 9;
+  optional int32 net_type = 12;
+  optional string pversion = 24;
+  optional string sign = 23;
+  optional string smallflow = 22;
+  optional string stoken = 30;
+  optional string subapp_type = 13;
+  optional string tbs = 11;
+  optional string z_id = 31;
+}

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message LabelInfo {
+  optional string labelContent = 2;
+  optional int32 labelHot = 1;
+  optional string labelId = 3;
+}

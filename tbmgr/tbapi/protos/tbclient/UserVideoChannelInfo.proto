@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message UserVideoChannelInfo {
+  optional int32 follow_channel = 2;
+  optional int32 man_channel = 1;
+}

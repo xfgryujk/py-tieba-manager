@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+message MemeInfo {
+  optional string detail_link = 7;
+  optional uint32 height = 6;
+  optional uint32 pck_id = 1;
+  optional uint64 pic_id = 2;
+  optional string pic_url = 3;
+  optional string thumbnail = 4;
+  optional uint32 width = 5;
+}

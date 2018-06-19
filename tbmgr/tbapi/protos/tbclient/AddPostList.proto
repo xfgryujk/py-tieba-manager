@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/SubPostList.proto";
+
+message AddPostList {
+  repeated SubPostList add_post_list = 4;
+  optional uint64 pid = 1;
+  optional uint32 total_count = 3;
+  optional uint32 total_num = 2;
+}

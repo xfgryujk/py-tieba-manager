@@ -1,0 +1,28 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Media {
+  optional string big_pic = 3;
+  optional string bsize = 12;
+  optional uint32 during_time = 13;
+  optional string dynamic_pic = 18;
+  optional uint32 e_type = 14;
+  optional uint32 height = 11;
+  optional string id = 22;
+  optional uint32 is_blocked_pic = 21;
+  optional uint32 is_long_pic = 19;
+  optional string origin_pic = 15;
+  optional uint32 origin_size = 16;
+  optional int64 post_id = 17;
+  optional uint32 show_original_btn = 20;
+  optional string small_pic = 2;
+  optional string src_pic = 8;
+  optional string text = 9;
+  optional int32 type = 1;
+  optional string vhsrc = 7;
+  optional string vpic = 5;
+  optional string vsrc = 6;
+  optional string water_pic = 4;
+  optional uint32 width = 10;
+}

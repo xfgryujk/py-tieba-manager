@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message GraffitiInfo {
+  optional int64 gid = 2;
+  optional string url = 1;
+}

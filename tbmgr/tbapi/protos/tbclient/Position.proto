@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Position {
+  optional int32 card = 4;
+  optional int32 frs = 1;
+  optional int32 home = 3;
+  optional int32 pb = 2;
+}

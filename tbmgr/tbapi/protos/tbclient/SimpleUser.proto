@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package tbclient;
+
+message SimpleUser {
+  optional int32 agree_type = 9;
+  optional string ahead_url = 10;
+  optional string block_msg = 11;
+  optional uint32 incomplete_user = 7;
+  optional string portrait = 8;
+  optional string secureemail = 3;
+  optional string securemobil = 4;
+  optional int64 user_id = 1;
+  optional string user_name = 5;
+  optional string user_nickname = 6;
+  optional int32 user_status = 2;
+}

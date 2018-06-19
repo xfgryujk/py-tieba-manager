@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Level {
+  optional int32 end_time = 4;
+  optional string expired_notify = 10;
+  optional string expiring_notify = 9;
+  optional int32 left_num = 5;
+  optional string max_free_score = 11;
+  optional string open_status = 8;
+  optional string pic_url = 12;
+  optional string props_category = 3;
+  optional int32 props_id = 1;
+  optional string props_type = 2;
+  optional int32 update_time = 6;
+  optional string used_status = 7;
+}

@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/User.proto";
+
+message Zan {
+  optional int32 consent_type = 6;
+  optional int32 is_liked = 3;
+  optional int32 last_time = 4;
+  repeated int64 liker_id = 5;
+  repeated User liker_list = 2;
+  optional int32 num = 1;
+}

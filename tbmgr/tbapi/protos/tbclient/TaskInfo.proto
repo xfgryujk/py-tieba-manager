@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package tbclient;
+
+message TaskInfo {
+  optional string bgimg = 3;
+  optional int64 end_time = 6;
+  optional int64 forum_id = 8;
+  optional string forum_name = 9;
+  optional string obj_id = 10;
+  optional int64 start_time = 5;
+  optional int64 task_id = 1;
+  optional int64 thread_id = 2;
+  optional string thread_img = 4;
+  optional string thread_img_size = 7;
+}

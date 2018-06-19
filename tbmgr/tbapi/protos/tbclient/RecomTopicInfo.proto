@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/RecomTopicList.proto";
+
+message RecomTopicInfo {
+  optional string recom_title = 1;
+  repeated RecomTopicList topic_list = 2;
+}

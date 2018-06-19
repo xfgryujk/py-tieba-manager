@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+message AdInfo {
+  optional string ad_desc = 3;
+  optional string ad_pic = 4;
+  optional int32 ad_type = 2;
+  optional string ad_url = 5;
+  optional int32 show_rule = 1;
+}

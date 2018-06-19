@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package tbclient;
+
+message GodInfo {
+  optional int32 can_send_msg = 8;
+  optional int64 fid = 4;
+  optional int32 followed = 5;
+  optional string forum_name = 7;
+  optional int64 id = 1;
+  optional string intro = 2;
+  optional string recommend_reason = 6;
+  optional int32 type = 3;
+}

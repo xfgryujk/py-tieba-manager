@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message LinkInfo {
+  optional string desc = 1;
+  optional string link = 2;
+  optional string type = 3;
+}

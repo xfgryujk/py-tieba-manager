@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/AwardInfo.proto";
+import "tbclient/AwardUser.proto";
+import "tbclient/LotteryRegular.proto";
+import "tbclient/LotteryTheme.proto";
+
+message SeniorLottery {
+  optional string act_desc = 5;
+  required LotteryRegular act_regular = 6;
+  repeated AwardInfo award_info = 2;
+  repeated AwardUser luck_users = 4;
+  optional string myaward = 3;
+  required LotteryTheme theme = 1;
+}

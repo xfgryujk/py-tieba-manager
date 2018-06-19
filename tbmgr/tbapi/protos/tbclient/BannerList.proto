@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/App.proto";
+import "tbclient/FeedForumInfo.proto";
+import "tbclient/RecomTopicInfo.proto";
+
+message BannerList {
+  repeated App app = 1;
+  optional string applist = 4;
+  repeated FeedForumInfo feed_forum = 2;
+  required RecomTopicInfo hot_topic = 3;
+}

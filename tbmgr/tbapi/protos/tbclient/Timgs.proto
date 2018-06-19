@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Timgs {
+  optional string big_cdn_url = 7;
+  optional string bsize = 6;
+  optional string des_main = 4;
+  optional string des_sub = 5;
+  optional uint32 flag = 3;
+  optional string img_url = 1;
+  optional string url = 2;
+}

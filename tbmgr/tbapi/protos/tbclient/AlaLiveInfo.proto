@@ -1,0 +1,33 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/AlaShareInfo.proto";
+import "tbclient/AlaStageDislikeInfo.proto";
+import "tbclient/AlaUserInfo.proto";
+
+message AlaLiveInfo {
+  optional uint32 audience_count = 14;
+  optional string cover = 2;
+  optional string description = 11;
+  optional uint64 distance = 20;
+  optional uint32 duration = 13;
+  optional uint64 group_id = 6;
+  optional string hls_url = 5;
+  optional string label_name = 17;
+  optional uint64 live_id = 1;
+  optional int32 live_status = 18;
+  optional uint32 live_type = 15;
+  optional string media_id = 9;
+  optional string media_pic = 8;
+  optional string media_subtitle = 10;
+  optional string media_url = 7;
+  optional string rtmp_url = 4;
+  optional uint32 screen_direction = 16;
+  optional string session_id = 3;
+  required AlaShareInfo share_info = 19;
+  repeated AlaStageDislikeInfo stage_dislike_info = 23;
+  optional string third_app_id = 21;
+  optional uint64 thread_id = 22;
+  required AlaUserInfo user_info = 12;
+}

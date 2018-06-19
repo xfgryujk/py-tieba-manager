@@ -1,0 +1,63 @@
+syntax = "proto2";
+
+package tbclient.ThreadList;
+
+import "tbclient/AppPosInfo.proto";
+import "tbclient/CommonReq.proto";
+import "tbclient/ThreadList/AdParam.proto";
+
+message DataReq {
+    required AdParam ad_param = 51;
+    required tbclient.AppPosInfo app_pos = 50;
+    optional int32 category_id = 44;
+    optional bool check_login = 20;
+    optional int32 cid = 5;
+    optional int32 class_id = 23;
+    required tbclient.CommonReq common = 39;
+    optional string cookie = 38;
+    optional int32 ctime = 17;
+    optional string da_idfa = 42;
+    optional int32 data_size = 18;
+    optional bool debug = 37;
+    optional string email = 36;
+    optional string forum_name = 21;
+    optional int32 frs_rn = 10;
+    optional int32 ip_int = 25;
+    optional string ip_str = 24;
+    optional int32 is_good = 4;
+    optional int32 issdk = 41;
+    optional string kw = 1;
+    optional uint64 last_click_tid = 48;
+    optional string lastids = 40;
+    optional int32 load_type = 49;
+    optional bool login = 30;
+    optional string mobile = 35;
+    optional string module_name = 26;
+    optional int32 need_badge = 9;
+    optional int32 net_error = 19;
+    optional int32 no_un = 33;
+    optional int32 noval = 7;
+    optional string obj_locate = 52;
+    optional string obj_source = 53;
+    optional string platform = 43;
+    optional int32 pn = 15;
+    optional string portrait = 34;
+    optional int32 q_type = 14;
+    optional int32 result_num = 22;
+    optional int32 rn = 2;
+    optional int32 rn_need = 3;
+    optional double scr_dip = 13;
+    optional int32 scr_h = 12;
+    optional int32 scr_w = 11;
+    optional int32 smile_grade = 28;
+    optional int32 sort_type = 47;
+    optional int32 st_param = 27;
+    optional string st_type = 16;
+    optional bool support_noun = 29;
+    optional int64 user_id = 31;
+    optional string user_name = 32;
+    optional int32 with_group = 8;
+    optional int32 withcal = 6;
+    optional string yuelaou_locate = 45;
+    optional string yuelaou_params = 46;
+}

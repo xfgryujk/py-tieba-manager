@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message VideoChannelInfo {
+  optional string channel_avatar = 3;
+  optional uint64 channel_id = 1;
+  optional string channel_name = 2;
+}

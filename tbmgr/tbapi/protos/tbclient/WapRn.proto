@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message WapRn {
+  optional int32 frsrn = 1;
+  optional int32 pbrn = 2;
+}

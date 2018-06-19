@@ -1,0 +1,40 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/GoodsInfo.proto";
+
+message App {
+  optional string abtest = 24;
+  optional string ad_id = 12;
+  optional string apk_name = 19;
+  optional string apk_url = 18;
+  optional string app_desc = 6;
+  optional string app_name = 5;
+  optional int32 app_time = 10;
+  optional int32 cpid = 23;
+  optional string deep_url = 32;
+  optional string ext_info = 29;
+  optional string first_name = 21;
+  repeated GoodsInfo goods_info = 30;
+  optional string icon_link = 4;
+  optional string icon_url = 3;
+  optional string id = 13;
+  optional string img_url = 9;
+  optional string ios_url = 17;
+  optional string loc_code = 31;
+  optional string name = 14;
+  optional string p_name = 7;
+  optional string p_url = 8;
+  optional int32 plan_id = 25;
+  optional int32 pos = 2;
+  optional string pos_name = 20;
+  optional string price = 27;
+  optional string second_name = 22;
+  optional int32 type = 1;
+  optional string url = 16;
+  optional int32 url_type = 15;
+  optional string user_id = 26;
+  optional string verify = 28;
+  optional string web_url = 11;
+}

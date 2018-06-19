@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Lbs {
+  optional string lat = 1;
+  optional string lng = 2;
+  optional string name = 3;
+  optional string sn = 4;
+}

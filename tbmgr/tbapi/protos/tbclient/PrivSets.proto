@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+message PrivSets {
+  optional int32 friend = 5;
+  optional int32 group = 3;
+  optional int32 like = 2;
+  optional int32 live = 6;
+  optional int32 location = 1;
+  optional int32 post = 4;
+}

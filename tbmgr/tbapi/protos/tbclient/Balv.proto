@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Balv {
+  optional int32 days_tofree = 3;
+  optional int32 is_black = 1;
+  optional int32 is_block = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+message AppInfo {
+  optional string ad_apk_package_name = 4;
+  optional int32 ad_id = 1;
+  optional string ad_name = 2;
+  optional string apk_url = 3;
+  optional int64 app_size = 5;
+}

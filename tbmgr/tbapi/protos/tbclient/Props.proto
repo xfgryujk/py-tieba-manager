@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Props {
+  repeated string _word = 14;
+  optional string end_time = 7;
+  optional string expired_notify = 12;
+  optional string expiring_notify = 11;
+  optional int32 left_num = 4;
+  optional string notice = 8;
+  optional int32 num = 6;
+  optional string open_status = 10;
+  repeated string pattern = 15;
+  optional string props_category = 3;
+  optional int32 props_id = 1;
+  optional string props_type = 2;
+  optional string title = 13;
+  optional int32 update_time = 9;
+  optional string used_status = 5;
+}

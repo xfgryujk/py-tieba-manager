@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+message PsInfo {
+  optional int64 game_id = 1;
+  optional string game_intro = 5;
+  optional string game_pic_url = 4;
+  optional int64 game_type = 3;
+  optional int64 score = 2;
+}

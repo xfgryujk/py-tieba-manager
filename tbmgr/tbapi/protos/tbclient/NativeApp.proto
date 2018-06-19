@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message NativeApp {
+  optional string download_and = 3;
+  optional string download_ios = 4;
+  optional string jump_and = 1;
+  optional string jump_ios = 2;
+}

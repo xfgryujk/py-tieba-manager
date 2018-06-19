@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/Avatar.proto";
+import "tbclient/Equipment.proto";
+
+message SignatureInfo {
+  required Avatar avatar = 5;
+  required Equipment equipment = 1;
+  optional string game_id = 2;
+  optional string game_name = 3;
+  optional string player = 4;
+  optional string power = 6;
+  optional string server = 7;
+}

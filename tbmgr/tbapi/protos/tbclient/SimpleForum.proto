@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/MultiForumPerm.proto";
+
+message SimpleForum {
+  optional string avatar = 4;
+  optional string ext = 9;
+  optional string first_class = 7;
+  optional int64 id = 1;
+  optional int32 is_exists = 3;
+  optional uint32 is_liked = 5;
+  optional uint32 is_signed = 6;
+  optional uint32 level_id = 10;
+  required MultiForumPerm multi_forum_perm = 11;
+  optional string name = 2;
+  optional string second_class = 8;
+}

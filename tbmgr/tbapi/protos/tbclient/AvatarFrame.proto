@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message AvatarFrame {
+  optional int32 end_time = 2;
+  optional int32 props_id = 1;
+}

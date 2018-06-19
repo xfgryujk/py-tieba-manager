@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message UserPics {
+  optional string big = 1;
+  optional string small = 2;
+}

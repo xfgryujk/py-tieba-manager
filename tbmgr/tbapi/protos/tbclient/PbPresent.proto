@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/PbPresentList.proto";
+
+message PbPresent {
+  repeated PbPresentList list = 2;
+  optional uint32 total = 1;
+}

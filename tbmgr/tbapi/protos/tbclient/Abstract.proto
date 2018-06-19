@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Abstract {
+  optional string during_time = 6;
+  optional string link = 3;
+  optional string src = 4;
+  optional string text = 2;
+  optional int32 type = 1;
+  optional string un = 5;
+  optional string voice_md5 = 7;
+}

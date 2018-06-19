@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/PushType.proto";
+
+message PushStatus {
+  optional int32 status = 1;
+  repeated PushType types = 2;
+}

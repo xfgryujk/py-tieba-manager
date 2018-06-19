@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message MultipleForum {
+  optional int64 forum_id = 1;
+  optional string forum_name = 2;
+}

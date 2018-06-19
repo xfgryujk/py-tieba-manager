@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ActHot {
+  optional string author_name = 4;
+  optional string bsize = 1;
+  optional string img_des = 5;
+  optional string img_src = 2;
+  optional int32 img_type = 6;
+  optional string link = 3;
+}

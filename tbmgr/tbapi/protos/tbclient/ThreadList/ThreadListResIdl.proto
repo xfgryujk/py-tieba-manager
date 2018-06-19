@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient.ThreadList;
+
+import "tbclient/Error.proto";
+import "tbclient/ThreadList/DataRes.proto";
+
+message ThreadListResIdl {
+    required DataRes data = 2;
+    required tbclient.Error error = 1;
+}

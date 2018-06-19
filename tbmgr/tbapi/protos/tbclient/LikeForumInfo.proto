@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message LikeForumInfo {
+  optional uint64 forum_id = 2;
+  optional string forum_name = 1;
+}

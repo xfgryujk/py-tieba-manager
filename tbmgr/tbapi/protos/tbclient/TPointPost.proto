@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/ActBtn.proto";
+import "tbclient/DetailInfo.proto";
+import "tbclient/Timgs.proto";
+import "tbclient/VideoInfo.proto";
+
+message TPointPost {
+  repeated ActBtn act_btn = 5;
+  required DetailInfo detail_info = 7;
+  optional int32 hidden_day = 9;
+  optional uint32 is_tuiguang = 1;
+  optional string monitor_id = 8;
+  optional string position = 2;
+  repeated Timgs t_imgs = 6;
+  required VideoInfo t_video = 10;
+  optional string tag_name = 11;
+  optional int64 template_id = 3;
+  optional int32 template_type = 4;
+}
