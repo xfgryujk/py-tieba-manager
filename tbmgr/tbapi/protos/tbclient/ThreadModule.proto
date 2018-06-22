@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/ThreadInfo.proto";
+
+message ThreadModule {
+  optional int64 module_id = 1;
+  optional string module_name = 2;
+  optional int64 show_num = 4;
+  repeated ThreadInfo thread_info = 3;
+}

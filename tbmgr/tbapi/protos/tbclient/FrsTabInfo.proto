@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message FrsTabInfo {
+  optional int32 tab_id = 1;
+  optional string tab_name = 3;
+  optional int32 tab_type = 2;
+  optional string tab_url = 4;
+}

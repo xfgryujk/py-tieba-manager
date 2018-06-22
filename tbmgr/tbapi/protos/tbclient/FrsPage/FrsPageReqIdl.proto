@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/DataReq.proto";
+
+message FrsPageReqIdl {
+  optional DataReq data = 1;
+}

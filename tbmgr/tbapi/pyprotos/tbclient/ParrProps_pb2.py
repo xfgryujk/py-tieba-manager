@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/ParrProps.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x18tbclient/ParrProps.proto\x12\x08tbclient\x1a\x14tbclient/Level.proto\x1a\x14tbclient/Props.proto\"b\n\tParrProps\x12\x1e\n\x05level\x18\x02 \x02(\x0b\x32\x0f.tbclient.Level\x12\x15\n\rportrait_time\x18\x01 \x01(\x05\x12\x1e\n\x05props\x18\x03 \x03(\x0b\x32\x0f.tbclient.Props')
+  serialized_pb=_b('\n\x18tbclient/ParrProps.proto\x12\x08tbclient\x1a\x14tbclient/Level.proto\x1a\x14tbclient/Props.proto\"b\n\tParrProps\x12\x1e\n\x05level\x18\x02 \x01(\x0b\x32\x0f.tbclient.Level\x12\x15\n\rportrait_time\x18\x01 \x01(\x05\x12\x1e\n\x05props\x18\x03 \x03(\x0b\x32\x0f.tbclient.Props')
   ,
   dependencies=[tbclient_dot_Level__pb2.DESCRIPTOR,tbclient_dot_Props__pb2.DESCRIPTOR,])
 
@@ -37,7 +37,7 @@ _PARRPROPS = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='level', full_name='tbclient.ParrProps.level', index=0,
-      number=2, type=11, cpp_type=10, label=2,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

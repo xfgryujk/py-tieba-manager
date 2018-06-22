@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message AnchorPower {
+  optional string anchor_message = 2;
+  optional int32 can_add_live_post = 3;
+  optional string can_add_live_post_msg = 5;
+  optional int32 can_del_live_post = 4;
+  optional int32 have_power = 1;
+}

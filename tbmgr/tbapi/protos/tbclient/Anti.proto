@@ -1,0 +1,30 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/BlockPopInfo.proto";
+
+message Anti {
+  optional BlockPopInfo block_pop_info = 22;
+  optional int32 block_stat = 6;
+  optional int32 days_tofree = 9;
+  optional int32 forbid_flag = 4;
+  optional string forbid_info = 5;
+  optional int32 has_chance = 10;
+  optional int32 hide_stat = 7;
+  optional int32 ifaddition = 13;
+  optional int32 ifpost = 2;
+  optional int32 ifposta = 3;
+  optional int32 ifvoice = 11;
+  optional string ifxiaoying = 18;
+  optional int32 need_vcode = 14;
+  optional string poll_message = 19;
+  optional string tbs = 1;
+  optional string user_mute = 17;
+  optional string vcode_md5 = 15;
+  optional string vcode_pic_url = 16;
+  optional int32 vcode_stat = 8;
+  optional string video_local_message = 21;
+  optional string video_message = 20;
+  optional string voice_message = 12;
+}

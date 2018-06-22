@@ -1,0 +1,66 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/Abstract.proto";
+import "tbclient/Agree.proto";
+import "tbclient/AlaLiveInfo.proto";
+import "tbclient/AnchorInfo.proto";
+import "tbclient/DealInfo.proto";
+import "tbclient/LbsInfo.proto";
+import "tbclient/Media.proto";
+import "tbclient/MultipleForum.proto";
+import "tbclient/OriginThreadInfo.proto";
+import "tbclient/PollInfo.proto";
+import "tbclient/PostInfoContent.proto";
+import "tbclient/Quote.proto";
+import "tbclient/VideoInfo.proto";
+import "tbclient/Voice.proto";
+import "tbclient/ZhiBoInfoTW.proto";
+
+message PostInfoList {
+  optional string _abstract = 14;
+  repeated Abstract abstract_thread = 15;
+  optional Agree agree = 40;
+  optional int32 agree_num = 37;
+  optional AlaLiveInfo ala_info = 36;
+  optional AnchorInfo anchor_info = 24;
+  repeated PostInfoContent content = 8;
+  optional string content_thread = 9;
+  optional uint32 create_time = 5;
+  optional DealInfo deal_info = 31;
+  optional uint64 forum_id = 1;
+  optional string forum_name = 6;
+  optional int32 freq_num = 33;
+  optional int32 hide_post = 25;
+  optional string ip = 11;
+  optional bool is_deal = 30;
+  optional uint32 is_post_deleted = 12;
+  optional int32 is_remain = 41;
+  optional int32 is_share_thread = 44;
+  optional uint32 is_thread = 4;
+  optional int32 is_view_year = 43;
+  optional LbsInfo lbs_info = 21;
+  repeated Media media = 16;
+  repeated MultipleForum multiple_forum_list = 32;
+  optional string name_show = 35;
+  optional OriginThreadInfo origin_thread_info = 42;
+  optional PollInfo poll_info = 28;
+  optional uint64 post_id = 3;
+  optional string post_type = 20;
+  optional string ptype = 13;
+  optional Quote quote = 22;
+  optional uint32 reply_num = 17;
+  optional int32 share_num = 39;
+  optional uint64 thread_id = 2;
+  optional uint64 thread_type = 26;
+  optional string title = 7;
+  optional ZhiBoInfoTW twzhibo_info = 27;
+  optional int64 user_id = 18;
+  optional string user_name = 10;
+  optional string user_portrait = 19;
+  optional uint64 v_forum_id = 34;
+  optional VideoInfo video_info = 29;
+  optional int32 view_num = 38;
+  repeated Voice voice_info = 23;
+}

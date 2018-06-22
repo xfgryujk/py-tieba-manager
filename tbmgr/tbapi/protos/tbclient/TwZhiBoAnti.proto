@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message TwZhiBoAnti {
+  optional int32 can_add_live_post = 1;
+  optional int32 can_del_live_post = 2;
+  optional int32 can_show_pb_headline = 3;
+}

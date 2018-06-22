@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/ThreadInfo.proto";
+import "tbclient/User.proto";
+
+message PushThreadInfo {
+  optional int32 has_pushcard = 2;
+  optional int32 has_pushplace = 3;
+  repeated ThreadInfo thread_list = 1;
+  repeated User user_list = 4;
+}

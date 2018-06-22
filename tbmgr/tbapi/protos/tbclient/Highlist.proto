@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/High.proto";
+
+message Highlist {
+  optional bool has_more = 2;
+  repeated High list = 1;
+}

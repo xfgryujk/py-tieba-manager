@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/AndroidBfbSdk.proto";
+
+message UserBfbInfo {
+  optional int32 activity_status = 1;
+  optional AndroidBfbSdk android_bfb_sdk = 5;
+  optional string bfb_url = 2;
+  optional string maste_url = 3;
+  optional int32 res_no = 4;
+}

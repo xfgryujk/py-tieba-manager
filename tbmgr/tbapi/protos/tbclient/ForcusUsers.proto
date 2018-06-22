@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ForcusUsers {
+  optional string portrait = 4;
+  optional int64 thread_id = 1;
+  optional int64 user_id = 3;
+  optional string user_name = 2;
+}

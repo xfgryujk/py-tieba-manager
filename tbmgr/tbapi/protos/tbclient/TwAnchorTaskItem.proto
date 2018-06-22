@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+message TwAnchorTaskItem {
+  optional int32 complete = 4;
+  optional string icon = 6;
+  optional int32 id = 1;
+  optional string name = 2;
+  optional string progress = 3;
+  optional string remark = 5;
+}

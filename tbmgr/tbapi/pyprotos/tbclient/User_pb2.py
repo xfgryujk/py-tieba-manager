@@ -14,8 +14,8 @@ _sym_db = _symbol_database.Default()
 
 
 from tbclient import ActivitySponsor_pb2 as tbclient_dot_ActivitySponsor__pb2
-from tbclient import AlaUserInfo_pb2 as tbclient_dot_AlaUserInfo__pb2
 from tbclient import AlaLiveInfo_pb2 as tbclient_dot_AlaLiveInfo__pb2
+from tbclient import AlaUserInfo_pb2 as tbclient_dot_AlaUserInfo__pb2
 from tbclient import Balv_pb2 as tbclient_dot_Balv__pb2
 from tbclient import ConsumeInfo_pb2 as tbclient_dot_ConsumeInfo__pb2
 from tbclient import Ecom_pb2 as tbclient_dot_Ecom__pb2
@@ -25,9 +25,9 @@ from tbclient import GodInfo_pb2 as tbclient_dot_GodInfo__pb2
 from tbclient import Icon_pb2 as tbclient_dot_Icon__pb2
 from tbclient import LikeForumInfo_pb2 as tbclient_dot_LikeForumInfo__pb2
 from tbclient import MyGroupInfo_pb2 as tbclient_dot_MyGroupInfo__pb2
+from tbclient import NewParrScores_pb2 as tbclient_dot_NewParrScores__pb2
 from tbclient import NewUser_pb2 as tbclient_dot_NewUser__pb2
 from tbclient import NovelFansInfo_pb2 as tbclient_dot_NovelFansInfo__pb2
-from tbclient import NewParrScores_pb2 as tbclient_dot_NewParrScores__pb2
 from tbclient import PayMemberInfo_pb2 as tbclient_dot_PayMemberInfo__pb2
 from tbclient import Pendant_pb2 as tbclient_dot_Pendant__pb2
 from tbclient import PrivSets_pb2 as tbclient_dot_PrivSets__pb2
@@ -49,9 +49,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/User.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x13tbclient/User.proto\x12\x08tbclient\x1a\x1etbclient/ActivitySponsor.proto\x1a\x1atbclient/AlaUserInfo.proto\x1a\x1atbclient/AlaLiveInfo.proto\x1a\x13tbclient/Balv.proto\x1a\x1atbclient/ConsumeInfo.proto\x1a\x13tbclient/Ecom.proto\x1a\x19tbclient/EsportInfo.proto\x1a\x17tbclient/GiftInfo.proto\x1a\x16tbclient/GodInfo.proto\x1a\x13tbclient/Icon.proto\x1a\x1ctbclient/LikeForumInfo.proto\x1a\x1atbclient/MyGroupInfo.proto\x1a\x16tbclient/NewUser.proto\x1a\x1ctbclient/NovelFansInfo.proto\x1a\x1ctbclient/NewParrScores.proto\x1a\x1ctbclient/PayMemberInfo.proto\x1a\x16tbclient/Pendant.proto\x1a\x17tbclient/PrivSets.proto\x1a\x19tbclient/SimpleUser.proto\x1a tbclient/SpringVirtualUser.proto\x1a\x18tbclient/TbVipInfo.proto\x1a\x1etbclient/ThemeCardInUser.proto\x1a\x18tbclient/TshowInfo.proto\x1a!tbclient/TwAnchorProfitItem.proto\x1a\x1atbclient/TwZhiBoUser.proto\x1a\x17tbclient/UserPics.proto\x1a#tbclient/UserVideoChannelInfo.proto\x1a\x1atbclient/UserVipInfo.proto\x1a\x19tbclient/VipCloseAd.proto\x1a\x1atbclient/VipShowInfo.proto\"\xea\x13\n\x04User\x12\r\n\x05\x42\x44USS\x18\x1d \x01(\t\x12\x33\n\x10\x61\x63tivity_sponsor\x18G \x02(\x0b\x32\x19.tbclient.ActivitySponsor\x12\x11\n\tagree_num\x18X \x01(\x05\x12\'\n\x08\x61la_info\x18N \x02(\x0b\x32\x15.tbclient.AlaUserInfo\x12,\n\rala_live_info\x18U \x02(\x0b\x32\x15.tbclient.AlaLiveInfo\x12\x1c\n\x04\x62\x61lv\x18\n \x02(\x0b\x32\x0e.tbclient.Balv\x12\x11\n\tbawu_type\x18\x1a \x01(\t\x12\x0e\n\x06\x62g_pic\x18: \x01(\t\x12\x15\n\rbimg_end_time\x18( \x01(\x05\x12\x10\n\x08\x62img_url\x18\r \x01(\t\x12\x16\n\x0e\x62ookmark_count\x18\x35 \x01(\x05\x12\x1a\n\x12\x62ookmark_new_count\x18\x36 \x01(\x05\x12\x13\n\x0b\x63oncern_num\x18\x1f \x01(\x05\x12+\n\x0c\x63onsume_info\x18\x44 \x02(\x0b\x32\x15.tbclient.ConsumeInfo\x12\x19\n\x11\x65\x61\x63h_other_friend\x18S \x01(\x05\x12\x1c\n\x04\x65\x63om\x18J \x02(\x0b\x32\x0e.tbclient.Ecom\x12)\n\x0b\x65sport_data\x18T \x02(\x0b\x32\x14.tbclient.EsportInfo\x12\x15\n\rfans_nickname\x18\x39 \x01(\t\x12\x10\n\x08\x66\x61ns_num\x18\x1e \x01(\x05\x12\x12\n\nfriend_num\x18\x38 \x01(\x03\x12\x0e\n\x06gender\x18* \x01(\x05\x12%\n\tgift_list\x18\x32 \x03(\x0b\x32\x12.tbclient.GiftInfo\x12\x10\n\x08gift_num\x18\x31 \x01(\x05\x12#\n\x08god_data\x18> \x02(\x0b\x32\x11.tbclient.GodInfo\x12(\n\tgroupList\x18\x30 \x03(\x0b\x32\x15.tbclient.MyGroupInfo\x12\x18\n\x10has_bottle_enter\x18P \x01(\x05\x12\x15\n\rhas_concerned\x18# \x01(\x05\x12\x12\n\nheavy_user\x18? \x01(\x05\x12 \n\x08iconinfo\x18\x11 \x03(\x0b\x32\x0e.tbclient.Icon\x12\n\n\x02id\x18\x02 \x01(\x03\x12\r\n\x05intro\x18\" \x01(\t\x12\x17\n\x0fios_bimg_format\x18\x16 \x01(\t\x12\n\n\x02ip\x18\x1c \x01(\t\x12\x0f\n\x07is_bawu\x18\x19 \x01(\x05\x12\x13\n\x0bis_coreuser\x18\x14 \x01(\x05\x12\x0f\n\x07is_fans\x18[ \x01(\x05\x12\x11\n\tis_friend\x18. \x01(\x05\x12\x13\n\x0bis_guanfang\x18\x34 \x01(\x05\x12\x14\n\x0cis_huinibuke\x18\x15 \x01(\x05\x12\x16\n\x0eis_interestman\x18\x10 \x01(\x05\x12\x12\n\nis_invited\x18Z \x01(\x05\x12\x0f\n\x07is_like\x18\x18 \x01(\x05\x12\x10\n\x08is_login\x18\x01 \x01(\x05\x12\x12\n\nis_manager\x18\x0b \x01(\x05\x12\x0f\n\x07is_mask\x18+ \x01(\x05\x12\x0e\n\x06is_mem\x18\' \x01(\x05\x12\x16\n\x0eis_select_tail\x18\x33 \x01(\x05\x12\x11\n\tis_verify\x18\x0f \x01(\x05\x12\x15\n\rleft_call_num\x18Y \x01(\x05\x12\x10\n\x08level_id\x18\x17 \x01(\x05\x12*\n\tlikeForum\x18/ \x03(\x0b\x32\x17.tbclient.LikeForumInfo\x12\x14\n\x0cmeizhi_level\x18\x0e \x01(\x05\x12\'\n\tmute_user\x18\x37 \x03(\x0b\x32\x14.tbclient.SimpleUser\x12\x13\n\x0bmy_like_num\x18! \x01(\x05\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x11\n\tname_show\x18\x04 \x01(\t\x12+\n\x0enew_tshow_icon\x18\x41 \x03(\x0b\x32\x13.tbclient.TshowInfo\x12(\n\rnew_user_info\x18\x08 \x02(\x0b\x32\x11.tbclient.NewUser\x12\x1c\n\x14nickname_update_time\x18V \x01(\x05\x12\x14\n\x0cno_post_high\x18I \x01(\r\x12\r\n\x05no_un\x18\x06 \x01(\x05\x12\x30\n\x0fnovel_fans_info\x18< \x02(\x0b\x32\x17.tbclient.NovelFansInfo\x12,\n\x0bparr_scores\x18; \x02(\x0b\x32\x17.tbclient.NewParrScores\x12\x0e\n\x06passwd\x18$ \x01(\t\x12\x30\n\x0fpay_member_info\x18) \x02(\x0b\x32\x17.tbclient.PayMemberInfo\x12\"\n\x07pendant\x18M \x02(\x0b\x32\x11.tbclient.Pendant\x12\x10\n\x08portrait\x18\x05 \x01(\t\x12\x11\n\tportraith\x18\x1b \x01(\t\x12\x10\n\x08post_num\x18% \x01(\x05\x12%\n\tpriv_sets\x18- \x02(\x0b\x32\x12.tbclient.PrivSets\x12\x13\n\x0bpriv_thread\x18\\ \x01(\x05\x12\x31\n\x0bprofit_list\x18\x43 \x03(\x0b\x32\x1c.tbclient.TwAnchorProfitItem\x12\x0c\n\x04rank\x18\x0c \x01(\t\x12\x13\n\x0bseal_prefix\x18O \x01(\t\x12\x0b\n\x03sex\x18  \x01(\x05\x12\x38\n\x13spring_virtual_user\x18R \x02(\x0b\x32\x1b.tbclient.SpringVirtualUser\x12\x0e\n\x06tb_age\x18& \x01(\t\x12#\n\x06tb_vip\x18H \x02(\x0b\x32\x13.tbclient.TbVipInfo\x12-\n\ntheme_card\x18\x45 \x02(\x0b\x32\x19.tbclient.ThemeCardInUser\x12\x12\n\nthread_num\x18W \x01(\x05\x12\x19\n\x11total_visitor_num\x18L \x01(\x05\x12\'\n\ntshow_icon\x18\x12 \x03(\x0b\x32\x13.tbclient.TshowInfo\x12-\n\x0etw_anchor_info\x18\x42 \x02(\x0b\x32\x15.tbclient.TwZhiBoUser\x12\x0c\n\x04type\x18\x07 \x01(\x05\x12%\n\tuser_pics\x18, \x03(\x0b\x32\x12.tbclient.UserPics\x12\x11\n\tuser_type\x18\x13 \x01(\x05\x12\x10\n\x08userhide\x18\t \x01(\x05\x12:\n\x12video_channel_info\x18Q \x02(\x0b\x32\x1e.tbclient.UserVideoChannelInfo\x12&\n\x07vipInfo\x18= \x02(\x0b\x32\x15.tbclient.UserVipInfo\x12*\n\x0cvip_close_ad\x18\x46 \x02(\x0b\x32\x14.tbclient.VipCloseAd\x12,\n\rvip_show_info\x18@ \x02(\x0b\x32\x15.tbclient.VipShowInfo\x12\x13\n\x0bvisitor_num\x18K \x01(\x05')
+  serialized_pb=_b('\n\x13tbclient/User.proto\x12\x08tbclient\x1a\x1etbclient/ActivitySponsor.proto\x1a\x1atbclient/AlaLiveInfo.proto\x1a\x1atbclient/AlaUserInfo.proto\x1a\x13tbclient/Balv.proto\x1a\x1atbclient/ConsumeInfo.proto\x1a\x13tbclient/Ecom.proto\x1a\x19tbclient/EsportInfo.proto\x1a\x17tbclient/GiftInfo.proto\x1a\x16tbclient/GodInfo.proto\x1a\x13tbclient/Icon.proto\x1a\x1ctbclient/LikeForumInfo.proto\x1a\x1atbclient/MyGroupInfo.proto\x1a\x1ctbclient/NewParrScores.proto\x1a\x16tbclient/NewUser.proto\x1a\x1ctbclient/NovelFansInfo.proto\x1a\x1ctbclient/PayMemberInfo.proto\x1a\x16tbclient/Pendant.proto\x1a\x17tbclient/PrivSets.proto\x1a\x19tbclient/SimpleUser.proto\x1a tbclient/SpringVirtualUser.proto\x1a\x18tbclient/TbVipInfo.proto\x1a\x1etbclient/ThemeCardInUser.proto\x1a\x18tbclient/TshowInfo.proto\x1a!tbclient/TwAnchorProfitItem.proto\x1a\x1atbclient/TwZhiBoUser.proto\x1a\x17tbclient/UserPics.proto\x1a#tbclient/UserVideoChannelInfo.proto\x1a\x1atbclient/UserVipInfo.proto\x1a\x19tbclient/VipCloseAd.proto\x1a\x1atbclient/VipShowInfo.proto\"\xea\x13\n\x04User\x12\r\n\x05\x42\x44USS\x18\x1d \x01(\t\x12\x33\n\x10\x61\x63tivity_sponsor\x18G \x01(\x0b\x32\x19.tbclient.ActivitySponsor\x12\x11\n\tagree_num\x18X \x01(\x05\x12\'\n\x08\x61la_info\x18N \x01(\x0b\x32\x15.tbclient.AlaUserInfo\x12,\n\rala_live_info\x18U \x01(\x0b\x32\x15.tbclient.AlaLiveInfo\x12\x1c\n\x04\x62\x61lv\x18\n \x01(\x0b\x32\x0e.tbclient.Balv\x12\x11\n\tbawu_type\x18\x1a \x01(\t\x12\x0e\n\x06\x62g_pic\x18: \x01(\t\x12\x15\n\rbimg_end_time\x18( \x01(\x05\x12\x10\n\x08\x62img_url\x18\r \x01(\t\x12\x16\n\x0e\x62ookmark_count\x18\x35 \x01(\x05\x12\x1a\n\x12\x62ookmark_new_count\x18\x36 \x01(\x05\x12\x13\n\x0b\x63oncern_num\x18\x1f \x01(\x05\x12+\n\x0c\x63onsume_info\x18\x44 \x01(\x0b\x32\x15.tbclient.ConsumeInfo\x12\x19\n\x11\x65\x61\x63h_other_friend\x18S \x01(\x05\x12\x1c\n\x04\x65\x63om\x18J \x01(\x0b\x32\x0e.tbclient.Ecom\x12)\n\x0b\x65sport_data\x18T \x01(\x0b\x32\x14.tbclient.EsportInfo\x12\x15\n\rfans_nickname\x18\x39 \x01(\t\x12\x10\n\x08\x66\x61ns_num\x18\x1e \x01(\x05\x12\x12\n\nfriend_num\x18\x38 \x01(\x03\x12\x0e\n\x06gender\x18* \x01(\x05\x12%\n\tgift_list\x18\x32 \x03(\x0b\x32\x12.tbclient.GiftInfo\x12\x10\n\x08gift_num\x18\x31 \x01(\x05\x12#\n\x08god_data\x18> \x01(\x0b\x32\x11.tbclient.GodInfo\x12(\n\tgroupList\x18\x30 \x03(\x0b\x32\x15.tbclient.MyGroupInfo\x12\x18\n\x10has_bottle_enter\x18P \x01(\x05\x12\x15\n\rhas_concerned\x18# \x01(\x05\x12\x12\n\nheavy_user\x18? \x01(\x05\x12 \n\x08iconinfo\x18\x11 \x03(\x0b\x32\x0e.tbclient.Icon\x12\n\n\x02id\x18\x02 \x01(\x03\x12\r\n\x05intro\x18\" \x01(\t\x12\x17\n\x0fios_bimg_format\x18\x16 \x01(\t\x12\n\n\x02ip\x18\x1c \x01(\t\x12\x0f\n\x07is_bawu\x18\x19 \x01(\x05\x12\x13\n\x0bis_coreuser\x18\x14 \x01(\x05\x12\x0f\n\x07is_fans\x18[ \x01(\x05\x12\x11\n\tis_friend\x18. \x01(\x05\x12\x13\n\x0bis_guanfang\x18\x34 \x01(\x05\x12\x14\n\x0cis_huinibuke\x18\x15 \x01(\x05\x12\x16\n\x0eis_interestman\x18\x10 \x01(\x05\x12\x12\n\nis_invited\x18Z \x01(\x05\x12\x0f\n\x07is_like\x18\x18 \x01(\x05\x12\x10\n\x08is_login\x18\x01 \x01(\x05\x12\x12\n\nis_manager\x18\x0b \x01(\x05\x12\x0f\n\x07is_mask\x18+ \x01(\x05\x12\x0e\n\x06is_mem\x18\' \x01(\x05\x12\x16\n\x0eis_select_tail\x18\x33 \x01(\x05\x12\x11\n\tis_verify\x18\x0f \x01(\x05\x12\x15\n\rleft_call_num\x18Y \x01(\x05\x12\x10\n\x08level_id\x18\x17 \x01(\x05\x12*\n\tlikeForum\x18/ \x03(\x0b\x32\x17.tbclient.LikeForumInfo\x12\x14\n\x0cmeizhi_level\x18\x0e \x01(\x05\x12\'\n\tmute_user\x18\x37 \x03(\x0b\x32\x14.tbclient.SimpleUser\x12\x13\n\x0bmy_like_num\x18! \x01(\x05\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x11\n\tname_show\x18\x04 \x01(\t\x12+\n\x0enew_tshow_icon\x18\x41 \x03(\x0b\x32\x13.tbclient.TshowInfo\x12(\n\rnew_user_info\x18\x08 \x01(\x0b\x32\x11.tbclient.NewUser\x12\x1c\n\x14nickname_update_time\x18V \x01(\x05\x12\x14\n\x0cno_post_high\x18I \x01(\r\x12\r\n\x05no_un\x18\x06 \x01(\x05\x12\x30\n\x0fnovel_fans_info\x18< \x01(\x0b\x32\x17.tbclient.NovelFansInfo\x12,\n\x0bparr_scores\x18; \x01(\x0b\x32\x17.tbclient.NewParrScores\x12\x0e\n\x06passwd\x18$ \x01(\t\x12\x30\n\x0fpay_member_info\x18) \x01(\x0b\x32\x17.tbclient.PayMemberInfo\x12\"\n\x07pendant\x18M \x01(\x0b\x32\x11.tbclient.Pendant\x12\x10\n\x08portrait\x18\x05 \x01(\t\x12\x11\n\tportraith\x18\x1b \x01(\t\x12\x10\n\x08post_num\x18% \x01(\x05\x12%\n\tpriv_sets\x18- \x01(\x0b\x32\x12.tbclient.PrivSets\x12\x13\n\x0bpriv_thread\x18\\ \x01(\x05\x12\x31\n\x0bprofit_list\x18\x43 \x03(\x0b\x32\x1c.tbclient.TwAnchorProfitItem\x12\x0c\n\x04rank\x18\x0c \x01(\t\x12\x13\n\x0bseal_prefix\x18O \x01(\t\x12\x0b\n\x03sex\x18  \x01(\x05\x12\x38\n\x13spring_virtual_user\x18R \x01(\x0b\x32\x1b.tbclient.SpringVirtualUser\x12\x0e\n\x06tb_age\x18& \x01(\t\x12#\n\x06tb_vip\x18H \x01(\x0b\x32\x13.tbclient.TbVipInfo\x12-\n\ntheme_card\x18\x45 \x01(\x0b\x32\x19.tbclient.ThemeCardInUser\x12\x12\n\nthread_num\x18W \x01(\x05\x12\x19\n\x11total_visitor_num\x18L \x01(\x05\x12\'\n\ntshow_icon\x18\x12 \x03(\x0b\x32\x13.tbclient.TshowInfo\x12-\n\x0etw_anchor_info\x18\x42 \x01(\x0b\x32\x15.tbclient.TwZhiBoUser\x12\x0c\n\x04type\x18\x07 \x01(\x05\x12%\n\tuser_pics\x18, \x03(\x0b\x32\x12.tbclient.UserPics\x12\x11\n\tuser_type\x18\x13 \x01(\x05\x12\x10\n\x08userhide\x18\t \x01(\x05\x12:\n\x12video_channel_info\x18Q \x01(\x0b\x32\x1e.tbclient.UserVideoChannelInfo\x12&\n\x07vipInfo\x18= \x01(\x0b\x32\x15.tbclient.UserVipInfo\x12*\n\x0cvip_close_ad\x18\x46 \x01(\x0b\x32\x14.tbclient.VipCloseAd\x12,\n\rvip_show_info\x18@ \x01(\x0b\x32\x15.tbclient.VipShowInfo\x12\x13\n\x0bvisitor_num\x18K \x01(\x05')
   ,
-  dependencies=[tbclient_dot_ActivitySponsor__pb2.DESCRIPTOR,tbclient_dot_AlaUserInfo__pb2.DESCRIPTOR,tbclient_dot_AlaLiveInfo__pb2.DESCRIPTOR,tbclient_dot_Balv__pb2.DESCRIPTOR,tbclient_dot_ConsumeInfo__pb2.DESCRIPTOR,tbclient_dot_Ecom__pb2.DESCRIPTOR,tbclient_dot_EsportInfo__pb2.DESCRIPTOR,tbclient_dot_GiftInfo__pb2.DESCRIPTOR,tbclient_dot_GodInfo__pb2.DESCRIPTOR,tbclient_dot_Icon__pb2.DESCRIPTOR,tbclient_dot_LikeForumInfo__pb2.DESCRIPTOR,tbclient_dot_MyGroupInfo__pb2.DESCRIPTOR,tbclient_dot_NewUser__pb2.DESCRIPTOR,tbclient_dot_NovelFansInfo__pb2.DESCRIPTOR,tbclient_dot_NewParrScores__pb2.DESCRIPTOR,tbclient_dot_PayMemberInfo__pb2.DESCRIPTOR,tbclient_dot_Pendant__pb2.DESCRIPTOR,tbclient_dot_PrivSets__pb2.DESCRIPTOR,tbclient_dot_SimpleUser__pb2.DESCRIPTOR,tbclient_dot_SpringVirtualUser__pb2.DESCRIPTOR,tbclient_dot_TbVipInfo__pb2.DESCRIPTOR,tbclient_dot_ThemeCardInUser__pb2.DESCRIPTOR,tbclient_dot_TshowInfo__pb2.DESCRIPTOR,tbclient_dot_TwAnchorProfitItem__pb2.DESCRIPTOR,tbclient_dot_TwZhiBoUser__pb2.DESCRIPTOR,tbclient_dot_UserPics__pb2.DESCRIPTOR,tbclient_dot_UserVideoChannelInfo__pb2.DESCRIPTOR,tbclient_dot_UserVipInfo__pb2.DESCRIPTOR,tbclient_dot_VipCloseAd__pb2.DESCRIPTOR,tbclient_dot_VipShowInfo__pb2.DESCRIPTOR,])
+  dependencies=[tbclient_dot_ActivitySponsor__pb2.DESCRIPTOR,tbclient_dot_AlaLiveInfo__pb2.DESCRIPTOR,tbclient_dot_AlaUserInfo__pb2.DESCRIPTOR,tbclient_dot_Balv__pb2.DESCRIPTOR,tbclient_dot_ConsumeInfo__pb2.DESCRIPTOR,tbclient_dot_Ecom__pb2.DESCRIPTOR,tbclient_dot_EsportInfo__pb2.DESCRIPTOR,tbclient_dot_GiftInfo__pb2.DESCRIPTOR,tbclient_dot_GodInfo__pb2.DESCRIPTOR,tbclient_dot_Icon__pb2.DESCRIPTOR,tbclient_dot_LikeForumInfo__pb2.DESCRIPTOR,tbclient_dot_MyGroupInfo__pb2.DESCRIPTOR,tbclient_dot_NewParrScores__pb2.DESCRIPTOR,tbclient_dot_NewUser__pb2.DESCRIPTOR,tbclient_dot_NovelFansInfo__pb2.DESCRIPTOR,tbclient_dot_PayMemberInfo__pb2.DESCRIPTOR,tbclient_dot_Pendant__pb2.DESCRIPTOR,tbclient_dot_PrivSets__pb2.DESCRIPTOR,tbclient_dot_SimpleUser__pb2.DESCRIPTOR,tbclient_dot_SpringVirtualUser__pb2.DESCRIPTOR,tbclient_dot_TbVipInfo__pb2.DESCRIPTOR,tbclient_dot_ThemeCardInUser__pb2.DESCRIPTOR,tbclient_dot_TshowInfo__pb2.DESCRIPTOR,tbclient_dot_TwAnchorProfitItem__pb2.DESCRIPTOR,tbclient_dot_TwZhiBoUser__pb2.DESCRIPTOR,tbclient_dot_UserPics__pb2.DESCRIPTOR,tbclient_dot_UserVideoChannelInfo__pb2.DESCRIPTOR,tbclient_dot_UserVipInfo__pb2.DESCRIPTOR,tbclient_dot_VipCloseAd__pb2.DESCRIPTOR,tbclient_dot_VipShowInfo__pb2.DESCRIPTOR,])
 
 
 
@@ -72,7 +72,7 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='activity_sponsor', full_name='tbclient.User.activity_sponsor', index=1,
-      number=71, type=11, cpp_type=10, label=2,
+      number=71, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -86,21 +86,21 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ala_info', full_name='tbclient.User.ala_info', index=3,
-      number=78, type=11, cpp_type=10, label=2,
+      number=78, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ala_live_info', full_name='tbclient.User.ala_live_info', index=4,
-      number=85, type=11, cpp_type=10, label=2,
+      number=85, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='balv', full_name='tbclient.User.balv', index=5,
-      number=10, type=11, cpp_type=10, label=2,
+      number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -156,7 +156,7 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='consume_info', full_name='tbclient.User.consume_info', index=13,
-      number=68, type=11, cpp_type=10, label=2,
+      number=68, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -170,14 +170,14 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ecom', full_name='tbclient.User.ecom', index=15,
-      number=74, type=11, cpp_type=10, label=2,
+      number=74, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='esport_data', full_name='tbclient.User.esport_data', index=16,
-      number=84, type=11, cpp_type=10, label=2,
+      number=84, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -226,7 +226,7 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='god_data', full_name='tbclient.User.god_data', index=23,
-      number=62, type=11, cpp_type=10, label=2,
+      number=62, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -464,7 +464,7 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='new_user_info', full_name='tbclient.User.new_user_info', index=57,
-      number=8, type=11, cpp_type=10, label=2,
+      number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -492,14 +492,14 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='novel_fans_info', full_name='tbclient.User.novel_fans_info', index=61,
-      number=60, type=11, cpp_type=10, label=2,
+      number=60, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='parr_scores', full_name='tbclient.User.parr_scores', index=62,
-      number=59, type=11, cpp_type=10, label=2,
+      number=59, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -513,14 +513,14 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pay_member_info', full_name='tbclient.User.pay_member_info', index=64,
-      number=41, type=11, cpp_type=10, label=2,
+      number=41, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pendant', full_name='tbclient.User.pendant', index=65,
-      number=77, type=11, cpp_type=10, label=2,
+      number=77, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -548,7 +548,7 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='priv_sets', full_name='tbclient.User.priv_sets', index=69,
-      number=45, type=11, cpp_type=10, label=2,
+      number=45, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -590,7 +590,7 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='spring_virtual_user', full_name='tbclient.User.spring_virtual_user', index=75,
-      number=82, type=11, cpp_type=10, label=2,
+      number=82, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -604,14 +604,14 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tb_vip', full_name='tbclient.User.tb_vip', index=77,
-      number=72, type=11, cpp_type=10, label=2,
+      number=72, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='theme_card', full_name='tbclient.User.theme_card', index=78,
-      number=69, type=11, cpp_type=10, label=2,
+      number=69, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -639,7 +639,7 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tw_anchor_info', full_name='tbclient.User.tw_anchor_info', index=82,
-      number=66, type=11, cpp_type=10, label=2,
+      number=66, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -674,28 +674,28 @@ _USER = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='video_channel_info', full_name='tbclient.User.video_channel_info', index=87,
-      number=81, type=11, cpp_type=10, label=2,
+      number=81, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='vipInfo', full_name='tbclient.User.vipInfo', index=88,
-      number=61, type=11, cpp_type=10, label=2,
+      number=61, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='vip_close_ad', full_name='tbclient.User.vip_close_ad', index=89,
-      number=70, type=11, cpp_type=10, label=2,
+      number=70, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='vip_show_info', full_name='tbclient.User.vip_show_info', index=90,
-      number=64, type=11, cpp_type=10, label=2,
+      number=64, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

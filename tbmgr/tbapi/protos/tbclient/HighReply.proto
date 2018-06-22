@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+message HighReply {
+  optional string content = 4;
+  optional uint32 create_time = 5;
+  optional uint64 hid = 3;
+  optional uint64 id = 7;
+  optional string portrait = 6;
+  optional uint64 uid = 1;
+  optional string uname = 2;
+}

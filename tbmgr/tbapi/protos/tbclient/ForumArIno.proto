@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ForumArIno {
+  optional uint32 _switch = 1;
+  optional string animation_url = 5;
+  optional uint32 ar_id = 2;
+  optional uint32 ar_type = 3;
+  optional string suspension_url = 6;
+  optional string title = 4;
+}

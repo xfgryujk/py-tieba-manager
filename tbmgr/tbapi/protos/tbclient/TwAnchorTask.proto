@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/TwAnchorTaskItem.proto";
+
+message TwAnchorTask {
+  optional string describe = 1;
+  repeated TwAnchorTaskItem task_list = 2;
+  optional string task_name = 3;
+}

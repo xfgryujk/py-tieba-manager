@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/EsportRank.proto";
+import "tbclient/EsportStatic.proto";
+
+message Esport {
+  optional EsportStatic _static = 1;
+  repeated EsportRank billboard = 3;
+  optional int32 floor_no = 2;
+}

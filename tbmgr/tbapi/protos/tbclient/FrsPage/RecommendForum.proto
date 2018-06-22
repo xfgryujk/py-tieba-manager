@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message RecommendForum {
+  optional string avatar = 2;
+  optional string link = 3;
+  optional int32 member_num = 5;
+  optional string name = 1;
+  optional string st_param = 4;
+  optional int32 thread_num = 6;
+}

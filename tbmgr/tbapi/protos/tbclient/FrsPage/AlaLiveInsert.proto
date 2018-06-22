@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/ThreadInfo.proto";
+
+message AlaLiveInsert {
+  repeated ThreadInfo ala_live_list = 1;
+}

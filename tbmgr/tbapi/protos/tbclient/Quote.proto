@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Quote {
+  optional string content = 5;
+  optional string ip = 4;
+  optional int64 post_id = 1;
+  optional int64 user_id = 3;
+  optional string user_name = 2;
+}

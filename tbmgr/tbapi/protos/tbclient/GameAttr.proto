@@ -6,6 +6,6 @@ import "tbclient/SignatureInfo.proto";
 
 message GameAttr {
   optional string is_open = 3;
-  required SignatureInfo signature_info = 2;
+  optional SignatureInfo signature_info = 2;
   optional string user_id = 1;
 }

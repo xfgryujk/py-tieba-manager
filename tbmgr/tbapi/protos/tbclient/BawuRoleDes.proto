@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/BawuRoleInfoPub.proto";
+
+message BawuRoleDes {
+  repeated BawuRoleInfoPub role_info = 2;
+  optional string role_name = 1;
+}

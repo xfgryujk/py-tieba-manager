@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/SchoolRecomUserInfo.proto";
+
+message RecommendInfo {
+  optional string title = 1;
+  repeated SchoolRecomUserInfo user_list = 2;
+}

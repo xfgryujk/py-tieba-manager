@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message RecommendThread {
+  optional uint64 post_num = 3;
+  repeated string term_list = 4;
+  optional uint64 tid = 1;
+  optional string title = 2;
+}

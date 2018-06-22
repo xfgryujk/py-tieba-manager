@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/PbContent.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x18tbclient/PbContent.proto\x12\x08tbclient\x1a\x1btbclient/GraffitiInfo.proto\x1a\x17tbclient/MemeInfo.proto\x1a\x18tbclient/NativeApp.proto\x1a\x19tbclient/TogetherHi.proto\"\xe8\x05\n\tPbContent\x12\x0f\n\x07_static\x18\x11 \x01(\t\x12\x13\n\x0b\x62ig_cdn_src\x18\t \x01(\t\x12\x10\n\x08\x62ig_size\x18\x07 \x01(\t\x12\x0f\n\x07\x62ig_src\x18\x06 \x01(\t\x12\r\n\x05\x62size\x18\x05 \x01(\t\x12\x10\n\x08\x62tn_type\x18\x1a \x01(\r\x12\x0f\n\x07\x63\x64n_src\x18\x08 \x01(\t\x12\x16\n\x0e\x63\x64n_src_active\x18$ \x01(\t\x12\r\n\x05\x63ount\x18\x1c \x01(\x05\x12\x13\n\x0b\x64uring_time\x18\r \x01(\r\x12\x0f\n\x07\x64ynamic\x18\x10 \x01(\t\x12\x0e\n\x06\x65_type\x18\x18 \x01(\r\x12-\n\rgraffiti_info\x18\x1d \x02(\x0b\x32\x16.tbclient.GraffitiInfo\x12\x0e\n\x06height\x18\x13 \x01(\r\x12+\n\rhigh_together\x18\x1e \x02(\x0b\x32\x14.tbclient.TogetherHi\x12\x0f\n\x07imgtype\x18\n \x01(\t\x12\x13\n\x0bis_long_pic\x18\" \x01(\r\x12\x15\n\ris_native_app\x18\x16 \x01(\r\x12\x0e\n\x06is_sub\x18\x0e \x01(\r\x12\x0c\n\x04link\x18\x03 \x01(\t\x12\x16\n\x0emedia_subtitle\x18\x1f \x01(\t\x12%\n\tmeme_info\x18! \x02(\x0b\x32\x12.tbclient.MemeInfo\x12\'\n\nnative_app\x18\x17 \x02(\x0b\x32\x13.tbclient.NativeApp\x12\x13\n\x0borigin_size\x18\x1b \x01(\r\x12\x12\n\norigin_src\x18\x19 \x01(\t\x12\x13\n\x0bpacket_name\x18\x14 \x01(\t\x12\x11\n\tphonetype\x18\x15 \x01(\t\x12\x19\n\x11show_original_btn\x18# \x01(\r\x12\x0b\n\x03src\x18\x04 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x01 \x01(\r\x12\x0b\n\x03uid\x18\x0f \x01(\x03\x12\x10\n\x08url_type\x18  \x01(\x05\x12\x11\n\tvoice_md5\x18\x0c \x01(\t\x12\r\n\x05width\x18\x12 \x01(\r')
+  serialized_pb=_b('\n\x18tbclient/PbContent.proto\x12\x08tbclient\x1a\x1btbclient/GraffitiInfo.proto\x1a\x17tbclient/MemeInfo.proto\x1a\x18tbclient/NativeApp.proto\x1a\x19tbclient/TogetherHi.proto\"\xe8\x05\n\tPbContent\x12\x0f\n\x07_static\x18\x11 \x01(\t\x12\x13\n\x0b\x62ig_cdn_src\x18\t \x01(\t\x12\x10\n\x08\x62ig_size\x18\x07 \x01(\t\x12\x0f\n\x07\x62ig_src\x18\x06 \x01(\t\x12\r\n\x05\x62size\x18\x05 \x01(\t\x12\x10\n\x08\x62tn_type\x18\x1a \x01(\r\x12\x0f\n\x07\x63\x64n_src\x18\x08 \x01(\t\x12\x16\n\x0e\x63\x64n_src_active\x18$ \x01(\t\x12\r\n\x05\x63ount\x18\x1c \x01(\x05\x12\x13\n\x0b\x64uring_time\x18\r \x01(\r\x12\x0f\n\x07\x64ynamic\x18\x10 \x01(\t\x12\x0e\n\x06\x65_type\x18\x18 \x01(\r\x12-\n\rgraffiti_info\x18\x1d \x01(\x0b\x32\x16.tbclient.GraffitiInfo\x12\x0e\n\x06height\x18\x13 \x01(\r\x12+\n\rhigh_together\x18\x1e \x01(\x0b\x32\x14.tbclient.TogetherHi\x12\x0f\n\x07imgtype\x18\n \x01(\t\x12\x13\n\x0bis_long_pic\x18\" \x01(\r\x12\x15\n\ris_native_app\x18\x16 \x01(\r\x12\x0e\n\x06is_sub\x18\x0e \x01(\r\x12\x0c\n\x04link\x18\x03 \x01(\t\x12\x16\n\x0emedia_subtitle\x18\x1f \x01(\t\x12%\n\tmeme_info\x18! \x01(\x0b\x32\x12.tbclient.MemeInfo\x12\'\n\nnative_app\x18\x17 \x01(\x0b\x32\x13.tbclient.NativeApp\x12\x13\n\x0borigin_size\x18\x1b \x01(\r\x12\x12\n\norigin_src\x18\x19 \x01(\t\x12\x13\n\x0bpacket_name\x18\x14 \x01(\t\x12\x11\n\tphonetype\x18\x15 \x01(\t\x12\x19\n\x11show_original_btn\x18# \x01(\r\x12\x0b\n\x03src\x18\x04 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x01 \x01(\r\x12\x0b\n\x03uid\x18\x0f \x01(\x03\x12\x10\n\x08url_type\x18  \x01(\x05\x12\x11\n\tvoice_md5\x18\x0c \x01(\t\x12\r\n\x05width\x18\x12 \x01(\r')
   ,
   dependencies=[tbclient_dot_GraffitiInfo__pb2.DESCRIPTOR,tbclient_dot_MemeInfo__pb2.DESCRIPTOR,tbclient_dot_NativeApp__pb2.DESCRIPTOR,tbclient_dot_TogetherHi__pb2.DESCRIPTOR,])
 
@@ -123,7 +123,7 @@ _PBCONTENT = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='graffiti_info', full_name='tbclient.PbContent.graffiti_info', index=12,
-      number=29, type=11, cpp_type=10, label=2,
+      number=29, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -137,7 +137,7 @@ _PBCONTENT = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='high_together', full_name='tbclient.PbContent.high_together', index=14,
-      number=30, type=11, cpp_type=10, label=2,
+      number=30, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -186,14 +186,14 @@ _PBCONTENT = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='meme_info', full_name='tbclient.PbContent.meme_info', index=21,
-      number=33, type=11, cpp_type=10, label=2,
+      number=33, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='native_app', full_name='tbclient.PbContent.native_app', index=22,
-      number=23, type=11, cpp_type=10, label=2,
+      number=23, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/CommonDistance.proto";
+import "tbclient/FrsPage/CommonForum.proto";
+import "tbclient/FrsPage/PostInfo.proto";
+import "tbclient/FrsPage/UserInfo.proto";
+
+message RecomUserInfo {
+  repeated CommonForum common_forum = 2;
+  optional CommonDistance distanceinfo = 6;
+  optional string message = 5;
+  optional string pos_name = 4;
+  repeated PostInfo post_info = 3;
+  optional UserInfo user_info = 1;
+}

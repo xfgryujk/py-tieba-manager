@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ManagerApplyInfo {
+  optional int32 manager_apply_status = 3;
+  optional string manager_apply_url = 2;
+  optional int32 manager_left_num = 1;
+}

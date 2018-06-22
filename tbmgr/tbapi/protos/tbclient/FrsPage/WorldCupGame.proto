@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/WorldCupGameTeam.proto";
+
+message WorldCupGame {
+  optional string status = 2;
+  repeated WorldCupGameTeam team = 4;
+  optional string title = 1;
+  optional string url = 3;
+}

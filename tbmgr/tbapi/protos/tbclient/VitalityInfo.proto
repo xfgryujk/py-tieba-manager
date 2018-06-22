@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/FrequentlyForumInfo.proto";
+
+message VitalityInfo {
+  optional FrequentlyForumInfo frequently_forum_info = 1;
+}

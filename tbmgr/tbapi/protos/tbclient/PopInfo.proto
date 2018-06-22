@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+message PopInfo {
+  optional string ahead_info = 4;
+  optional string ahead_url = 5;
+  optional int32 if_pop = 1;
+  optional string ok_info = 6;
+  optional string title = 2;
+  optional string v_title = 3;
+}

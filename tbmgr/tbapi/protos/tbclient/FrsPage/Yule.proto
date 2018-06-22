@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/YuleActivity.proto";
+
+message Yule {
+  optional int32 activity_show = 2;
+  optional YuleActivity yule_activity = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/ForcusUsers.proto";
+
+message ForcusRecommand {
+  optional uint32 type = 1;
+  repeated ForcusUsers users = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message RankInfo {
+  optional double dir_rate = 4;
+  optional int32 member_count = 3;
+  optional int32 sign_count = 1;
+  optional int32 sign_rank = 2;
+}

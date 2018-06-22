@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message GconAccount {
+  optional int32 has_account = 1;
+  optional string menu_name = 2;
+}

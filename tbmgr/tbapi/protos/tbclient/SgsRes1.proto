@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tbclient;
+
+message SgsRes1 {
+  optional uint32 aa = 1;
+}

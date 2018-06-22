@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ForumGodInfo {
+  optional int64 fid = 2;
+  optional int64 id = 1;
+  optional string intro = 3;
+}

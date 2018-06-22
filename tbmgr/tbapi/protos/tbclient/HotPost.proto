@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/PbContent.proto";
+import "tbclient/PbPostZan.proto";
+
+message HotPost {
+  repeated PbContent content = 7;
+  optional uint32 create_time = 8;
+  optional uint32 floor = 9;
+  optional string portrait = 10;
+  optional uint64 post_id = 2;
+  optional int32 post_num = 6;
+  optional PbPostZan post_zan = 5;
+  optional uint64 thread_id = 1;
+  optional uint64 user_id = 4;
+  optional string user_name = 3;
+}

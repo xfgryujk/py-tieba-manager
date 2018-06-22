@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/AlaLiveInfo.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x1atbclient/AlaLiveInfo.proto\x12\x08tbclient\x1a\x1btbclient/AlaShareInfo.proto\x1a\"tbclient/AlaStageDislikeInfo.proto\x1a\x1atbclient/AlaUserInfo.proto\"\xa7\x04\n\x0b\x41laLiveInfo\x12\x16\n\x0e\x61udience_count\x18\x0e \x01(\r\x12\r\n\x05\x63over\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x0b \x01(\t\x12\x10\n\x08\x64istance\x18\x14 \x01(\x04\x12\x10\n\x08\x64uration\x18\r \x01(\r\x12\x10\n\x08group_id\x18\x06 \x01(\x04\x12\x0f\n\x07hls_url\x18\x05 \x01(\t\x12\x12\n\nlabel_name\x18\x11 \x01(\t\x12\x0f\n\x07live_id\x18\x01 \x01(\x04\x12\x13\n\x0blive_status\x18\x12 \x01(\x05\x12\x11\n\tlive_type\x18\x0f \x01(\r\x12\x10\n\x08media_id\x18\t \x01(\t\x12\x11\n\tmedia_pic\x18\x08 \x01(\t\x12\x16\n\x0emedia_subtitle\x18\n \x01(\t\x12\x11\n\tmedia_url\x18\x07 \x01(\t\x12\x10\n\x08rtmp_url\x18\x04 \x01(\t\x12\x18\n\x10screen_direction\x18\x10 \x01(\r\x12\x12\n\nsession_id\x18\x03 \x01(\t\x12*\n\nshare_info\x18\x13 \x02(\x0b\x32\x16.tbclient.AlaShareInfo\x12\x39\n\x12stage_dislike_info\x18\x17 \x03(\x0b\x32\x1d.tbclient.AlaStageDislikeInfo\x12\x14\n\x0cthird_app_id\x18\x15 \x01(\t\x12\x11\n\tthread_id\x18\x16 \x01(\x04\x12(\n\tuser_info\x18\x0c \x02(\x0b\x32\x15.tbclient.AlaUserInfo')
+  serialized_pb=_b('\n\x1atbclient/AlaLiveInfo.proto\x12\x08tbclient\x1a\x1btbclient/AlaShareInfo.proto\x1a\"tbclient/AlaStageDislikeInfo.proto\x1a\x1atbclient/AlaUserInfo.proto\"\xa7\x04\n\x0b\x41laLiveInfo\x12\x16\n\x0e\x61udience_count\x18\x0e \x01(\r\x12\r\n\x05\x63over\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x0b \x01(\t\x12\x10\n\x08\x64istance\x18\x14 \x01(\x04\x12\x10\n\x08\x64uration\x18\r \x01(\r\x12\x10\n\x08group_id\x18\x06 \x01(\x04\x12\x0f\n\x07hls_url\x18\x05 \x01(\t\x12\x12\n\nlabel_name\x18\x11 \x01(\t\x12\x0f\n\x07live_id\x18\x01 \x01(\x04\x12\x13\n\x0blive_status\x18\x12 \x01(\x05\x12\x11\n\tlive_type\x18\x0f \x01(\r\x12\x10\n\x08media_id\x18\t \x01(\t\x12\x11\n\tmedia_pic\x18\x08 \x01(\t\x12\x16\n\x0emedia_subtitle\x18\n \x01(\t\x12\x11\n\tmedia_url\x18\x07 \x01(\t\x12\x10\n\x08rtmp_url\x18\x04 \x01(\t\x12\x18\n\x10screen_direction\x18\x10 \x01(\r\x12\x12\n\nsession_id\x18\x03 \x01(\t\x12*\n\nshare_info\x18\x13 \x01(\x0b\x32\x16.tbclient.AlaShareInfo\x12\x39\n\x12stage_dislike_info\x18\x17 \x03(\x0b\x32\x1d.tbclient.AlaStageDislikeInfo\x12\x14\n\x0cthird_app_id\x18\x15 \x01(\t\x12\x11\n\tthread_id\x18\x16 \x01(\x04\x12(\n\tuser_info\x18\x0c \x01(\x0b\x32\x15.tbclient.AlaUserInfo')
   ,
   dependencies=[tbclient_dot_AlaShareInfo__pb2.DESCRIPTOR,tbclient_dot_AlaStageDislikeInfo__pb2.DESCRIPTOR,tbclient_dot_AlaUserInfo__pb2.DESCRIPTOR,])
 
@@ -164,7 +164,7 @@ _ALALIVEINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='share_info', full_name='tbclient.AlaLiveInfo.share_info', index=18,
-      number=19, type=11, cpp_type=10, label=2,
+      number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -192,7 +192,7 @@ _ALALIVEINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_info', full_name='tbclient.AlaLiveInfo.user_info', index=22,
-      number=12, type=11, cpp_type=10, label=2,
+      number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

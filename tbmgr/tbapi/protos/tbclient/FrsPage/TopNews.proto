@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message TopNews {
+  optional string news_link = 1;
+  optional string summary = 2;
+}

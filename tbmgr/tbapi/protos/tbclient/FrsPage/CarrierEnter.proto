@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message CarrierEnter {
+  optional string headline_cover = 3;
+  optional string obj_id = 5;
+  optional string text = 2;
+  optional string title = 1;
+  optional string url = 4;
+}

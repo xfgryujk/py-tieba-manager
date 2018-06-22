@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message FineBannerPb {
+  optional int64 ftid = 1;
+  optional string link_url = 4;
+  optional string pic_url = 3;
+  optional string title = 2;
+}

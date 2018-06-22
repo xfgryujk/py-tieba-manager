@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/SeniorLottery.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x1ctbclient/SeniorLottery.proto\x12\x08tbclient\x1a\x18tbclient/AwardInfo.proto\x1a\x18tbclient/AwardUser.proto\x1a\x1dtbclient/LotteryRegular.proto\x1a\x1btbclient/LotteryTheme.proto\"\xda\x01\n\rSeniorLottery\x12\x10\n\x08\x61\x63t_desc\x18\x05 \x01(\t\x12-\n\x0b\x61\x63t_regular\x18\x06 \x02(\x0b\x32\x18.tbclient.LotteryRegular\x12\'\n\naward_info\x18\x02 \x03(\x0b\x32\x13.tbclient.AwardInfo\x12\'\n\nluck_users\x18\x04 \x03(\x0b\x32\x13.tbclient.AwardUser\x12\x0f\n\x07myaward\x18\x03 \x01(\t\x12%\n\x05theme\x18\x01 \x02(\x0b\x32\x16.tbclient.LotteryTheme')
+  serialized_pb=_b('\n\x1ctbclient/SeniorLottery.proto\x12\x08tbclient\x1a\x18tbclient/AwardInfo.proto\x1a\x18tbclient/AwardUser.proto\x1a\x1dtbclient/LotteryRegular.proto\x1a\x1btbclient/LotteryTheme.proto\"\xda\x01\n\rSeniorLottery\x12\x10\n\x08\x61\x63t_desc\x18\x05 \x01(\t\x12-\n\x0b\x61\x63t_regular\x18\x06 \x03(\x0b\x32\x18.tbclient.LotteryRegular\x12\'\n\naward_info\x18\x02 \x03(\x0b\x32\x13.tbclient.AwardInfo\x12\'\n\nluck_users\x18\x04 \x03(\x0b\x32\x13.tbclient.AwardUser\x12\x0f\n\x07myaward\x18\x03 \x01(\t\x12%\n\x05theme\x18\x01 \x01(\x0b\x32\x16.tbclient.LotteryTheme')
   ,
   dependencies=[tbclient_dot_AwardInfo__pb2.DESCRIPTOR,tbclient_dot_AwardUser__pb2.DESCRIPTOR,tbclient_dot_LotteryRegular__pb2.DESCRIPTOR,tbclient_dot_LotteryTheme__pb2.DESCRIPTOR,])
 
@@ -46,8 +46,8 @@ _SENIORLOTTERY = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='act_regular', full_name='tbclient.SeniorLottery.act_regular', index=1,
-      number=6, type=11, cpp_type=10, label=2,
-      has_default_value=False, default_value=None,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
@@ -74,7 +74,7 @@ _SENIORLOTTERY = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='theme', full_name='tbclient.SeniorLottery.theme', index=5,
-      number=1, type=11, cpp_type=10, label=2,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

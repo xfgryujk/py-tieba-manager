@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/StarContriRecord.proto";
+import "tbclient/FrsPage/StarTaskInfo.proto";
+
+message StarRank {
+  repeated StarContriRecord contri_record_list = 3;
+  optional string rank_name = 1;
+  optional int32 rank_ranking = 2;
+  optional string url = 8;
+  optional int32 user_contri_score = 4;
+  optional string user_current_score_notice = 7;
+  repeated StarTaskInfo user_task_info = 6;
+  optional string user_task_notice = 5;
+}

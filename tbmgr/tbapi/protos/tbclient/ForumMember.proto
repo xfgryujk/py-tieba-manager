@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ForumMember {
+  optional int32 cur_score = 4;
+  optional int32 is_like = 1;
+  optional string level_name = 3;
+  optional int32 levelup_score = 5;
+  optional int32 user_level = 2;
+}

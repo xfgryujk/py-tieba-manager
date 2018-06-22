@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/AlaLiveInfo.proto";
+
+message BannerFollowLive {
+  optional uint32 _switch = 2;
+  repeated AlaLiveInfo ala_live_list = 1;
+}

@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tbclient;
+
+message CartoonUserInfo {
+  optional uint32 is_vip = 1;
+}

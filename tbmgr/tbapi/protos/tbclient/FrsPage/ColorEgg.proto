@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message ColorEgg {
+  repeated string holiday_words = 1;
+  optional int32 style_flag = 2;
+}

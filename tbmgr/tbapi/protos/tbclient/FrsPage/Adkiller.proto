@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/AdkillerAd.proto";
+
+message Adkiller {
+  optional uint32 ad_left_num = 4;
+  repeated AdkillerAd ad_list = 5;
+  optional string hint_url = 3;
+  optional uint32 show_ad = 2;
+  optional uint32 show_hint = 1;
+}

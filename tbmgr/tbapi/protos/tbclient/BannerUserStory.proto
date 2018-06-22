@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/AlaLiveInfo.proto";
+import "tbclient/UserStory.proto";
+
+message BannerUserStory {
+  optional uint32 _switch = 2;
+  repeated AlaLiveInfo ala_live_list = 3;
+  repeated UserStory user_story = 1;
+}

@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/BookInfo.proto";
+
+message TbBookrack {
+  repeated BookInfo book_list = 3;
+  optional string booktown = 1;
+  optional string icon = 5;
+  optional uint32 num = 2;
+  optional string tip = 6;
+  optional string title = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message Identify {
+  optional string id = 2;
+  optional int32 is_identify = 1;
+}

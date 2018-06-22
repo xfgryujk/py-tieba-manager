@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package tbclient;
+
+message High {
+  optional uint64 album_id = 1;
+  optional uint32 create_time = 5;
+  optional uint64 hid = 2;
+  optional uint32 num_cai = 7;
+  optional uint32 num_zan = 6;
+  optional string pic_url = 4;
+  optional string portrait = 10;
+  optional uint32 type = 9;
+  optional uint64 uid = 3;
+  optional string user_name = 11;
+  optional uint32 weight = 8;
+}

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message PicTextItem {
+  optional string item_pic = 1;
+  optional string item_text = 3;
+  optional string item_url = 2;
+}

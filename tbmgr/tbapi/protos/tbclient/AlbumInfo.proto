@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package tbclient;
+
+message AlbumInfo {
+  optional uint64 album_id = 1;
+  optional string album_name = 2;
+  optional uint32 create_time = 4;
+  optional uint32 end_time = 6;
+  optional bool has_collect = 15;
+  optional double latd = 12;
+  optional string location = 10;
+  optional double longtd = 11;
+  optional uint32 num_high = 9;
+  optional uint32 num_join = 8;
+  optional string portrait = 14;
+  optional uint32 start_time = 5;
+  optional uint64 uid = 3;
+  optional uint32 update_time = 7;
+  optional string user_name = 13;
+}

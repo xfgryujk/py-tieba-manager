@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/GraffitiRankItem.proto";
+import "tbclient/User.proto";
+
+message GraffitiRankListInfo {
+  repeated User consent_list = 8;
+  optional int32 has_more = 1;
+  optional int32 has_state = 6;
+  repeated GraffitiRankItem list = 3;
+  optional int32 quick_list_count = 5;
+  optional int32 show_list_count = 4;
+  optional int64 tid = 7;
+  optional int32 total = 2;
+}

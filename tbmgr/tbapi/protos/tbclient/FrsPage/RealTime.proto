@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message RealTime {
+  optional string icon = 2;
+  optional int64 task_id = 1;
+  optional string url = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+message HotThreadInfo {
+  optional uint32 cid = 3;
+  optional uint32 hmtype = 4;
+  optional int32 hot_weight = 6;
+  optional uint64 post_num = 2;
+  optional uint64 thread_id = 1;
+  optional uint32 time_type = 5;
+}

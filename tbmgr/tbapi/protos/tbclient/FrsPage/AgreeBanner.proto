@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/SimpleUser.proto";
+
+message AgreeBanner {
+  optional string icon_url = 2;
+  optional string text = 1;
+  repeated SimpleUser top_agree_user = 4;
+  optional string url = 3;
+}

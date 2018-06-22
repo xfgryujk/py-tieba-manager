@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+message SchoolRecomUserInfo {
+  optional string institute = 4;
+  optional uint32 is_liked = 5;
+  optional string portrait = 3;
+  optional uint64 uid = 1;
+  optional string uname = 2;
+}

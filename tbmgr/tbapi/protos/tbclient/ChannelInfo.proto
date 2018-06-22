@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ChannelInfo {
+  optional string channel_avatar = 4;
+  optional string channel_cover = 3;
+  optional uint64 channel_id = 1;
+  optional string channel_name = 2;
+  optional string channel_small_cover = 14;
+  optional string description = 5;
+  optional uint32 fans_count = 10;
+  optional uint32 is_subscribe = 12;
+  optional string portrait = 8;
+  optional uint32 push_switch = 13;
+  optional uint64 user_id = 6;
+  optional string user_name = 7;
+  optional uint32 video_count = 9;
+  optional uint32 video_play_count = 11;
+}

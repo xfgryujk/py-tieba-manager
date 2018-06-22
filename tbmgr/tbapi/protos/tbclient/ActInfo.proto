@@ -14,7 +14,7 @@ message ActInfo {
   optional int32 component_id = 9;
   optional int32 end_time = 4;
   optional bool is_senior = 10;
-  required SeniorLottery lottery_senior = 13;
+  optional SeniorLottery lottery_senior = 13;
   optional int32 show_total_num = 14;
   optional int32 status = 2;
   optional int32 total_num = 6;

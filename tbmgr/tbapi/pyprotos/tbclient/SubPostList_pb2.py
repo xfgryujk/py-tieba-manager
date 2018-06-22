@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/SubPostList.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x1atbclient/SubPostList.proto\x12\x08tbclient\x1a\x18tbclient/PbContent.proto\x1a\x13tbclient/User.proto\"\xb3\x01\n\x0bSubPostList\x12\x1e\n\x06\x61uthor\x18\x07 \x02(\x0b\x32\x0e.tbclient.User\x12\x11\n\tauthor_id\x18\x04 \x01(\x03\x12$\n\x07\x63ontent\x18\x02 \x03(\x0b\x32\x13.tbclient.PbContent\x12\r\n\x05\x66loor\x18\x06 \x01(\r\x12\n\n\x02id\x18\x01 \x01(\x04\x12\x13\n\x0bis_giftpost\x18\x08 \x01(\x05\x12\x0c\n\x04time\x18\x03 \x01(\r\x12\r\n\x05title\x18\x05 \x01(\t')
+  serialized_pb=_b('\n\x1atbclient/SubPostList.proto\x12\x08tbclient\x1a\x18tbclient/PbContent.proto\x1a\x13tbclient/User.proto\"\xb3\x01\n\x0bSubPostList\x12\x1e\n\x06\x61uthor\x18\x07 \x01(\x0b\x32\x0e.tbclient.User\x12\x11\n\tauthor_id\x18\x04 \x01(\x03\x12$\n\x07\x63ontent\x18\x02 \x03(\x0b\x32\x13.tbclient.PbContent\x12\r\n\x05\x66loor\x18\x06 \x01(\r\x12\n\n\x02id\x18\x01 \x01(\x04\x12\x13\n\x0bis_giftpost\x18\x08 \x01(\x05\x12\x0c\n\x04time\x18\x03 \x01(\r\x12\r\n\x05title\x18\x05 \x01(\t')
   ,
   dependencies=[tbclient_dot_PbContent__pb2.DESCRIPTOR,tbclient_dot_User__pb2.DESCRIPTOR,])
 
@@ -37,7 +37,7 @@ _SUBPOSTLIST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='author', full_name='tbclient.SubPostList.author', index=0,
-      number=7, type=11, cpp_type=10, label=2,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/BawuRoleInfoPub.proto";
+
+message MemberGroupInfo {
+  repeated BawuRoleInfoPub member_group_list = 3;
+  optional int32 member_group_num = 2;
+  optional string member_group_type = 1;
+}

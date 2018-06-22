@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message NtSpreadInfo {
+  optional string link_url = 7;
+  repeated string pics = 6;
+  optional uint32 position = 8;
+  optional string publish_date = 9;
+  optional string tips = 3;
+  optional string title = 5;
+  optional string type = 4;
+  optional string user_avatar = 2;
+  optional string user_name = 1;
+}

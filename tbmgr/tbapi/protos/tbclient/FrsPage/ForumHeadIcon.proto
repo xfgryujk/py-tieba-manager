@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message ForumHeadIcon {
+  optional int32 grade = 1;
+  optional string url = 2;
+}

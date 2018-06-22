@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/Abstract.proto";
+import "tbclient/Zan.proto";
+
+message SimpleThreadInfo {
+  repeated Abstract _abstract = 5;
+  optional int32 last_time_int = 4;
+  optional int32 reply_num = 3;
+  optional uint64 thread_type = 7;
+  optional uint64 tid = 1;
+  optional string title = 2;
+  optional Zan zan = 6;
+}

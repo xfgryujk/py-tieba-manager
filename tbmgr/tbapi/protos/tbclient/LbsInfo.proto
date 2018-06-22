@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message LbsInfo {
+  optional string lat = 1;
+  optional string lon = 2;
+  optional string town = 3;
+}

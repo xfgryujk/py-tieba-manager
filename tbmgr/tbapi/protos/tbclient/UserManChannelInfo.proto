@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message UserManChannelInfo {
+  optional uint32 follow_channel = 2;
+  optional uint32 man_channel = 1;
+}

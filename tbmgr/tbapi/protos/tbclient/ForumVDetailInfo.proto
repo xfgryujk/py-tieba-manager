@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ForumVDetailInfo {
+  optional string avatar = 7;
+  optional string detail_info = 4;
+  optional int64 forum_id = 5;
+  optional string forum_name = 6;
+  optional string intro = 3;
+  optional int64 user_id = 2;
+  optional int64 v_id = 1;
+}

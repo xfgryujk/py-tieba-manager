@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/Error.proto";
+import "tbclient/FrsPage/DataRes.proto";
+
+message FrsPageResIdl {
+  optional DataRes data = 2;
+  optional Error error = 1;
+}

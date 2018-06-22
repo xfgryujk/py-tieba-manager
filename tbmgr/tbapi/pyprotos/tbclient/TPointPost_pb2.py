@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/TPointPost.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x19tbclient/TPointPost.proto\x12\x08tbclient\x1a\x15tbclient/ActBtn.proto\x1a\x19tbclient/DetailInfo.proto\x1a\x14tbclient/Timgs.proto\x1a\x18tbclient/VideoInfo.proto\"\xae\x02\n\nTPointPost\x12!\n\x07\x61\x63t_btn\x18\x05 \x03(\x0b\x32\x10.tbclient.ActBtn\x12)\n\x0b\x64\x65tail_info\x18\x07 \x02(\x0b\x32\x14.tbclient.DetailInfo\x12\x12\n\nhidden_day\x18\t \x01(\x05\x12\x13\n\x0bis_tuiguang\x18\x01 \x01(\r\x12\x12\n\nmonitor_id\x18\x08 \x01(\t\x12\x10\n\x08position\x18\x02 \x01(\t\x12\x1f\n\x06t_imgs\x18\x06 \x03(\x0b\x32\x0f.tbclient.Timgs\x12$\n\x07t_video\x18\n \x02(\x0b\x32\x13.tbclient.VideoInfo\x12\x10\n\x08tag_name\x18\x0b \x01(\t\x12\x13\n\x0btemplate_id\x18\x03 \x01(\x03\x12\x15\n\rtemplate_type\x18\x04 \x01(\x05')
+  serialized_pb=_b('\n\x19tbclient/TPointPost.proto\x12\x08tbclient\x1a\x15tbclient/ActBtn.proto\x1a\x19tbclient/DetailInfo.proto\x1a\x14tbclient/Timgs.proto\x1a\x18tbclient/VideoInfo.proto\"\xae\x02\n\nTPointPost\x12!\n\x07\x61\x63t_btn\x18\x05 \x03(\x0b\x32\x10.tbclient.ActBtn\x12)\n\x0b\x64\x65tail_info\x18\x07 \x01(\x0b\x32\x14.tbclient.DetailInfo\x12\x12\n\nhidden_day\x18\t \x01(\x05\x12\x13\n\x0bis_tuiguang\x18\x01 \x01(\r\x12\x12\n\nmonitor_id\x18\x08 \x01(\t\x12\x10\n\x08position\x18\x02 \x01(\t\x12\x1f\n\x06t_imgs\x18\x06 \x03(\x0b\x32\x0f.tbclient.Timgs\x12$\n\x07t_video\x18\n \x01(\x0b\x32\x13.tbclient.VideoInfo\x12\x10\n\x08tag_name\x18\x0b \x01(\t\x12\x13\n\x0btemplate_id\x18\x03 \x01(\x03\x12\x15\n\rtemplate_type\x18\x04 \x01(\x05')
   ,
   dependencies=[tbclient_dot_ActBtn__pb2.DESCRIPTOR,tbclient_dot_DetailInfo__pb2.DESCRIPTOR,tbclient_dot_Timgs__pb2.DESCRIPTOR,tbclient_dot_VideoInfo__pb2.DESCRIPTOR,])
 
@@ -46,7 +46,7 @@ _TPOINTPOST = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='detail_info', full_name='tbclient.TPointPost.detail_info', index=1,
-      number=7, type=11, cpp_type=10, label=2,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -88,7 +88,7 @@ _TPOINTPOST = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='t_video', full_name='tbclient.TPointPost.t_video', index=7,
-      number=10, type=11, cpp_type=10, label=2,
+      number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

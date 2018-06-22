@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/Forum.proto";
+import "tbclient/FrsPage/RankInfo.proto";
+
+message SignForum {
+  optional RankInfo current_rank_info = 4;
+  optional int64 forum_id = 10;
+  optional Forum forum_info = 3;
+  optional int32 is_filter = 2;
+  optional int32 is_on = 1;
+  optional string level1_dir_name = 7;
+  optional string level2_dir_name = 8;
+  optional RankInfo monthly_rank_info = 9;
+  optional RankInfo weekly_rank_info = 6;
+  optional RankInfo yesterday_rank_info = 5;
+}

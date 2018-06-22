@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/GoodsInfo.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x18tbclient/GoodsInfo.proto\x12\x08tbclient\x1a\x1atbclient/AdCloseInfo.proto\x1a\x1ctbclient/ThreadPicList.proto\x1a\x18tbclient/VideoInfo.proto\"\x9d\x05\n\tGoodsInfo\x12\x11\n\tad_source\x18\x18 \x01(\t\x12\x12\n\nbrand_icon\x18\x1b \x01(\t\x12\x15\n\rbrand_icon_wh\x18\x1c \x01(\t\x12\x13\n\x0b\x62utton_text\x18\r \x01(\t\x12\x12\n\nbutton_url\x18\x17 \x01(\t\x12\x11\n\tcard_desc\x18\x0e \x01(\t\x12\x10\n\x08\x63\x61rd_tag\x18\x0f \x01(\t\x12)\n\nclose_info\x18\x1d \x02(\x0b\x32\x15.tbclient.AdCloseInfo\x12\x13\n\x0bgoods_style\x18\x07 \x01(\x05\x12\x0e\n\x06height\x18\x11 \x01(\x05\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x15\n\rlabel_measure\x18\x12 \x01(\x05\x12\x12\n\nlabel_text\x18\n \x01(\t\x12\x15\n\rlabel_visible\x18\t \x01(\x05\x12\x11\n\tlego_card\x18\x14 \x01(\t\x12\x17\n\x0fpop_window_text\x18\x06 \x01(\t\x12\x12\n\nrank_level\x18\x0b \x01(\x05\x12\x10\n\x08tag_name\x18\x16 \x01(\t\x12\x14\n\x0ctag_name_url\x18\x19 \x01(\t\x12\x13\n\x0btag_name_wh\x18\x1a \x01(\t\x12\x16\n\x0ethread_content\x18\x13 \x01(\t\x12\x12\n\nthread_pic\x18\x05 \x01(\t\x12\x30\n\x0fthread_pic_list\x18\x08 \x03(\x0b\x32\x17.tbclient.ThreadPicList\x12\x14\n\x0cthread_title\x18\x04 \x01(\t\x12\x13\n\x0bthread_type\x18\x0c \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x15\n\ruser_portrait\x18\x03 \x01(\t\x12\'\n\nvideo_info\x18\x15 \x02(\x0b\x32\x13.tbclient.VideoInfo\x12\r\n\x05width\x18\x10 \x01(\x05')
+  serialized_pb=_b('\n\x18tbclient/GoodsInfo.proto\x12\x08tbclient\x1a\x1atbclient/AdCloseInfo.proto\x1a\x1ctbclient/ThreadPicList.proto\x1a\x18tbclient/VideoInfo.proto\"\x9d\x05\n\tGoodsInfo\x12\x11\n\tad_source\x18\x18 \x01(\t\x12\x12\n\nbrand_icon\x18\x1b \x01(\t\x12\x15\n\rbrand_icon_wh\x18\x1c \x01(\t\x12\x13\n\x0b\x62utton_text\x18\r \x01(\t\x12\x12\n\nbutton_url\x18\x17 \x01(\t\x12\x11\n\tcard_desc\x18\x0e \x01(\t\x12\x10\n\x08\x63\x61rd_tag\x18\x0f \x01(\t\x12)\n\nclose_info\x18\x1d \x01(\x0b\x32\x15.tbclient.AdCloseInfo\x12\x13\n\x0bgoods_style\x18\x07 \x01(\x05\x12\x0e\n\x06height\x18\x11 \x01(\x05\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x15\n\rlabel_measure\x18\x12 \x01(\x05\x12\x12\n\nlabel_text\x18\n \x01(\t\x12\x15\n\rlabel_visible\x18\t \x01(\x05\x12\x11\n\tlego_card\x18\x14 \x01(\t\x12\x17\n\x0fpop_window_text\x18\x06 \x01(\t\x12\x12\n\nrank_level\x18\x0b \x01(\x05\x12\x10\n\x08tag_name\x18\x16 \x01(\t\x12\x14\n\x0ctag_name_url\x18\x19 \x01(\t\x12\x13\n\x0btag_name_wh\x18\x1a \x01(\t\x12\x16\n\x0ethread_content\x18\x13 \x01(\t\x12\x12\n\nthread_pic\x18\x05 \x01(\t\x12\x30\n\x0fthread_pic_list\x18\x08 \x03(\x0b\x32\x17.tbclient.ThreadPicList\x12\x14\n\x0cthread_title\x18\x04 \x01(\t\x12\x13\n\x0bthread_type\x18\x0c \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x15\n\ruser_portrait\x18\x03 \x01(\t\x12\'\n\nvideo_info\x18\x15 \x01(\x0b\x32\x13.tbclient.VideoInfo\x12\r\n\x05width\x18\x10 \x01(\x05')
   ,
   dependencies=[tbclient_dot_AdCloseInfo__pb2.DESCRIPTOR,tbclient_dot_ThreadPicList__pb2.DESCRIPTOR,tbclient_dot_VideoInfo__pb2.DESCRIPTOR,])
 
@@ -87,7 +87,7 @@ _GOODSINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='close_info', full_name='tbclient.GoodsInfo.close_info', index=7,
-      number=29, type=11, cpp_type=10, label=2,
+      number=29, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -227,7 +227,7 @@ _GOODSINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='video_info', full_name='tbclient.GoodsInfo.video_info', index=27,
-      number=21, type=11, cpp_type=10, label=2,
+      number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

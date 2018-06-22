@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+message UcCardInfo {
+  optional string jmp = 3;
+  optional string pic = 2;
+  optional uint32 st = 5;
+  optional string tip = 4;
+  optional string title = 1;
+}

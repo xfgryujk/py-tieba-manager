@@ -1,0 +1,42 @@
+syntax = "proto2";
+
+package tbclient;
+
+message GameInfo {
+  optional string _abstract = 26;
+  optional string andr_pk_name = 16;
+  optional uint32 app_id = 28;
+  optional string apple_id = 10;
+  optional string bundle_id = 11;
+  optional uint32 category_id = 21;
+  optional string category_name = 22;
+  optional string category_name_sim = 35;
+  optional uint32 day_downloads = 17;
+  optional uint64 deadline = 24;
+  optional string editor_rec = 25;
+  optional string game_desc = 32;
+  optional string game_details_url = 27;
+  optional string game_id = 1;
+  optional string game_link = 8;
+  optional string game_name = 2;
+  repeated string game_pic = 13;
+  optional uint32 game_type = 3;
+  optional string icon_pic1 = 29;
+  optional string icon_pic2 = 30;
+  optional string icon_pic3 = 31;
+  optional string icon_url = 4;
+  optional string introduce = 14;
+  optional string launchComponent = 34;
+  optional string launch_component = 15;
+  optional uint32 mark = 9;
+  optional string package_link = 6;
+  optional string package_size = 7;
+  optional uint32 player_num = 5;
+  optional string schema_url = 12;
+  optional uint32 score = 36;
+  optional string secret_key = 18;
+  optional uint32 star = 20;
+  optional string subscript_color = 33;
+  optional string superscript_color = 19;
+  optional string version = 23;
+}

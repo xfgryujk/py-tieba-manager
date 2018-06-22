@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ActiveBannerList {
+  optional string active_desc = 4;
+  optional string active_name = 2;
+  optional uint32 active_type = 6;
+  optional string active_url = 3;
+  optional uint32 id = 1;
+  optional string skip_url = 5;
+}

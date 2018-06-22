@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message PostInfo {
+  optional string common_post_pic = 1;
+  optional string large_post_pic = 2;
+}

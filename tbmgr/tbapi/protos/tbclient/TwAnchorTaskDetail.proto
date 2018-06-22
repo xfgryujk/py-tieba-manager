@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tbclient;
+
+message TwAnchorTaskDetail {
+  optional string describe = 1;
+}

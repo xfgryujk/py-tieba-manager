@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/ForumDynamic.proto";
+import "tbclient/ThreadInfo.proto";
+import "tbclient/UserDynamic.proto";
+
+message DynamicInfo {
+  optional int64 dynamic_timestamp = 2;
+  optional ForumDynamic forum_dynamic = 3;
+  optional ThreadInfo thread_dynamic = 1;
+  optional int32 type = 5;
+  optional UserDynamic user_dynamic = 4;
+}

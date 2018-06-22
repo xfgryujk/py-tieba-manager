@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message Banner {
+  optional int32 banner_type = 2;
+  optional string banner_url = 1;
+  optional string desc = 5;
+  optional string obj_id = 7;
+  optional string tag_name = 8;
+  optional string tag_name_url = 9;
+  optional string tag_name_wh = 10;
+  optional int32 template_id = 6;
+  optional int32 type = 4;
+  optional string value = 3;
+}

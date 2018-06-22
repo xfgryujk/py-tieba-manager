@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+message TwAnchorPKItem {
+  optional string fans_num = 5;
+  optional string head_url = 3;
+  optional string order = 1;
+  optional uint64 user_id = 2;
+  optional string user_name = 4;
+  optional int32 user_sex = 6;
+}

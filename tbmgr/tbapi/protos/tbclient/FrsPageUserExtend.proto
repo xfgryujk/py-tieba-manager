@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/User.proto";
+
+message FrsPageUserExtend {
+  repeated User data = 4;
+  optional string tips = 3;
+  optional int32 user_extend_storey = 1;
+}

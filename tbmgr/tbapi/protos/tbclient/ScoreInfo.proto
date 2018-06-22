@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ScoreInfo {
+  optional int32 endtime = 2;
+  optional int32 score = 1;
+}

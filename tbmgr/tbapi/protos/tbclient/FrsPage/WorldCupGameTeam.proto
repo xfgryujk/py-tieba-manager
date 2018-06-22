@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message WorldCupGameTeam {
+  optional string logo_url = 2;
+  optional string name = 1;
+}

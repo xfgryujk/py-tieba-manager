@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/UcCardInfo.proto";
+
+message UcCard {
+  optional string doc = 3;
+  optional string icon = 2;
+  optional string jmp = 4;
+  optional string name = 1;
+  repeated UcCardInfo uc_cards = 5;
+}

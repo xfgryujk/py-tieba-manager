@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Novel {
+  optional string android_detail_params = 13;
+  optional string android_last_charpter_params = 15;
+  optional string android_last_read_params = 16;
+  optional string author = 5;
+  optional string author_id = 4;
+  optional string book_id = 1;
+  optional string book_name = 3;
+  optional string description = 6;
+  optional string gid = 2;
+  optional string ios_detail_params = 12;
+  optional string ios_last_charpter_params = 14;
+  optional string ios_last_read_params = 17;
+  optional string last_chapter_id = 7;
+  optional string last_chapter_index = 8;
+  optional string last_chapter_page_id = 10;
+  optional string last_chapter_title = 9;
+  optional string last_chapter_update_time = 11;
+}

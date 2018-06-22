@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message StarContriRecord {
+  optional string record_notice = 3;
+  optional int64 user_id = 1;
+  optional string user_name = 2;
+}

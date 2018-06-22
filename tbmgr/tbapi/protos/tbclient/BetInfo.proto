@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message BetInfo {
+  optional string bet = 1;
+  optional int32 no = 3;
+  optional int64 score = 2;
+}

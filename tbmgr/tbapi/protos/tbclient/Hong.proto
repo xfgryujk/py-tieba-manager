@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Hong {
+  optional string test = 1;
+}

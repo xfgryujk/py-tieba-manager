@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/BawuRoleDes.proto";
+
+message BawuTeam {
+  repeated BawuRoleDes bawu_team_list = 2;
+  optional int32 total_num = 1;
+}

@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message ForumBookInfo {
+  optional string author = 5;
+  optional string book_cover = 4;
+  optional string book_id = 1;
+  optional string book_title = 3;
+  optional int32 book_type = 2;
+  optional string forum_pic = 6;
+  optional int64 history_page_id = 10;
+  optional int64 history_paragraph_id = 11;
+  optional int64 history_percent = 13;
+  optional int64 history_word_id = 12;
+  optional string show_chapter_id = 7;
+  optional string show_chapter_no = 8;
+  optional string show_chapter_title = 9;
+  optional int64 show_page_id = 14;
+  optional int64 show_paragraph_id = 15;
+}

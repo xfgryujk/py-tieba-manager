@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/PostList.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x17tbclient/PostList.proto\x12\x08tbclient\x1a\x17tbclient/Abstract.proto\x1a\x14tbclient/Media.proto\x1a\x17tbclient/MediaNum.proto\x1a\x13tbclient/User.proto\x1a\x14tbclient/Voice.proto\"\xdc\x01\n\x08PostList\x12%\n\t_abstract\x18\x03 \x03(\x0b\x32\x12.tbclient.Abstract\x12\x1e\n\x06\x61uthor\x18\x02 \x02(\x0b\x32\x0e.tbclient.User\x12\x11\n\tauthor_id\x18\x07 \x01(\x03\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x1e\n\x05media\x18\x04 \x03(\x0b\x32\x0f.tbclient.Media\x12%\n\tmedia_num\x18\x05 \x03(\x0b\x32\x12.tbclient.MediaNum\x12#\n\nvoice_info\x18\x06 \x03(\x0b\x32\x0f.tbclient.Voice')
+  serialized_pb=_b('\n\x17tbclient/PostList.proto\x12\x08tbclient\x1a\x17tbclient/Abstract.proto\x1a\x14tbclient/Media.proto\x1a\x17tbclient/MediaNum.proto\x1a\x13tbclient/User.proto\x1a\x14tbclient/Voice.proto\"\xdc\x01\n\x08PostList\x12%\n\t_abstract\x18\x03 \x03(\x0b\x32\x12.tbclient.Abstract\x12\x1e\n\x06\x61uthor\x18\x02 \x01(\x0b\x32\x0e.tbclient.User\x12\x11\n\tauthor_id\x18\x07 \x01(\x03\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x1e\n\x05media\x18\x04 \x03(\x0b\x32\x0f.tbclient.Media\x12%\n\tmedia_num\x18\x05 \x03(\x0b\x32\x12.tbclient.MediaNum\x12#\n\nvoice_info\x18\x06 \x03(\x0b\x32\x0f.tbclient.Voice')
   ,
   dependencies=[tbclient_dot_Abstract__pb2.DESCRIPTOR,tbclient_dot_Media__pb2.DESCRIPTOR,tbclient_dot_MediaNum__pb2.DESCRIPTOR,tbclient_dot_User__pb2.DESCRIPTOR,tbclient_dot_Voice__pb2.DESCRIPTOR,])
 
@@ -47,7 +47,7 @@ _POSTLIST = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='author', full_name='tbclient.PostList.author', index=1,
-      number=2, type=11, cpp_type=10, label=2,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

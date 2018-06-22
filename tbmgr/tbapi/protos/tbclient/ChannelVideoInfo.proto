@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ChannelVideoInfo {
+  optional uint32 create_time = 16;
+  optional uint32 forum_id = 2;
+  optional string forum_name = 3;
+  optional uint32 is_top = 15;
+  optional uint32 play_count = 5;
+  optional uint64 thread_id = 1;
+  optional uint32 thumbnail_height = 14;
+  optional string thumbnail_url = 12;
+  optional uint32 thumbnail_width = 13;
+  optional string title = 4;
+  optional uint32 video_duration = 7;
+  optional uint32 video_height = 9;
+  optional uint32 video_length = 10;
+  optional uint64 video_type = 11;
+  optional string video_url = 6;
+  optional uint32 video_width = 8;
+}

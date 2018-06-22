@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message Music {
+  optional int32 isopen = 4;
+  optional int32 num = 2;
+  optional string pic = 1;
+  optional int32 sid = 3;
+}

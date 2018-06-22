@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/ThreadInfo.proto";
+
+message BannerThreadInfo {
+  optional uint32 from = 2;
+  optional ThreadInfo thread_info = 1;
+}

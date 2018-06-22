@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message ForumHeadlineImgInfo {
+  optional string headline_url = 7;
+  optional string img_url = 4;
+  optional int64 img_user_id = 6;
+  optional string img_user_name = 3;
+  optional int64 thread_id = 1;
+  optional int64 thread_user_id = 5;
+  optional string thread_user_name = 2;
+}

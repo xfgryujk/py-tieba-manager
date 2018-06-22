@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message StarEnter {
+  optional int32 bazhu_mark = 10;
+  optional string icon = 1;
+  optional string obj_id = 7;
+  optional int32 rank_num = 9;
+  optional string text = 8;
+  optional int32 time = 6;
+  optional string title = 2;
+  optional int32 type = 4;
+  optional string url = 5;
+  optional int32 weight = 3;
+}

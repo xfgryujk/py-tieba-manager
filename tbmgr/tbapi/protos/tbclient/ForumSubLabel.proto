@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ForumSubLabel {
+  optional int32 id = 1;
+  optional string sub_label_name = 2;
+}

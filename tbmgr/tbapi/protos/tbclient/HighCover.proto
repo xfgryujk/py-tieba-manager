@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tbclient;
+
+message HighCover {
+  optional string pic_url = 1;
+}

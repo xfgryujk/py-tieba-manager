@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message Ticket {
+  optional int32 time = 1;
+  optional string url = 2;
+}

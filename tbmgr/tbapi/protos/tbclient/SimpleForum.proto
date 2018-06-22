@@ -13,7 +13,7 @@ message SimpleForum {
   optional uint32 is_liked = 5;
   optional uint32 is_signed = 6;
   optional uint32 level_id = 10;
-  required MultiForumPerm multi_forum_perm = 11;
+  optional MultiForumPerm multi_forum_perm = 11;
   optional string name = 2;
   optional string second_class = 8;
 }

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message Video {
+  optional int32 num = 2;
+  optional string pic = 1;
+}

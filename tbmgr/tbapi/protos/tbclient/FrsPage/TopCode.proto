@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message TopCode {
+  optional string code_link = 4;
+  optional string game_link = 2;
+  optional int32 get_type = 5;
+  optional int64 giftworth = 7;
+  optional string img_url = 1;
+  optional string subtitle = 9;
+  optional string summary = 3;
+  optional string surplusgift = 6;
+  optional string type_text = 8;
+}

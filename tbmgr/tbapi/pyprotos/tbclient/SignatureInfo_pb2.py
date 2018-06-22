@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/SignatureInfo.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x1ctbclient/SignatureInfo.proto\x12\x08tbclient\x1a\x15tbclient/Avatar.proto\x1a\x18tbclient/Equipment.proto\"\xac\x01\n\rSignatureInfo\x12 \n\x06\x61vatar\x18\x05 \x02(\x0b\x32\x10.tbclient.Avatar\x12&\n\tequipment\x18\x01 \x02(\x0b\x32\x13.tbclient.Equipment\x12\x0f\n\x07game_id\x18\x02 \x01(\t\x12\x11\n\tgame_name\x18\x03 \x01(\t\x12\x0e\n\x06player\x18\x04 \x01(\t\x12\r\n\x05power\x18\x06 \x01(\t\x12\x0e\n\x06server\x18\x07 \x01(\t')
+  serialized_pb=_b('\n\x1ctbclient/SignatureInfo.proto\x12\x08tbclient\x1a\x15tbclient/Avatar.proto\x1a\x18tbclient/Equipment.proto\"\xac\x01\n\rSignatureInfo\x12 \n\x06\x61vatar\x18\x05 \x01(\x0b\x32\x10.tbclient.Avatar\x12&\n\tequipment\x18\x01 \x01(\x0b\x32\x13.tbclient.Equipment\x12\x0f\n\x07game_id\x18\x02 \x01(\t\x12\x11\n\tgame_name\x18\x03 \x01(\t\x12\x0e\n\x06player\x18\x04 \x01(\t\x12\r\n\x05power\x18\x06 \x01(\t\x12\x0e\n\x06server\x18\x07 \x01(\t')
   ,
   dependencies=[tbclient_dot_Avatar__pb2.DESCRIPTOR,tbclient_dot_Equipment__pb2.DESCRIPTOR,])
 
@@ -37,14 +37,14 @@ _SIGNATUREINFO = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='avatar', full_name='tbclient.SignatureInfo.avatar', index=0,
-      number=5, type=11, cpp_type=10, label=2,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='equipment', full_name='tbclient.SignatureInfo.equipment', index=1,
-      number=1, type=11, cpp_type=10, label=2,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

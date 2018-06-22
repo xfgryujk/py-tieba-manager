@@ -3,6 +3,6 @@ syntax = "proto2";
 package tbclient;
 
 message LotteryRegular {
-  repeated int32 change = 2;
+  repeated int32 chance = 2;
   optional string regular = 1;
 }

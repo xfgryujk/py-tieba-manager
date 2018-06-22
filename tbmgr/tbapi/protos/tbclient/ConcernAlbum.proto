@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/Album.proto";
+import "tbclient/ConcernUser.proto";
+
+message ConcernAlbum {
+  optional Album album = 3;
+  repeated ConcernUser concern_user = 1;
+  optional uint32 num_user = 2;
+}

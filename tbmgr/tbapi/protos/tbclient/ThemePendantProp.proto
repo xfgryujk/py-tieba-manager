@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ThemePendantProp {
+  optional int32 props_id = 1;
+  optional string title = 2;
+}

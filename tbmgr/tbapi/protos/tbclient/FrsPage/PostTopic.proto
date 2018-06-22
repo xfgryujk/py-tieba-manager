@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message PostTopic {
+  optional string content_topic = 2;
+  optional string title_topic = 1;
+}

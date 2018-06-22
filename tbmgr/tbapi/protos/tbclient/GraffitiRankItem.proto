@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package tbclient;
+
+message GraffitiRankItem {
+  optional int32 g_type = 7;
+  optional int64 gid = 1;
+  optional int32 is_vote = 4;
+  optional string pic_id = 6;
+  optional string thumb_url = 8;
+  optional int64 uid = 5;
+  optional string url = 2;
+  optional int64 vote_count = 3;
+}

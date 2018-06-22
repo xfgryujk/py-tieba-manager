@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message AcrossForumIcon {
+  optional string icon_url = 1;
+  optional uint32 pic_type = 2;
+}

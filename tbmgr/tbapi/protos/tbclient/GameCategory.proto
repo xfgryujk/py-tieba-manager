@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message GameCategory {
+  repeated string game_list = 4;
+  optional string icon_url = 3;
+  optional int32 id = 1;
+  optional string name = 2;
+}

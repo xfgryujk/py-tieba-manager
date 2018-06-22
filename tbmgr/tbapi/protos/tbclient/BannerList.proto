@@ -10,5 +10,5 @@ message BannerList {
   repeated App app = 1;
   optional string applist = 4;
   repeated FeedForumInfo feed_forum = 2;
-  required RecomTopicInfo hot_topic = 3;
+  optional RecomTopicInfo hot_topic = 3;
 }

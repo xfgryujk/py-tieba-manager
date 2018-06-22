@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ForumDynamic {
+  optional string avatar = 3;
+  optional int64 forum_id = 1;
+  optional string forum_name = 2;
+  optional uint32 is_like = 5;
+  optional uint32 member_count = 6;
+  optional string slogan = 4;
+  optional uint32 thread_count = 7;
+  optional string title = 8;
+  optional uint32 user_thread_count = 9;
+}

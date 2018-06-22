@@ -1,0 +1,33 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/Fans.proto";
+import "tbclient/FrsPage/Focus.proto";
+import "tbclient/FrsPage/Good.proto";
+import "tbclient/FrsPage/Identify.proto";
+import "tbclient/FrsPage/Info.proto";
+import "tbclient/FrsPage/Music.proto";
+import "tbclient/FrsPage/PhotoInfo.proto";
+import "tbclient/FrsPage/Size.proto";
+import "tbclient/FrsPage/Ticket.proto";
+import "tbclient/FrsPage/Video.proto";
+
+message StarInfo {
+  optional Fans fans = 6;
+  repeated Focus focus = 7;
+  optional int32 gender = 4;
+  optional Good good = 12;
+  optional int32 has_frs_star = 1;
+  optional string head = 3;
+  optional Size head_size = 15;
+  optional Identify identify = 13;
+  optional Info info = 5;
+  optional Music music = 10;
+  optional Music mv = 11;
+  optional PhotoInfo photo = 8;
+  optional string top = 2;
+  optional Size top_size = 14;
+  optional Ticket trade = 16;
+  optional Video video = 9;
+}

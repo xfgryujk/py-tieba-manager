@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+message SdkTopicThread {
+  optional int32 need_topic = 6;
+  optional string pic_url = 1;
+  optional uint64 post_num = 3;
+  optional uint64 tid = 5;
+  optional string title = 2;
+  optional uint64 zan_num = 4;
+}

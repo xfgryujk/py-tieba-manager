@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package tbclient;
+
+message BawuRoleInfoPub {
+  optional uint64 forum_id = 1;
+  optional string level_name = 7;
+  optional string portrait = 5;
+  optional int32 role_id = 3;
+  optional string role_name = 4;
+  optional int64 user_id = 2;
+  optional int32 user_level = 6;
+  optional string user_name = 8;
+}

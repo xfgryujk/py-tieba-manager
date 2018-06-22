@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message PostPrefix {
+  optional int32 mode = 1;
+  optional string text = 2;
+  optional string time = 4;
+  optional string type = 3;
+}

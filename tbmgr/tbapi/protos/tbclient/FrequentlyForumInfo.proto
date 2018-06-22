@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/User.proto";
+
+message FrequentlyForumInfo {
+  optional uint32 access_flag = 15;
+  optional string avatar = 12;
+  optional uint64 forum_id = 1;
+  optional string forum_name = 11;
+  optional uint32 forum_state = 14;
+  optional uint32 is_sign = 16;
+  optional uint64 last_access_time = 9;
+  optional uint32 level_id = 13;
+  optional string new_thread_num = 6;
+  repeated User user_list = 7;
+}

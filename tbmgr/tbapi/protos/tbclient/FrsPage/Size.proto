@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message Size {
+  optional int32 height = 2;
+  optional int32 width = 1;
+}

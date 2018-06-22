@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Superscript {
+  optional string color = 2;
+  optional string desc = 1;
+}

@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message SignUser {
+  optional int32 c_sign_num = 8;
+  optional int32 cont_sign_num = 5;
+  optional int32 cout_total_sign_num = 6;
+  optional int32 hun_sign_num = 9;
+  optional int32 is_org_disabled = 7;
+  optional int32 is_sign_in = 2;
+  optional int32 miss_sign_num = 11;
+  optional int32 sign_time = 4;
+  optional int32 total_resign_num = 10;
+  optional int64 user_id = 1;
+  optional int32 user_sign_rank = 3;
+}

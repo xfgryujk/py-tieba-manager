@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ThemeCardPropMain {
+  optional string activity_url = 9;
+  optional string description = 3;
+  optional string example_url = 4;
+  optional uint32 free_user_level = 8;
+  optional uint32 in_use = 7;
+  optional uint32 is_finished = 10;
+  optional string permission = 5;
+  optional uint64 props_id = 1;
+  optional string props_state_img = 6;
+  optional string title = 2;
+}

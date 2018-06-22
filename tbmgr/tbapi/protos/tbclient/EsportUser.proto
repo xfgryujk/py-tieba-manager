@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message EsportUser {
+  optional string steam_name = 1;
+  optional string steam_portrait = 2;
+}

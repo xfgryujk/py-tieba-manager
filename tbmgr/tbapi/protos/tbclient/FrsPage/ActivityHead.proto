@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/HeadImgs.proto";
+import "tbclient/FrsPage/Size.proto";
+
+message ActivityHead {
+  optional string activity_title = 2;
+  optional int32 activity_type = 1;
+  repeated HeadImgs head_imgs = 3;
+  optional string obj_id = 5;
+  optional Size top_size = 4;
+}

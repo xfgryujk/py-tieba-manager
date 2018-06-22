@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+message GuessLikeThreadInfo {
+  optional int64 forum_id = 2;
+  optional string forum_name = 3;
+  optional string recom_cover = 5;
+  optional string recom_reason = 6;
+  optional int64 reply_num = 4;
+  optional int64 thread_id = 1;
+  optional string title = 7;
+}

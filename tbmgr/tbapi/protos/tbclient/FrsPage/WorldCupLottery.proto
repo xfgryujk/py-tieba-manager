@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message WorldCupLottery {
+  optional string url = 1;
+}

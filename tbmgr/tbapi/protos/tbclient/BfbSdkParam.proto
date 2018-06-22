@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tbclient;
+
+message BfbSdkParam {
+  repeated int32 activity_no = 1;
+}

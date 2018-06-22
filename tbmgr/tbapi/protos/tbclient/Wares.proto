@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Wares {
+  optional uint32 money = 2;
+  optional string new_props_id = 6;
+  optional uint32 props_id = 1;
+  optional uint32 props_mon = 3;
+  optional string wars_item = 5;
+  optional string wars_name = 4;
+}

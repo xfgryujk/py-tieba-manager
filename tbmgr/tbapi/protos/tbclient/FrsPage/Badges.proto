@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message Badges {
+  optional int32 badge_id = 1;
+  optional string badge_url = 2;
+  optional string webview = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/User.proto";
+
+message PsRankListItem {
+  optional int64 game_id = 1;
+  optional int64 score = 3;
+  optional User user = 4;
+  optional int64 user_id = 2;
+}

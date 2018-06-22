@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/ZhiBoInfoTW.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x1atbclient/ZhiBoInfoTW.proto\x12\x08tbclient\x1a\x1etbclient/HotTWThreadInfo.proto\x1a\x18tbclient/LabelInfo.proto\x1a\x1etbclient/LiveCoverStatus.proto\x1a\x19tbclient/NoticeInfo.proto\x1a\x13tbclient/User.proto\x1a\x12tbclient/Zan.proto\"\xd7\x04\n\x0bZhiBoInfoTW\x12\x0f\n\x07\x63ontent\x18\x0b \x01(\t\x12\x19\n\x11\x63opythread_remind\x18\x14 \x01(\r\x12\x10\n\x08\x66ield_ex\x18\x16 \x01(\t\x12\x10\n\x08\x66orum_id\x18\x08 \x01(\x04\x12\x12\n\nforum_name\x18\x07 \x01(\t\x12\x10\n\x08\x66req_num\x18\x13 \x01(\r\x12.\n\x0bhot_tw_info\x18\r \x02(\x0b\x32\x19.tbclient.HotTWThreadInfo\x12\x16\n\x0eis_copytwzhibo\x18\x15 \x01(\r\x12\x13\n\x0bis_headline\x18\x11 \x01(\x05\x12&\n\tlabelInfo\x18\x0e \x03(\x0b\x32\x13.tbclient.LabelInfo\x12\x1a\n\x12last_modified_time\x18\t \x01(\x04\x12\x15\n\rlivecover_src\x18\x02 \x01(\t\x12\x1b\n\x13livecover_src_bsize\x18\x03 \x01(\t\x12\x1c\n\x14livecover_src_status\x18\x0f \x01(\t\x12\x33\n\x10livecover_status\x18\x12 \x02(\x0b\x32\x19.tbclient.LiveCoverStatus\x12)\n\x0bnotice_info\x18\x10 \x02(\x0b\x32\x14.tbclient.NoticeInfo\x12\x10\n\x08post_num\x18\x04 \x01(\r\x12\x11\n\treply_num\x18\x05 \x01(\r\x12\x11\n\tthread_id\x18\x01 \x01(\x04\x12\r\n\x05title\x18\n \x01(\t\x12\x1c\n\x04user\x18\x0c \x02(\x0b\x32\x0e.tbclient.User\x12\x1a\n\x03zan\x18\x06 \x02(\x0b\x32\r.tbclient.Zan')
+  serialized_pb=_b('\n\x1atbclient/ZhiBoInfoTW.proto\x12\x08tbclient\x1a\x1etbclient/HotTWThreadInfo.proto\x1a\x18tbclient/LabelInfo.proto\x1a\x1etbclient/LiveCoverStatus.proto\x1a\x19tbclient/NoticeInfo.proto\x1a\x13tbclient/User.proto\x1a\x12tbclient/Zan.proto\"\xd7\x04\n\x0bZhiBoInfoTW\x12\x0f\n\x07\x63ontent\x18\x0b \x01(\t\x12\x19\n\x11\x63opythread_remind\x18\x14 \x01(\r\x12\x10\n\x08\x66ield_ex\x18\x16 \x01(\t\x12\x10\n\x08\x66orum_id\x18\x08 \x01(\x04\x12\x12\n\nforum_name\x18\x07 \x01(\t\x12\x10\n\x08\x66req_num\x18\x13 \x01(\r\x12.\n\x0bhot_tw_info\x18\r \x01(\x0b\x32\x19.tbclient.HotTWThreadInfo\x12\x16\n\x0eis_copytwzhibo\x18\x15 \x01(\r\x12\x13\n\x0bis_headline\x18\x11 \x01(\x05\x12&\n\tlabelInfo\x18\x0e \x03(\x0b\x32\x13.tbclient.LabelInfo\x12\x1a\n\x12last_modified_time\x18\t \x01(\x04\x12\x15\n\rlivecover_src\x18\x02 \x01(\t\x12\x1b\n\x13livecover_src_bsize\x18\x03 \x01(\t\x12\x1c\n\x14livecover_src_status\x18\x0f \x01(\t\x12\x33\n\x10livecover_status\x18\x12 \x01(\x0b\x32\x19.tbclient.LiveCoverStatus\x12)\n\x0bnotice_info\x18\x10 \x01(\x0b\x32\x14.tbclient.NoticeInfo\x12\x10\n\x08post_num\x18\x04 \x01(\r\x12\x11\n\treply_num\x18\x05 \x01(\r\x12\x11\n\tthread_id\x18\x01 \x01(\x04\x12\r\n\x05title\x18\n \x01(\t\x12\x1c\n\x04user\x18\x0c \x01(\x0b\x32\x0e.tbclient.User\x12\x1a\n\x03zan\x18\x06 \x01(\x0b\x32\r.tbclient.Zan')
   ,
   dependencies=[tbclient_dot_HotTWThreadInfo__pb2.DESCRIPTOR,tbclient_dot_LabelInfo__pb2.DESCRIPTOR,tbclient_dot_LiveCoverStatus__pb2.DESCRIPTOR,tbclient_dot_NoticeInfo__pb2.DESCRIPTOR,tbclient_dot_User__pb2.DESCRIPTOR,tbclient_dot_Zan__pb2.DESCRIPTOR,])
 
@@ -83,7 +83,7 @@ _ZHIBOINFOTW = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='hot_tw_info', full_name='tbclient.ZhiBoInfoTW.hot_tw_info', index=6,
-      number=13, type=11, cpp_type=10, label=2,
+      number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -139,14 +139,14 @@ _ZHIBOINFOTW = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='livecover_status', full_name='tbclient.ZhiBoInfoTW.livecover_status', index=14,
-      number=18, type=11, cpp_type=10, label=2,
+      number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='notice_info', full_name='tbclient.ZhiBoInfoTW.notice_info', index=15,
-      number=16, type=11, cpp_type=10, label=2,
+      number=16, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -181,14 +181,14 @@ _ZHIBOINFOTW = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user', full_name='tbclient.ZhiBoInfoTW.user', index=20,
-      number=12, type=11, cpp_type=10, label=2,
+      number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='zan', full_name='tbclient.ZhiBoInfoTW.zan', index=21,
-      number=6, type=11, cpp_type=10, label=2,
+      number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

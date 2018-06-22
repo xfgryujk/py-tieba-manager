@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message RecommendBook {
+  optional string book_id = 2;
+  repeated string desc = 5;
+  optional string image = 4;
+  optional string link_url = 6;
+  optional string title = 3;
+  optional uint32 type = 1;
+}

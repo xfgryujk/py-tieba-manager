@@ -14,7 +14,7 @@ message GoodsInfo {
   optional string button_url = 23;
   optional string card_desc = 14;
   optional string card_tag = 15;
-  required AdCloseInfo close_info = 29;
+  optional AdCloseInfo close_info = 29;
   optional int32 goods_style = 7;
   optional int32 height = 17;
   optional int32 id = 1;
@@ -34,6 +34,6 @@ message GoodsInfo {
   optional string thread_type = 12;
   optional string user_name = 2;
   optional string user_portrait = 3;
-  required VideoInfo video_info = 21;
+  optional VideoInfo video_info = 21;
   optional int32 width = 16;
 }

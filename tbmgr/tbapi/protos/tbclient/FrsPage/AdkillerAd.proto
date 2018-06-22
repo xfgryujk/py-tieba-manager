@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/App.proto";
+
+message AdkillerAd {
+  optional App app = 3;
+  optional uint32 can_close = 4;
+  optional string game_url = 2;
+  optional string tag = 1;
+}

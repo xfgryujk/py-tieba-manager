@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Dev {
+  optional string cuid = 3;
+  optional string os = 1;
+  optional string version = 2;
+}

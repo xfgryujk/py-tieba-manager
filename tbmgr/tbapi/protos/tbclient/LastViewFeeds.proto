@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tbclient;
+
+message LastViewFeeds {
+  repeated uint32 live = 1;
+}

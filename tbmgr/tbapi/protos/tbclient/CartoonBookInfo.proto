@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message CartoonBookInfo {
+  optional int64 cartoon_id = 1;
+  optional string cartoon_name = 2;
+  optional uint32 cartoon_vip = 4;
+  optional string cover_img = 3;
+}

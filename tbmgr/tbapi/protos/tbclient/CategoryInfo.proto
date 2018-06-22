@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message CategoryInfo {
+  optional int32 category_id = 1;
+  optional string category_name = 2;
+}

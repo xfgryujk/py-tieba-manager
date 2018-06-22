@@ -16,7 +16,7 @@ message ZhiBoInfoTW {
   optional uint64 forum_id = 8;
   optional string forum_name = 7;
   optional uint32 freq_num = 19;
-  required HotTWThreadInfo hot_tw_info = 13;
+  optional HotTWThreadInfo hot_tw_info = 13;
   optional uint32 is_copytwzhibo = 21;
   optional int32 is_headline = 17;
   repeated LabelInfo labelInfo = 14;
@@ -24,12 +24,12 @@ message ZhiBoInfoTW {
   optional string livecover_src = 2;
   optional string livecover_src_bsize = 3;
   optional string livecover_src_status = 15;
-  required LiveCoverStatus livecover_status = 18;
-  required NoticeInfo notice_info = 16;
+  optional LiveCoverStatus livecover_status = 18;
+  optional NoticeInfo notice_info = 16;
   optional uint32 post_num = 4;
   optional uint32 reply_num = 5;
   optional uint64 thread_id = 1;
   optional string title = 10;
-  required User user = 12;
-  required Zan zan = 6;
+  optional User user = 12;
+  optional Zan zan = 6;
 }

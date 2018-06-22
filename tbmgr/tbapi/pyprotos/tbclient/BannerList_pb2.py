@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/BannerList.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x19tbclient/BannerList.proto\x12\x08tbclient\x1a\x12tbclient/App.proto\x1a\x1ctbclient/FeedForumInfo.proto\x1a\x1dtbclient/RecomTopicInfo.proto\"\x93\x01\n\nBannerList\x12\x1a\n\x03\x61pp\x18\x01 \x03(\x0b\x32\r.tbclient.App\x12\x0f\n\x07\x61pplist\x18\x04 \x01(\t\x12+\n\nfeed_forum\x18\x02 \x03(\x0b\x32\x17.tbclient.FeedForumInfo\x12+\n\thot_topic\x18\x03 \x02(\x0b\x32\x18.tbclient.RecomTopicInfo')
+  serialized_pb=_b('\n\x19tbclient/BannerList.proto\x12\x08tbclient\x1a\x12tbclient/App.proto\x1a\x1ctbclient/FeedForumInfo.proto\x1a\x1dtbclient/RecomTopicInfo.proto\"\x93\x01\n\nBannerList\x12\x1a\n\x03\x61pp\x18\x01 \x03(\x0b\x32\r.tbclient.App\x12\x0f\n\x07\x61pplist\x18\x04 \x01(\t\x12+\n\nfeed_forum\x18\x02 \x03(\x0b\x32\x17.tbclient.FeedForumInfo\x12+\n\thot_topic\x18\x03 \x01(\x0b\x32\x18.tbclient.RecomTopicInfo')
   ,
   dependencies=[tbclient_dot_App__pb2.DESCRIPTOR,tbclient_dot_FeedForumInfo__pb2.DESCRIPTOR,tbclient_dot_RecomTopicInfo__pb2.DESCRIPTOR,])
 
@@ -59,7 +59,7 @@ _BANNERLIST = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='hot_topic', full_name='tbclient.BannerList.hot_topic', index=3,
-      number=3, type=11, cpp_type=10, label=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

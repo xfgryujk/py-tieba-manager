@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/SignForum.proto";
+import "tbclient/FrsPage/SignUser.proto";
+
+message SignInfo {
+  optional SignForum forum_info = 2;
+  optional SignUser user_info = 1;
+}

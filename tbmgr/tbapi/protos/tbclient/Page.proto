@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package tbclient;
+
+message Page {
+  optional int32 cur_good_id = 8;
+  optional int32 current_page = 3;
+  optional int32 has_more = 6;
+  optional int32 has_prev = 7;
+  optional int32 lz_total_floor = 13;
+  optional int32 offset = 2;
+  optional int32 page_size = 1;
+  optional int32 pnum = 10;
+  optional int32 req_num = 9;
+  optional int32 tnum = 11;
+  optional int32 total_count = 4;
+  optional int32 total_num = 12;
+  optional int32 total_page = 5;
+}

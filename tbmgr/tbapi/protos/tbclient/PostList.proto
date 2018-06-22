@@ -10,7 +10,7 @@ import "tbclient/Voice.proto";
 
 message PostList {
   repeated Abstract _abstract = 3;
-  required User author = 2;
+  optional User author = 2;
   optional int64 author_id = 7;
   optional int64 id = 1;
   repeated Media media = 4;

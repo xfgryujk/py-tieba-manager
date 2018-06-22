@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ShowData {
+  optional int32 show = 1;
+}

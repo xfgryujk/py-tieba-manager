@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/UserRankPresentInfo.proto";
+
+message ForumPresentInfo {
+  optional string content = 2;
+  repeated UserRankPresentInfo user_list = 1;
+}

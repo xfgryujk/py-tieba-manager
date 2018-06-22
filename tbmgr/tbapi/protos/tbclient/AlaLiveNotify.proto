@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient;
+
+message AlaLiveNotify {
+  optional string noti_content = 1;
+  optional string noti_url = 2;
+}

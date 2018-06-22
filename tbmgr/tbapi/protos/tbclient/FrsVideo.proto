@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/ActBtn.proto";
+
+message FrsVideo {
+  optional ActBtn video_act = 1;
+}

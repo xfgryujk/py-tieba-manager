@@ -1,9 +1,0 @@
-syntax = "proto2";
-
-package tbclient.ThreadList;
-
-import "tbclient/ThreadList/DataReq.proto";
-
-message ThreadListReqIdl {
-    required DataReq data = 1;
-}

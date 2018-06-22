@@ -8,9 +8,9 @@ import "tbclient/Terminal.proto";
 message Icon {
   optional string icon = 4;
   optional string name = 1;
-  required Position position = 7;
+  optional Position position = 7;
   repeated string sprite_info = 8;
-  required Terminal terminal = 6;
+  optional Terminal terminal = 6;
   optional string url = 3;
   optional int32 value = 5;
   optional int32 weight = 2;

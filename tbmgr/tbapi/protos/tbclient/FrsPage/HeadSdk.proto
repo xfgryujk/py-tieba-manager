@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message HeadSdk {
+  optional string head_pic = 1;
+  optional string head_text = 2;
+  optional int32 head_type = 5;
+  optional string sdk_name = 3;
+  optional string sdk_params = 4;
+}

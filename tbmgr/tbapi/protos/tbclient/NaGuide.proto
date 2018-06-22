@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/RecGuide.proto";
+
+message NaGuide {
+  optional string dwnl_url = 1;
+  repeated RecGuide rec_info = 2;
+}

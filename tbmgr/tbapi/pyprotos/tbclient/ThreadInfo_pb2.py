@@ -46,9 +46,9 @@ from tbclient import PushStatus_pb2 as tbclient_dot_PushStatus__pb2
 from tbclient import ReportInfo_pb2 as tbclient_dot_ReportInfo__pb2
 from tbclient import SkinInfo_pb2 as tbclient_dot_SkinInfo__pb2
 from tbclient import StarRankIcon_pb2 as tbclient_dot_StarRankIcon__pb2
+from tbclient import TailInfo_pb2 as tbclient_dot_TailInfo__pb2
 from tbclient import TaskInfo_pb2 as tbclient_dot_TaskInfo__pb2
 from tbclient import TbreadDispatch_pb2 as tbclient_dot_TbreadDispatch__pb2
-from tbclient import TailInfo_pb2 as tbclient_dot_TailInfo__pb2
 from tbclient import TogetherHi_pb2 as tbclient_dot_TogetherHi__pb2
 from tbclient import Topic_pb2 as tbclient_dot_Topic__pb2
 from tbclient import User_pb2 as tbclient_dot_User__pb2
@@ -64,9 +64,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/ThreadInfo.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x19tbclient/ThreadInfo.proto\x12\x08tbclient\x1a\x17tbclient/Abstract.proto\x1a\x16tbclient/ActInfo.proto\x1a\x1btbclient/ActivityInfo.proto\x1a\x15tbclient/AdInfo.proto\x1a\x14tbclient/Agree.proto\x1a\x1atbclient/AlaLiveInfo.proto\x1a\x19tbclient/AnchorInfo.proto\x1a\x1etbclient/AnimationThread.proto\x1a\x16tbclient/AppCode.proto\x1a\x16tbclient/AppInfo.proto\x1a\x19tbclient/BookThread.proto\x1a\x1ctbclient/CartoonThread.proto\x1a\x17tbclient/DealInfo.proto\x1a\x1atbclient/DeclareInfo.proto\x1a\x1atbclient/DislikeInfo.proto\x1a\x14tbclient/Guess.proto\x1a\x1etbclient/HotTWThreadInfo.proto\x1a\x14tbclient/JNews.proto\x1a\x12tbclient/Lbs.proto\x1a\x1dtbclient/LinkThreadInfo.proto\x1a\x14tbclient/Media.proto\x1a\x17tbclient/MediaNum.proto\x1a\x1ctbclient/MultipleForum.proto\x1a\x1ftbclient/OriginThreadInfo.proto\x1a\x18tbclient/PbContent.proto\x1a\x17tbclient/PollInfo.proto\x1a\x13tbclient/Post.proto\x1a\x17tbclient/PostList.proto\x1a\x15tbclient/PsInfo.proto\x1a\x19tbclient/PushStatus.proto\x1a\x19tbclient/ReportInfo.proto\x1a\x17tbclient/SkinInfo.proto\x1a\x1btbclient/StarRankIcon.proto\x1a\x17tbclient/TaskInfo.proto\x1a\x1dtbclient/TbreadDispatch.proto\x1a\x17tbclient/TailInfo.proto\x1a\x19tbclient/TogetherHi.proto\x1a\x14tbclient/Topic.proto\x1a\x13tbclient/User.proto\x1a\x1ftbclient/VideoChannelInfo.proto\x1a\x18tbclient/VideoInfo.proto\x1a\x14tbclient/Voice.proto\x1a\x1ftbclient/YulePostActivity.proto\x1a\x12tbclient/Zan.proto\x1a\x1atbclient/ZhiBoInfoTW.proto\"\xc9\x1f\n\nThreadInfo\x12%\n\t_abstract\x18\x15 \x03(\x0b\x32\x12.tbclient.Abstract\x12\x0e\n\x06\x61\x62_tag\x18l \x01(\t\x12#\n\x08\x61\x63t_info\x18\x41 \x03(\x0b\x32\x11.tbclient.ActInfo\x12.\n\ractivity_info\x18\x84\x01 \x02(\x0b\x32\x16.tbclient.ActivityInfo\x12\x1e\n\x05\x61gree\x18~ \x02(\x0b\x32\x0f.tbclient.Agree\x12\x11\n\tagree_num\x18| \x01(\x05\x12\'\n\x08\x61la_info\x18q \x02(\x0b\x32\x15.tbclient.AlaLiveInfo\x12)\n\x0b\x61nchor_info\x18\x37 \x02(\x0b\x32\x14.tbclient.AnchorInfo\x12\x31\n\x0e\x61nimation_info\x18\x63 \x02(\x0b\x32\x19.tbclient.AnimationThread\x12#\n\x08\x61pp_code\x18Y \x02(\x0b\x32\x11.tbclient.AppCode\x12#\n\x08\x61pp_info\x18u \x02(\x0b\x32\x11.tbclient.AppInfo\x12\x13\n\naudit_time\x18\x8a\x01 \x01(\x03\x12\x1e\n\x06\x61uthor\x18\x12 \x02(\x0b\x32\x0e.tbclient.User\x12\x11\n\tauthor_id\x18\x38 \x01(\x03\x12*\n\x0c\x62ook_chapter\x18\x66 \x02(\x0b\x32\x14.tbclient.BookThread\x12-\n\x0c\x63\x61rtoon_info\x18\\ \x02(\x0b\x32\x17.tbclient.CartoonThread\x12\x15\n\rcategory_name\x18I \x01(\t\x12\x14\n\x0c\x63heak_repeat\x18k \x01(\r\x12\x11\n\tclick_url\x18  \x01(\t\x12\x18\n\x10\x63ollect_mark_pid\x18\x33 \x01(\t\x12\x16\n\x0e\x63ollect_status\x18\x32 \x01(\x05\x12\x13\n\x0b\x63omment_num\x18\x14 \x01(\x05\x12\x13\n\x0b\x63reate_time\x18- \x01(\x05\x12%\n\tdeal_info\x18\x62 \x02(\x0b\x32\x12.tbclient.DealInfo\x12+\n\x0c\x64\x65\x63lare_list\x18y \x03(\x0b\x32\x15.tbclient.DeclareInfo\x12+\n\x0c\x64islike_info\x18x \x03(\x0b\x32\x15.tbclient.DislikeInfo\x12\x0c\n\x04\x65\x63om\x18< \x01(\t\x12%\n\text_tails\x18Z \x03(\x0b\x32\x12.tbclient.TailInfo\x12\x0b\n\x03\x66id\x18\x1b \x01(\x03\x12\x30\n\x12\x66irst_post_content\x18\x8e\x01 \x03(\x0b\x32\x13.tbclient.PbContent\x12\x15\n\rfirst_post_id\x18( \x01(\x03\x12\r\n\x05\x66name\x18\x1c \x01(\t\x12\x11\n\x08\x66req_num\x18\x82\x01 \x01(\x03\x12\x0c\n\x04\x66rom\x18\x31 \x01(\t\x12\x1e\n\x05guess\x18? \x02(\x0b\x32\x0f.tbclient.Guess\x12\x15\n\rhas_commented\x18\x30 \x01(\x05\x12+\n\rhigh_together\x18_ \x02(\x0b\x32\x14.tbclient.TogetherHi\x12,\n\thotTWInfo\x18G \x02(\x0b\x32\x19.tbclient.HotTWThreadInfo\x12\x12\n\nhot_weight\x18\x42 \x01(\x05\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x15\n\risLzDeleteAll\x18: \x01(\r\x12\x13\n\x0bis_activity\x18\x10 \x01(\x05\x12\r\n\x05is_ad\x18; \x01(\r\x12\x10\n\x08is_bakan\x18\x0c \x01(\x05\x12\x17\n\x0fis_book_chapter\x18g \x01(\r\x12\x0e\n\x06is_bub\x18\' \x01(\x05\x12\x12\n\tis_called\x18\x88\x01 \x01(\x05\x12\x15\n\ris_copythread\x18Q \x01(\r\x12\x0f\n\x07is_deal\x18\x61 \x01(\x05\x12\x15\n\ris_global_top\x18* \x01(\x05\x12\x0f\n\x06is_god\x18\x83\x01 \x01(\x05\x12\x1e\n\x16is_godthread_recommend\x18U \x01(\x05\x12\x0f\n\x07is_good\x18\n \x01(\x05\x12\x17\n\x0eis_link_thread\x18\x80\x01 \x01(\x05\x12\x13\n\x0bis_livepost\x18\x1e \x01(\x05\x12\x11\n\tis_meizhi\x18\x0e \x01(\x05\x12\x14\n\x0cis_membertop\x18\x36 \x01(\x05\x12\x1c\n\x14is_multiforum_thread\x18{ \x01(\x05\x12\x11\n\tis_notice\x18\x11 \x01(\x05\x12\x10\n\x08is_novel\x18L \x01(\x05\x12\x17\n\x0fis_novel_reward\x18N \x01(\x05\x12\x16\n\x0eis_novel_thank\x18M \x01(\x05\x12\x11\n\tis_ntitle\x18& \x01(\x05\x12\x19\n\x11is_operate_thread\x18r \x01(\r\x12\x1a\n\x12is_partial_visible\x18\x7f \x01(\x05\x12\x0e\n\x06is_pic\x18+ \x01(\x05\x12\x11\n\tis_protal\x18\r \x01(\x05\x12\x18\n\x0fis_share_thread\x18\x8f\x01 \x01(\x05\x12\x17\n\x0eis_story_audit\x18\x86\x01 \x01(\x05\x12\x1a\n\x12is_tbread_dispatch\x18s \x01(\x05\x12\x0e\n\x06is_top\x18\t \x01(\x05\x12\x17\n\x0fis_voice_thread\x18\x0f \x01(\x05\x12\x0f\n\x07is_vote\x18\x0b \x01(\x05\x12\x1c\n\x03jid\x18K \x02(\x0b\x32\x0f.tbclient.JNews\x12\x15\n\rlast_read_pid\x18j \x01(\x04\x12$\n\x0clast_replyer\x18\x13 \x02(\x0b\x32\x0e.tbclient.User\x12\x11\n\tlast_time\x18\x06 \x01(\t\x12\x15\n\rlast_time_int\x18\x07 \x01(\x05\x12\x11\n\tlego_card\x18^ \x01(\t\x12,\n\tlink_info\x18\x81\x01 \x02(\x0b\x32\x18.tbclient.LinkThreadInfo\x12\x16\n\x0elive_post_type\x18\x1d \x01(\t\x12\x15\n\rlivecover_src\x18\x43 \x01(\t\x12\x1f\n\x08location\x18> \x02(\x0b\x32\r.tbclient.Lbs\x12\x1e\n\x05media\x18\x16 \x03(\x0b\x32\x0f.tbclient.Media\x12%\n\tmedia_num\x18\x19 \x03(\x0b\x32\x12.tbclient.MediaNum\x12\x12\n\nmeizhi_pic\x18\x18 \x01(\t\x12\x18\n\x0fmiddle_page_num\x18\x8b\x01 \x01(\x05\x12\x1e\n\x15middle_page_pass_flag\x18\x8c\x01 \x01(\x05\x12\x19\n\x10multi_forum_text\x18\x92\x01 \x01(\t\x12\x34\n\x13multiple_forum_list\x18z \x03(\x0b\x32\x17.tbclient.MultipleForum\x12\x15\n\roperator_flag\x18R \x01(\r\x12\x37\n\x12origin_thread_info\x18\x8d\x01 \x02(\x0b\x32\x1a.tbclient.OriginThreadInfo\x12\"\n\x08pic_info\x18\x85\x01 \x02(\x0b\x32\x0f.tbclient.Media\x12\x0f\n\x07pic_num\x18T \x01(\r\x12\x0c\n\x04pids\x18= \x01(\t\x12%\n\tpoll_info\x18J \x02(\x0b\x32\x12.tbclient.PollInfo\x12\x0f\n\x07post_id\x18\x34 \x01(\x03\x12%\n\tpost_list\x18, \x03(\x0b\x32\x12.tbclient.PostList\x12\x10\n\x08post_num\x18\x45 \x01(\x05\x12!\n\x07ps_info\x18\x65 \x02(\x0b\x32\x10.tbclient.PsInfo\x12\x15\n\rpush_end_time\x18P \x01(\x05\x12)\n\x0bpush_status\x18[ \x02(\x0b\x32\x14.tbclient.PushStatus\x12\x14\n\x0brecom_extra\x18\x90\x01 \x01(\t\x12\x14\n\x0crecom_reason\x18m \x01(\t\x12\x14\n\x0crecom_source\x18h \x01(\t\x12\x14\n\x0crecom_weight\x18i \x01(\t\x12\x11\n\treply_num\x18\x04 \x01(\x05\x12)\n\x0breport_info\x18v \x03(\x0b\x32\x14.tbclient.ReportInfo\x12\x12\n\nrepost_num\x18. \x01(\x05\x12*\n\rrich_abstract\x18p \x03(\x0b\x32\x13.tbclient.PbContent\x12\'\n\nrich_title\x18o \x03(\x0b\x32\x13.tbclient.PbContent\x12\x12\n\tshare_num\x18\x87\x01 \x01(\x03\x12\x16\n\x0eshow_commented\x18\x1f \x01(\x05\x12%\n\tskin_info\x18\x64 \x02(\x0b\x32\x12.tbclient.SkinInfo\x12/\n\x0estar_rank_icon\x18\x93\x01 \x02(\x0b\x32\x16.tbclient.StarRankIcon\x12\x12\n\nstorecount\x18\x44 \x01(\x05\x12%\n\ttask_info\x18S \x02(\x0b\x32\x12.tbclient.TaskInfo\x12\x36\n\x14tbread_dispatch_info\x18t \x02(\x0b\x32\x18.tbclient.TbreadDispatch\x12\x13\n\x0bthread_type\x18\x1a \x01(\x05\x12\x14\n\x0cthread_types\x18\x08 \x01(\x05\x12\x0b\n\x03tid\x18\x02 \x01(\x03\x12&\n\x1dtieba_game_information_source\x18\x89\x01 \x01(\t\x12\x0c\n\x04time\x18\x35 \x01(\x05\x12\x10\n\x08timeline\x18@ \x01(\r\x12\r\n\x05title\x18\x03 \x01(\t\x12&\n\x0etop_agree_post\x18} \x02(\x0b\x32\x0e.tbclient.Post\x12\x1e\n\x05topic\x18/ \x02(\x0b\x32\x0f.tbclient.Topic\x12\x12\n\ttrans_num\x18\x91\x01 \x01(\x04\x12+\n\x0ctwzhibo_info\x18H \x02(\x0b\x32\x15.tbclient.ZhiBoInfoTW\x12\x16\n\x0evalid_post_num\x18\x39 \x01(\r\x12\r\n\x05video\x18! \x01(\t\x12\'\n\rvideo_ad_info\x18n \x02(\x0b\x32\x10.tbclient.AdInfo\x12\x36\n\x12video_channel_info\x18w \x02(\x0b\x32\x1a.tbclient.VideoChannelInfo\x12\x13\n\x0bvideo_cover\x18# \x01(\t\x12\x10\n\x08video_id\x18$ \x01(\t\x12\'\n\nvideo_info\x18O \x02(\x0b\x32\x13.tbclient.VideoInfo\x12\x18\n\x10video_mobile_url\x18% \x01(\t\x12\x11\n\tvideo_swf\x18\" \x01(\t\x12/\n\x10videoactive_info\x18` \x02(\x0b\x32\x15.tbclient.VideoActive\x12\x10\n\x08view_num\x18\x05 \x01(\x05\x12#\n\nvoice_info\x18\x17 \x03(\x0b\x32\x0f.tbclient.Voice\x12\x36\n\x12yule_post_activity\x18X \x02(\x0b\x32\x1a.tbclient.YulePostActivity\x12\x1a\n\x03zan\x18) \x02(\x0b\x32\r.tbclient.Zan\"\xba\x01\n\x0bVideoActive\x12\x13\n\x0b\x61\x63tive_name\x18\x02 \x01(\t\x12\x12\n\nactive_url\x18\x03 \x01(\t\x12\x12\n\nbanner_url\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\n\n\x02id\x18\x01 \x01(\r\x12\x12\n\nnative_url\x18\x04 \x01(\t\x12\x0e\n\x06remark\x18\x07 \x01(\t\x12)\n\x0bthread_list\x18\x08 \x03(\x0b\x32\x14.tbclient.ThreadInfo')
+  serialized_pb=_b('\n\x19tbclient/ThreadInfo.proto\x12\x08tbclient\x1a\x17tbclient/Abstract.proto\x1a\x16tbclient/ActInfo.proto\x1a\x1btbclient/ActivityInfo.proto\x1a\x15tbclient/AdInfo.proto\x1a\x14tbclient/Agree.proto\x1a\x1atbclient/AlaLiveInfo.proto\x1a\x19tbclient/AnchorInfo.proto\x1a\x1etbclient/AnimationThread.proto\x1a\x16tbclient/AppCode.proto\x1a\x16tbclient/AppInfo.proto\x1a\x19tbclient/BookThread.proto\x1a\x1ctbclient/CartoonThread.proto\x1a\x17tbclient/DealInfo.proto\x1a\x1atbclient/DeclareInfo.proto\x1a\x1atbclient/DislikeInfo.proto\x1a\x14tbclient/Guess.proto\x1a\x1etbclient/HotTWThreadInfo.proto\x1a\x14tbclient/JNews.proto\x1a\x12tbclient/Lbs.proto\x1a\x1dtbclient/LinkThreadInfo.proto\x1a\x14tbclient/Media.proto\x1a\x17tbclient/MediaNum.proto\x1a\x1ctbclient/MultipleForum.proto\x1a\x1ftbclient/OriginThreadInfo.proto\x1a\x18tbclient/PbContent.proto\x1a\x17tbclient/PollInfo.proto\x1a\x13tbclient/Post.proto\x1a\x17tbclient/PostList.proto\x1a\x15tbclient/PsInfo.proto\x1a\x19tbclient/PushStatus.proto\x1a\x19tbclient/ReportInfo.proto\x1a\x17tbclient/SkinInfo.proto\x1a\x1btbclient/StarRankIcon.proto\x1a\x17tbclient/TailInfo.proto\x1a\x17tbclient/TaskInfo.proto\x1a\x1dtbclient/TbreadDispatch.proto\x1a\x19tbclient/TogetherHi.proto\x1a\x14tbclient/Topic.proto\x1a\x13tbclient/User.proto\x1a\x1ftbclient/VideoChannelInfo.proto\x1a\x18tbclient/VideoInfo.proto\x1a\x14tbclient/Voice.proto\x1a\x1ftbclient/YulePostActivity.proto\x1a\x12tbclient/Zan.proto\x1a\x1atbclient/ZhiBoInfoTW.proto\"\xc9\x1f\n\nThreadInfo\x12%\n\t_abstract\x18\x15 \x03(\x0b\x32\x12.tbclient.Abstract\x12\x0e\n\x06\x61\x62_tag\x18l \x01(\t\x12#\n\x08\x61\x63t_info\x18\x41 \x03(\x0b\x32\x11.tbclient.ActInfo\x12.\n\ractivity_info\x18\x84\x01 \x01(\x0b\x32\x16.tbclient.ActivityInfo\x12\x1e\n\x05\x61gree\x18~ \x01(\x0b\x32\x0f.tbclient.Agree\x12\x11\n\tagree_num\x18| \x01(\x05\x12\'\n\x08\x61la_info\x18q \x01(\x0b\x32\x15.tbclient.AlaLiveInfo\x12)\n\x0b\x61nchor_info\x18\x37 \x01(\x0b\x32\x14.tbclient.AnchorInfo\x12\x31\n\x0e\x61nimation_info\x18\x63 \x01(\x0b\x32\x19.tbclient.AnimationThread\x12#\n\x08\x61pp_code\x18Y \x01(\x0b\x32\x11.tbclient.AppCode\x12#\n\x08\x61pp_info\x18u \x01(\x0b\x32\x11.tbclient.AppInfo\x12\x13\n\naudit_time\x18\x8a\x01 \x01(\x03\x12\x1e\n\x06\x61uthor\x18\x12 \x01(\x0b\x32\x0e.tbclient.User\x12\x11\n\tauthor_id\x18\x38 \x01(\x03\x12*\n\x0c\x62ook_chapter\x18\x66 \x01(\x0b\x32\x14.tbclient.BookThread\x12-\n\x0c\x63\x61rtoon_info\x18\\ \x01(\x0b\x32\x17.tbclient.CartoonThread\x12\x15\n\rcategory_name\x18I \x01(\t\x12\x14\n\x0c\x63heak_repeat\x18k \x01(\r\x12\x11\n\tclick_url\x18  \x01(\t\x12\x18\n\x10\x63ollect_mark_pid\x18\x33 \x01(\t\x12\x16\n\x0e\x63ollect_status\x18\x32 \x01(\x05\x12\x13\n\x0b\x63omment_num\x18\x14 \x01(\x05\x12\x13\n\x0b\x63reate_time\x18- \x01(\x05\x12%\n\tdeal_info\x18\x62 \x01(\x0b\x32\x12.tbclient.DealInfo\x12+\n\x0c\x64\x65\x63lare_list\x18y \x03(\x0b\x32\x15.tbclient.DeclareInfo\x12+\n\x0c\x64islike_info\x18x \x03(\x0b\x32\x15.tbclient.DislikeInfo\x12\x0c\n\x04\x65\x63om\x18< \x01(\t\x12%\n\text_tails\x18Z \x03(\x0b\x32\x12.tbclient.TailInfo\x12\x0b\n\x03\x66id\x18\x1b \x01(\x03\x12\x30\n\x12\x66irst_post_content\x18\x8e\x01 \x03(\x0b\x32\x13.tbclient.PbContent\x12\x15\n\rfirst_post_id\x18( \x01(\x03\x12\r\n\x05\x66name\x18\x1c \x01(\t\x12\x11\n\x08\x66req_num\x18\x82\x01 \x01(\x03\x12\x0c\n\x04\x66rom\x18\x31 \x01(\t\x12\x1e\n\x05guess\x18? \x01(\x0b\x32\x0f.tbclient.Guess\x12\x15\n\rhas_commented\x18\x30 \x01(\x05\x12+\n\rhigh_together\x18_ \x01(\x0b\x32\x14.tbclient.TogetherHi\x12,\n\thotTWInfo\x18G \x01(\x0b\x32\x19.tbclient.HotTWThreadInfo\x12\x12\n\nhot_weight\x18\x42 \x01(\x05\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x15\n\risLzDeleteAll\x18: \x01(\r\x12\x13\n\x0bis_activity\x18\x10 \x01(\x05\x12\r\n\x05is_ad\x18; \x01(\r\x12\x10\n\x08is_bakan\x18\x0c \x01(\x05\x12\x17\n\x0fis_book_chapter\x18g \x01(\r\x12\x0e\n\x06is_bub\x18\' \x01(\x05\x12\x12\n\tis_called\x18\x88\x01 \x01(\x05\x12\x15\n\ris_copythread\x18Q \x01(\r\x12\x0f\n\x07is_deal\x18\x61 \x01(\x05\x12\x15\n\ris_global_top\x18* \x01(\x05\x12\x0f\n\x06is_god\x18\x83\x01 \x01(\x05\x12\x1e\n\x16is_godthread_recommend\x18U \x01(\x05\x12\x0f\n\x07is_good\x18\n \x01(\x05\x12\x17\n\x0eis_link_thread\x18\x80\x01 \x01(\x05\x12\x13\n\x0bis_livepost\x18\x1e \x01(\x05\x12\x11\n\tis_meizhi\x18\x0e \x01(\x05\x12\x14\n\x0cis_membertop\x18\x36 \x01(\x05\x12\x1c\n\x14is_multiforum_thread\x18{ \x01(\x05\x12\x11\n\tis_notice\x18\x11 \x01(\x05\x12\x10\n\x08is_novel\x18L \x01(\x05\x12\x17\n\x0fis_novel_reward\x18N \x01(\x05\x12\x16\n\x0eis_novel_thank\x18M \x01(\x05\x12\x11\n\tis_ntitle\x18& \x01(\x05\x12\x19\n\x11is_operate_thread\x18r \x01(\r\x12\x1a\n\x12is_partial_visible\x18\x7f \x01(\x05\x12\x0e\n\x06is_pic\x18+ \x01(\x05\x12\x11\n\tis_protal\x18\r \x01(\x05\x12\x18\n\x0fis_share_thread\x18\x8f\x01 \x01(\x05\x12\x17\n\x0eis_story_audit\x18\x86\x01 \x01(\x05\x12\x1a\n\x12is_tbread_dispatch\x18s \x01(\x05\x12\x0e\n\x06is_top\x18\t \x01(\x05\x12\x17\n\x0fis_voice_thread\x18\x0f \x01(\x05\x12\x0f\n\x07is_vote\x18\x0b \x01(\x05\x12\x1c\n\x03jid\x18K \x01(\x0b\x32\x0f.tbclient.JNews\x12\x15\n\rlast_read_pid\x18j \x01(\x04\x12$\n\x0clast_replyer\x18\x13 \x01(\x0b\x32\x0e.tbclient.User\x12\x11\n\tlast_time\x18\x06 \x01(\t\x12\x15\n\rlast_time_int\x18\x07 \x01(\x05\x12\x11\n\tlego_card\x18^ \x01(\t\x12,\n\tlink_info\x18\x81\x01 \x01(\x0b\x32\x18.tbclient.LinkThreadInfo\x12\x16\n\x0elive_post_type\x18\x1d \x01(\t\x12\x15\n\rlivecover_src\x18\x43 \x01(\t\x12\x1f\n\x08location\x18> \x01(\x0b\x32\r.tbclient.Lbs\x12\x1e\n\x05media\x18\x16 \x03(\x0b\x32\x0f.tbclient.Media\x12%\n\tmedia_num\x18\x19 \x03(\x0b\x32\x12.tbclient.MediaNum\x12\x12\n\nmeizhi_pic\x18\x18 \x01(\t\x12\x18\n\x0fmiddle_page_num\x18\x8b\x01 \x01(\x05\x12\x1e\n\x15middle_page_pass_flag\x18\x8c\x01 \x01(\x05\x12\x19\n\x10multi_forum_text\x18\x92\x01 \x01(\t\x12\x34\n\x13multiple_forum_list\x18z \x03(\x0b\x32\x17.tbclient.MultipleForum\x12\x15\n\roperator_flag\x18R \x01(\r\x12\x37\n\x12origin_thread_info\x18\x8d\x01 \x01(\x0b\x32\x1a.tbclient.OriginThreadInfo\x12\"\n\x08pic_info\x18\x85\x01 \x01(\x0b\x32\x0f.tbclient.Media\x12\x0f\n\x07pic_num\x18T \x01(\r\x12\x0c\n\x04pids\x18= \x01(\t\x12%\n\tpoll_info\x18J \x01(\x0b\x32\x12.tbclient.PollInfo\x12\x0f\n\x07post_id\x18\x34 \x01(\x03\x12%\n\tpost_list\x18, \x03(\x0b\x32\x12.tbclient.PostList\x12\x10\n\x08post_num\x18\x45 \x01(\x05\x12!\n\x07ps_info\x18\x65 \x01(\x0b\x32\x10.tbclient.PsInfo\x12\x15\n\rpush_end_time\x18P \x01(\x05\x12)\n\x0bpush_status\x18[ \x01(\x0b\x32\x14.tbclient.PushStatus\x12\x14\n\x0brecom_extra\x18\x90\x01 \x01(\t\x12\x14\n\x0crecom_reason\x18m \x01(\t\x12\x14\n\x0crecom_source\x18h \x01(\t\x12\x14\n\x0crecom_weight\x18i \x01(\t\x12\x11\n\treply_num\x18\x04 \x01(\x05\x12)\n\x0breport_info\x18v \x03(\x0b\x32\x14.tbclient.ReportInfo\x12\x12\n\nrepost_num\x18. \x01(\x05\x12*\n\rrich_abstract\x18p \x03(\x0b\x32\x13.tbclient.PbContent\x12\'\n\nrich_title\x18o \x03(\x0b\x32\x13.tbclient.PbContent\x12\x12\n\tshare_num\x18\x87\x01 \x01(\x03\x12\x16\n\x0eshow_commented\x18\x1f \x01(\x05\x12%\n\tskin_info\x18\x64 \x01(\x0b\x32\x12.tbclient.SkinInfo\x12/\n\x0estar_rank_icon\x18\x93\x01 \x01(\x0b\x32\x16.tbclient.StarRankIcon\x12\x12\n\nstorecount\x18\x44 \x01(\x05\x12%\n\ttask_info\x18S \x01(\x0b\x32\x12.tbclient.TaskInfo\x12\x36\n\x14tbread_dispatch_info\x18t \x01(\x0b\x32\x18.tbclient.TbreadDispatch\x12\x13\n\x0bthread_type\x18\x1a \x01(\x05\x12\x14\n\x0cthread_types\x18\x08 \x01(\x05\x12\x0b\n\x03tid\x18\x02 \x01(\x03\x12&\n\x1dtieba_game_information_source\x18\x89\x01 \x01(\t\x12\x0c\n\x04time\x18\x35 \x01(\x05\x12\x10\n\x08timeline\x18@ \x01(\r\x12\r\n\x05title\x18\x03 \x01(\t\x12&\n\x0etop_agree_post\x18} \x01(\x0b\x32\x0e.tbclient.Post\x12\x1e\n\x05topic\x18/ \x01(\x0b\x32\x0f.tbclient.Topic\x12\x12\n\ttrans_num\x18\x91\x01 \x01(\x04\x12+\n\x0ctwzhibo_info\x18H \x01(\x0b\x32\x15.tbclient.ZhiBoInfoTW\x12\x16\n\x0evalid_post_num\x18\x39 \x01(\r\x12\r\n\x05video\x18! \x01(\t\x12\'\n\rvideo_ad_info\x18n \x01(\x0b\x32\x10.tbclient.AdInfo\x12\x36\n\x12video_channel_info\x18w \x01(\x0b\x32\x1a.tbclient.VideoChannelInfo\x12\x13\n\x0bvideo_cover\x18# \x01(\t\x12\x10\n\x08video_id\x18$ \x01(\t\x12\'\n\nvideo_info\x18O \x01(\x0b\x32\x13.tbclient.VideoInfo\x12\x18\n\x10video_mobile_url\x18% \x01(\t\x12\x11\n\tvideo_swf\x18\" \x01(\t\x12/\n\x10videoactive_info\x18` \x01(\x0b\x32\x15.tbclient.VideoActive\x12\x10\n\x08view_num\x18\x05 \x01(\x05\x12#\n\nvoice_info\x18\x17 \x03(\x0b\x32\x0f.tbclient.Voice\x12\x36\n\x12yule_post_activity\x18X \x01(\x0b\x32\x1a.tbclient.YulePostActivity\x12\x1a\n\x03zan\x18) \x01(\x0b\x32\r.tbclient.Zan\"\xba\x01\n\x0bVideoActive\x12\x13\n\x0b\x61\x63tive_name\x18\x02 \x01(\t\x12\x12\n\nactive_url\x18\x03 \x01(\t\x12\x12\n\nbanner_url\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\n\n\x02id\x18\x01 \x01(\r\x12\x12\n\nnative_url\x18\x04 \x01(\t\x12\x0e\n\x06remark\x18\x07 \x01(\t\x12)\n\x0bthread_list\x18\x08 \x03(\x0b\x32\x14.tbclient.ThreadInfo')
   ,
-  dependencies=[tbclient_dot_Abstract__pb2.DESCRIPTOR,tbclient_dot_ActInfo__pb2.DESCRIPTOR,tbclient_dot_ActivityInfo__pb2.DESCRIPTOR,tbclient_dot_AdInfo__pb2.DESCRIPTOR,tbclient_dot_Agree__pb2.DESCRIPTOR,tbclient_dot_AlaLiveInfo__pb2.DESCRIPTOR,tbclient_dot_AnchorInfo__pb2.DESCRIPTOR,tbclient_dot_AnimationThread__pb2.DESCRIPTOR,tbclient_dot_AppCode__pb2.DESCRIPTOR,tbclient_dot_AppInfo__pb2.DESCRIPTOR,tbclient_dot_BookThread__pb2.DESCRIPTOR,tbclient_dot_CartoonThread__pb2.DESCRIPTOR,tbclient_dot_DealInfo__pb2.DESCRIPTOR,tbclient_dot_DeclareInfo__pb2.DESCRIPTOR,tbclient_dot_DislikeInfo__pb2.DESCRIPTOR,tbclient_dot_Guess__pb2.DESCRIPTOR,tbclient_dot_HotTWThreadInfo__pb2.DESCRIPTOR,tbclient_dot_JNews__pb2.DESCRIPTOR,tbclient_dot_Lbs__pb2.DESCRIPTOR,tbclient_dot_LinkThreadInfo__pb2.DESCRIPTOR,tbclient_dot_Media__pb2.DESCRIPTOR,tbclient_dot_MediaNum__pb2.DESCRIPTOR,tbclient_dot_MultipleForum__pb2.DESCRIPTOR,tbclient_dot_OriginThreadInfo__pb2.DESCRIPTOR,tbclient_dot_PbContent__pb2.DESCRIPTOR,tbclient_dot_PollInfo__pb2.DESCRIPTOR,tbclient_dot_Post__pb2.DESCRIPTOR,tbclient_dot_PostList__pb2.DESCRIPTOR,tbclient_dot_PsInfo__pb2.DESCRIPTOR,tbclient_dot_PushStatus__pb2.DESCRIPTOR,tbclient_dot_ReportInfo__pb2.DESCRIPTOR,tbclient_dot_SkinInfo__pb2.DESCRIPTOR,tbclient_dot_StarRankIcon__pb2.DESCRIPTOR,tbclient_dot_TaskInfo__pb2.DESCRIPTOR,tbclient_dot_TbreadDispatch__pb2.DESCRIPTOR,tbclient_dot_TailInfo__pb2.DESCRIPTOR,tbclient_dot_TogetherHi__pb2.DESCRIPTOR,tbclient_dot_Topic__pb2.DESCRIPTOR,tbclient_dot_User__pb2.DESCRIPTOR,tbclient_dot_VideoChannelInfo__pb2.DESCRIPTOR,tbclient_dot_VideoInfo__pb2.DESCRIPTOR,tbclient_dot_Voice__pb2.DESCRIPTOR,tbclient_dot_YulePostActivity__pb2.DESCRIPTOR,tbclient_dot_Zan__pb2.DESCRIPTOR,tbclient_dot_ZhiBoInfoTW__pb2.DESCRIPTOR,])
+  dependencies=[tbclient_dot_Abstract__pb2.DESCRIPTOR,tbclient_dot_ActInfo__pb2.DESCRIPTOR,tbclient_dot_ActivityInfo__pb2.DESCRIPTOR,tbclient_dot_AdInfo__pb2.DESCRIPTOR,tbclient_dot_Agree__pb2.DESCRIPTOR,tbclient_dot_AlaLiveInfo__pb2.DESCRIPTOR,tbclient_dot_AnchorInfo__pb2.DESCRIPTOR,tbclient_dot_AnimationThread__pb2.DESCRIPTOR,tbclient_dot_AppCode__pb2.DESCRIPTOR,tbclient_dot_AppInfo__pb2.DESCRIPTOR,tbclient_dot_BookThread__pb2.DESCRIPTOR,tbclient_dot_CartoonThread__pb2.DESCRIPTOR,tbclient_dot_DealInfo__pb2.DESCRIPTOR,tbclient_dot_DeclareInfo__pb2.DESCRIPTOR,tbclient_dot_DislikeInfo__pb2.DESCRIPTOR,tbclient_dot_Guess__pb2.DESCRIPTOR,tbclient_dot_HotTWThreadInfo__pb2.DESCRIPTOR,tbclient_dot_JNews__pb2.DESCRIPTOR,tbclient_dot_Lbs__pb2.DESCRIPTOR,tbclient_dot_LinkThreadInfo__pb2.DESCRIPTOR,tbclient_dot_Media__pb2.DESCRIPTOR,tbclient_dot_MediaNum__pb2.DESCRIPTOR,tbclient_dot_MultipleForum__pb2.DESCRIPTOR,tbclient_dot_OriginThreadInfo__pb2.DESCRIPTOR,tbclient_dot_PbContent__pb2.DESCRIPTOR,tbclient_dot_PollInfo__pb2.DESCRIPTOR,tbclient_dot_Post__pb2.DESCRIPTOR,tbclient_dot_PostList__pb2.DESCRIPTOR,tbclient_dot_PsInfo__pb2.DESCRIPTOR,tbclient_dot_PushStatus__pb2.DESCRIPTOR,tbclient_dot_ReportInfo__pb2.DESCRIPTOR,tbclient_dot_SkinInfo__pb2.DESCRIPTOR,tbclient_dot_StarRankIcon__pb2.DESCRIPTOR,tbclient_dot_TailInfo__pb2.DESCRIPTOR,tbclient_dot_TaskInfo__pb2.DESCRIPTOR,tbclient_dot_TbreadDispatch__pb2.DESCRIPTOR,tbclient_dot_TogetherHi__pb2.DESCRIPTOR,tbclient_dot_Topic__pb2.DESCRIPTOR,tbclient_dot_User__pb2.DESCRIPTOR,tbclient_dot_VideoChannelInfo__pb2.DESCRIPTOR,tbclient_dot_VideoInfo__pb2.DESCRIPTOR,tbclient_dot_Voice__pb2.DESCRIPTOR,tbclient_dot_YulePostActivity__pb2.DESCRIPTOR,tbclient_dot_Zan__pb2.DESCRIPTOR,tbclient_dot_ZhiBoInfoTW__pb2.DESCRIPTOR,])
 
 
 
@@ -101,14 +101,14 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='activity_info', full_name='tbclient.ThreadInfo.activity_info', index=3,
-      number=132, type=11, cpp_type=10, label=2,
+      number=132, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='agree', full_name='tbclient.ThreadInfo.agree', index=4,
-      number=126, type=11, cpp_type=10, label=2,
+      number=126, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -122,35 +122,35 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ala_info', full_name='tbclient.ThreadInfo.ala_info', index=6,
-      number=113, type=11, cpp_type=10, label=2,
+      number=113, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='anchor_info', full_name='tbclient.ThreadInfo.anchor_info', index=7,
-      number=55, type=11, cpp_type=10, label=2,
+      number=55, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='animation_info', full_name='tbclient.ThreadInfo.animation_info', index=8,
-      number=99, type=11, cpp_type=10, label=2,
+      number=99, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_code', full_name='tbclient.ThreadInfo.app_code', index=9,
-      number=89, type=11, cpp_type=10, label=2,
+      number=89, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_info', full_name='tbclient.ThreadInfo.app_info', index=10,
-      number=117, type=11, cpp_type=10, label=2,
+      number=117, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -164,7 +164,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='author', full_name='tbclient.ThreadInfo.author', index=12,
-      number=18, type=11, cpp_type=10, label=2,
+      number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -178,14 +178,14 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='book_chapter', full_name='tbclient.ThreadInfo.book_chapter', index=14,
-      number=102, type=11, cpp_type=10, label=2,
+      number=102, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='cartoon_info', full_name='tbclient.ThreadInfo.cartoon_info', index=15,
-      number=92, type=11, cpp_type=10, label=2,
+      number=92, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -241,7 +241,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='deal_info', full_name='tbclient.ThreadInfo.deal_info', index=23,
-      number=98, type=11, cpp_type=10, label=2,
+      number=98, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -318,7 +318,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='guess', full_name='tbclient.ThreadInfo.guess', index=34,
-      number=63, type=11, cpp_type=10, label=2,
+      number=63, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -332,14 +332,14 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='high_together', full_name='tbclient.ThreadInfo.high_together', index=36,
-      number=95, type=11, cpp_type=10, label=2,
+      number=95, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='hotTWInfo', full_name='tbclient.ThreadInfo.hotTWInfo', index=37,
-      number=71, type=11, cpp_type=10, label=2,
+      number=71, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -591,7 +591,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='jid', full_name='tbclient.ThreadInfo.jid', index=73,
-      number=75, type=11, cpp_type=10, label=2,
+      number=75, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -605,7 +605,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='last_replyer', full_name='tbclient.ThreadInfo.last_replyer', index=75,
-      number=19, type=11, cpp_type=10, label=2,
+      number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -633,7 +633,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='link_info', full_name='tbclient.ThreadInfo.link_info', index=79,
-      number=129, type=11, cpp_type=10, label=2,
+      number=129, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -654,7 +654,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='location', full_name='tbclient.ThreadInfo.location', index=82,
-      number=62, type=11, cpp_type=10, label=2,
+      number=62, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -717,14 +717,14 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='origin_thread_info', full_name='tbclient.ThreadInfo.origin_thread_info', index=91,
-      number=141, type=11, cpp_type=10, label=2,
+      number=141, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='pic_info', full_name='tbclient.ThreadInfo.pic_info', index=92,
-      number=133, type=11, cpp_type=10, label=2,
+      number=133, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -745,7 +745,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='poll_info', full_name='tbclient.ThreadInfo.poll_info', index=95,
-      number=74, type=11, cpp_type=10, label=2,
+      number=74, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -773,7 +773,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ps_info', full_name='tbclient.ThreadInfo.ps_info', index=99,
-      number=101, type=11, cpp_type=10, label=2,
+      number=101, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -787,7 +787,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='push_status', full_name='tbclient.ThreadInfo.push_status', index=101,
-      number=91, type=11, cpp_type=10, label=2,
+      number=91, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -871,14 +871,14 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='skin_info', full_name='tbclient.ThreadInfo.skin_info', index=113,
-      number=100, type=11, cpp_type=10, label=2,
+      number=100, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='star_rank_icon', full_name='tbclient.ThreadInfo.star_rank_icon', index=114,
-      number=147, type=11, cpp_type=10, label=2,
+      number=147, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -892,14 +892,14 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='task_info', full_name='tbclient.ThreadInfo.task_info', index=116,
-      number=83, type=11, cpp_type=10, label=2,
+      number=83, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tbread_dispatch_info', full_name='tbclient.ThreadInfo.tbread_dispatch_info', index=117,
-      number=116, type=11, cpp_type=10, label=2,
+      number=116, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -955,14 +955,14 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='top_agree_post', full_name='tbclient.ThreadInfo.top_agree_post', index=125,
-      number=125, type=11, cpp_type=10, label=2,
+      number=125, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='topic', full_name='tbclient.ThreadInfo.topic', index=126,
-      number=47, type=11, cpp_type=10, label=2,
+      number=47, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -976,7 +976,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='twzhibo_info', full_name='tbclient.ThreadInfo.twzhibo_info', index=128,
-      number=72, type=11, cpp_type=10, label=2,
+      number=72, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -997,14 +997,14 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='video_ad_info', full_name='tbclient.ThreadInfo.video_ad_info', index=131,
-      number=110, type=11, cpp_type=10, label=2,
+      number=110, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='video_channel_info', full_name='tbclient.ThreadInfo.video_channel_info', index=132,
-      number=119, type=11, cpp_type=10, label=2,
+      number=119, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1025,7 +1025,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='video_info', full_name='tbclient.ThreadInfo.video_info', index=135,
-      number=79, type=11, cpp_type=10, label=2,
+      number=79, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1046,7 +1046,7 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='videoactive_info', full_name='tbclient.ThreadInfo.videoactive_info', index=138,
-      number=96, type=11, cpp_type=10, label=2,
+      number=96, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1067,14 +1067,14 @@ _THREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='yule_post_activity', full_name='tbclient.ThreadInfo.yule_post_activity', index=141,
-      number=88, type=11, cpp_type=10, label=2,
+      number=88, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='zan', full_name='tbclient.ThreadInfo.zan', index=142,
-      number=41, type=11, cpp_type=10, label=2,
+      number=41, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

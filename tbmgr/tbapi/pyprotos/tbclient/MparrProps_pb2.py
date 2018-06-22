@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/MparrProps.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x19tbclient/MparrProps.proto\x12\x08tbclient\x1a\x1atbclient/AvatarFrame.proto\x1a\x14tbclient/Level.proto\x1a\x17tbclient/Portrait.proto\x1a\x14tbclient/Props.proto\"\x9e\x01\n\nMparrProps\x12*\n\x0b\x61vatarframe\x18\x01 \x02(\x0b\x32\x15.tbclient.AvatarFrame\x12\x1e\n\x05level\x18\x03 \x02(\x0b\x32\x0f.tbclient.Level\x12$\n\x08portrait\x18\x02 \x02(\x0b\x32\x12.tbclient.Portrait\x12\x1e\n\x05props\x18\x04 \x03(\x0b\x32\x0f.tbclient.Props')
+  serialized_pb=_b('\n\x19tbclient/MparrProps.proto\x12\x08tbclient\x1a\x1atbclient/AvatarFrame.proto\x1a\x14tbclient/Level.proto\x1a\x17tbclient/Portrait.proto\x1a\x14tbclient/Props.proto\"\x9e\x01\n\nMparrProps\x12*\n\x0b\x61vatarframe\x18\x01 \x01(\x0b\x32\x15.tbclient.AvatarFrame\x12\x1e\n\x05level\x18\x03 \x01(\x0b\x32\x0f.tbclient.Level\x12$\n\x08portrait\x18\x02 \x01(\x0b\x32\x12.tbclient.Portrait\x12\x1e\n\x05props\x18\x04 \x03(\x0b\x32\x0f.tbclient.Props')
   ,
   dependencies=[tbclient_dot_AvatarFrame__pb2.DESCRIPTOR,tbclient_dot_Level__pb2.DESCRIPTOR,tbclient_dot_Portrait__pb2.DESCRIPTOR,tbclient_dot_Props__pb2.DESCRIPTOR,])
 
@@ -39,21 +39,21 @@ _MPARRPROPS = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='avatarframe', full_name='tbclient.MparrProps.avatarframe', index=0,
-      number=1, type=11, cpp_type=10, label=2,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='level', full_name='tbclient.MparrProps.level', index=1,
-      number=3, type=11, cpp_type=10, label=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='portrait', full_name='tbclient.MparrProps.portrait', index=2,
-      number=2, type=11, cpp_type=10, label=2,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message TWGuideDesc {
+  optional string link = 3;
+  optional uint32 order = 1;
+  optional string title = 2;
+}

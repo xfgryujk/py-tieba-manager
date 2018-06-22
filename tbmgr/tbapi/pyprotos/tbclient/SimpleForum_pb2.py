@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/SimpleForum.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x1atbclient/SimpleForum.proto\x12\x08tbclient\x1a\x1dtbclient/MultiForumPerm.proto\"\xed\x01\n\x0bSimpleForum\x12\x0e\n\x06\x61vatar\x18\x04 \x01(\t\x12\x0b\n\x03\x65xt\x18\t \x01(\t\x12\x13\n\x0b\x66irst_class\x18\x07 \x01(\t\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x11\n\tis_exists\x18\x03 \x01(\x05\x12\x10\n\x08is_liked\x18\x05 \x01(\r\x12\x11\n\tis_signed\x18\x06 \x01(\r\x12\x10\n\x08level_id\x18\n \x01(\r\x12\x32\n\x10multi_forum_perm\x18\x0b \x02(\x0b\x32\x18.tbclient.MultiForumPerm\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x0csecond_class\x18\x08 \x01(\t')
+  serialized_pb=_b('\n\x1atbclient/SimpleForum.proto\x12\x08tbclient\x1a\x1dtbclient/MultiForumPerm.proto\"\xed\x01\n\x0bSimpleForum\x12\x0e\n\x06\x61vatar\x18\x04 \x01(\t\x12\x0b\n\x03\x65xt\x18\t \x01(\t\x12\x13\n\x0b\x66irst_class\x18\x07 \x01(\t\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x11\n\tis_exists\x18\x03 \x01(\x05\x12\x10\n\x08is_liked\x18\x05 \x01(\r\x12\x11\n\tis_signed\x18\x06 \x01(\r\x12\x10\n\x08level_id\x18\n \x01(\r\x12\x32\n\x10multi_forum_perm\x18\x0b \x01(\x0b\x32\x18.tbclient.MultiForumPerm\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x0csecond_class\x18\x08 \x01(\t')
   ,
   dependencies=[tbclient_dot_MultiForumPerm__pb2.DESCRIPTOR,])
 
@@ -92,7 +92,7 @@ _SIMPLEFORUM = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='multi_forum_perm', full_name='tbclient.SimpleForum.multi_forum_perm', index=8,
-      number=11, type=11, cpp_type=10, label=2,
+      number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

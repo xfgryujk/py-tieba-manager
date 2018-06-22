@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/ShowIcon.proto";
+
+message UserInfo {
+  optional int32 gender = 4;
+  optional string intro = 6;
+  optional string portrait = 2;
+  optional ShowIcon tshow_icon = 7;
+  optional int64 user_id = 1;
+  optional string user_name = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message HeadImgs {
+  optional string btn_text = 5;
+  optional string img_url = 1;
+  optional string pc_url = 2;
+  optional string subtitle = 4;
+  optional string tag_name_url = 6;
+  optional string tag_name_wh = 7;
+  optional string title = 3;
+}

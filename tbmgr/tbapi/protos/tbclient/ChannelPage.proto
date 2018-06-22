@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ChannelPage {
+  optional uint32 has_more = 1;
+  optional uint32 total_count = 2;
+  optional uint32 total_page = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ForumHeadlineImg {
+  optional string img_url = 4;
+  optional int64 img_user_id = 3;
+  optional int64 thread_id = 1;
+  optional int64 thread_user_id = 2;
+}

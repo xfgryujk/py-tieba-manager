@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/DefaultInfo.proto";
+import "tbclient/OrderList.proto";
+
+message OrderData {
+  optional DefaultInfo default_info = 3;
+  optional int32 hasmore = 2;
+  repeated OrderList order_list = 1;
+}

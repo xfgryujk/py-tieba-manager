@@ -1,0 +1,53 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/BookTag.proto";
+
+message BookInfo {
+  optional string ad_code = 20;
+  optional string author = 11;
+  optional string author_intro = 12;
+  optional string big_cover = 31;
+  optional string book_id = 1;
+  optional uint32 book_size = 9;
+  optional uint32 book_type = 4;
+  optional string book_ver = 36;
+  optional string chapter_ver = 37;
+  optional uint32 charge_type = 44;
+  optional uint32 class_id = 5;
+  optional string class_name = 6;
+  optional string copyright = 25;
+  optional string copyright_text = 27;
+  optional string cover = 3;
+  optional string cp_id = 41;
+  optional string discount_icon = 33;
+  optional string discount_ratio = 18;
+  optional uint32 discount_type = 32;
+  optional string discuss = 40;
+  optional uint32 first_chapter = 43;
+  optional uint64 forum_id = 38;
+  optional string forum_name = 39;
+  optional string free_info = 22;
+  optional string intro = 10;
+  optional uint32 is_buy = 21;
+  optional uint32 is_finish = 19;
+  optional string isbn = 24;
+  optional uint32 member_show_type = 45;
+  optional uint32 orignal_price = 16;
+  optional string paper_price = 42;
+  optional uint32 price = 17;
+  optional string publish_text = 26;
+  optional string publish_time = 28;
+  optional string publish_type = 29;
+  optional string publisher = 23;
+  optional uint32 read_count = 34;
+  optional uint32 sub_class_id = 7;
+  optional string sub_class_name = 8;
+  repeated BookTag tags = 13;
+  optional string title = 2;
+  optional uint32 total_chapter = 14;
+  optional uint32 total_page = 35;
+  optional uint32 update_time = 30;
+  optional uint32 words = 15;
+}

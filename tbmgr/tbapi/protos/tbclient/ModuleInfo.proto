@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/ThreadModule.proto";
+
+message ModuleInfo {
+  optional int32 max_module_num = 2;
+  optional int32 max_module_thread_num = 3;
+  repeated ThreadModule module_list = 1;
+}

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/OriginThreadInfo.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x1ftbclient/OriginThreadInfo.proto\x12\x08tbclient\x1a\x17tbclient/Abstract.proto\x1a\x1atbclient/AlaLiveInfo.proto\x1a\x14tbclient/Media.proto\"\xe3\x01\n\x10OriginThreadInfo\x12%\n\t_abstract\x18\x03 \x03(\x0b\x32\x12.tbclient.Abstract\x12\'\n\x08\x61la_info\x18\x06 \x02(\x0b\x32\x15.tbclient.AlaLiveInfo\x12\x0b\n\x03\x66id\x18\x07 \x01(\x03\x12\r\n\x05\x66name\x18\x04 \x01(\t\x12\x12\n\nis_deleted\x18\t \x01(\x05\x12\x1e\n\x05media\x18\x02 \x03(\x0b\x32\x0f.tbclient.Media\x12\x13\n\x0bthread_type\x18\x08 \x01(\x05\x12\x0b\n\x03tid\x18\x05 \x01(\t\x12\r\n\x05title\x18\x01 \x01(\t')
+  serialized_pb=_b('\n\x1ftbclient/OriginThreadInfo.proto\x12\x08tbclient\x1a\x17tbclient/Abstract.proto\x1a\x1atbclient/AlaLiveInfo.proto\x1a\x14tbclient/Media.proto\"\xe3\x01\n\x10OriginThreadInfo\x12%\n\t_abstract\x18\x03 \x03(\x0b\x32\x12.tbclient.Abstract\x12\'\n\x08\x61la_info\x18\x06 \x01(\x0b\x32\x15.tbclient.AlaLiveInfo\x12\x0b\n\x03\x66id\x18\x07 \x01(\x03\x12\r\n\x05\x66name\x18\x04 \x01(\t\x12\x12\n\nis_deleted\x18\t \x01(\x05\x12\x1e\n\x05media\x18\x02 \x03(\x0b\x32\x0f.tbclient.Media\x12\x13\n\x0bthread_type\x18\x08 \x01(\x05\x12\x0b\n\x03tid\x18\x05 \x01(\t\x12\r\n\x05title\x18\x01 \x01(\t')
   ,
   dependencies=[tbclient_dot_Abstract__pb2.DESCRIPTOR,tbclient_dot_AlaLiveInfo__pb2.DESCRIPTOR,tbclient_dot_Media__pb2.DESCRIPTOR,])
 
@@ -45,7 +45,7 @@ _ORIGINTHREADINFO = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ala_info', full_name='tbclient.OriginThreadInfo.ala_info', index=1,
-      number=6, type=11, cpp_type=10, label=2,
+      number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

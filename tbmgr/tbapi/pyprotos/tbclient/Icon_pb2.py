@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/Icon.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x13tbclient/Icon.proto\x12\x08tbclient\x1a\x17tbclient/Position.proto\x1a\x17tbclient/Terminal.proto\"\xaf\x01\n\x04Icon\x12\x0c\n\x04icon\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x01 \x01(\t\x12$\n\x08position\x18\x07 \x02(\x0b\x32\x12.tbclient.Position\x12\x13\n\x0bsprite_info\x18\x08 \x03(\t\x12$\n\x08terminal\x18\x06 \x02(\x0b\x32\x12.tbclient.Terminal\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\r\n\x05value\x18\x05 \x01(\x05\x12\x0e\n\x06weight\x18\x02 \x01(\x05')
+  serialized_pb=_b('\n\x13tbclient/Icon.proto\x12\x08tbclient\x1a\x17tbclient/Position.proto\x1a\x17tbclient/Terminal.proto\"\xaf\x01\n\x04Icon\x12\x0c\n\x04icon\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x01 \x01(\t\x12$\n\x08position\x18\x07 \x01(\x0b\x32\x12.tbclient.Position\x12\x13\n\x0bsprite_info\x18\x08 \x03(\t\x12$\n\x08terminal\x18\x06 \x01(\x0b\x32\x12.tbclient.Terminal\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\r\n\x05value\x18\x05 \x01(\x05\x12\x0e\n\x06weight\x18\x02 \x01(\x05')
   ,
   dependencies=[tbclient_dot_Position__pb2.DESCRIPTOR,tbclient_dot_Terminal__pb2.DESCRIPTOR,])
 
@@ -51,7 +51,7 @@ _ICON = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='position', full_name='tbclient.Icon.position', index=2,
-      number=7, type=11, cpp_type=10, label=2,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -65,7 +65,7 @@ _ICON = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='terminal', full_name='tbclient.Icon.terminal', index=4,
-      number=6, type=11, cpp_type=10, label=2,
+      number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

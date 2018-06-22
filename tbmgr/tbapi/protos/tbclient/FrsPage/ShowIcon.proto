@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message ShowIcon {
+  optional string icon = 1;
+  optional string name = 2;
+  optional string url = 3;
+}

@@ -6,8 +6,8 @@ import "tbclient/Avatar.proto";
 import "tbclient/Equipment.proto";
 
 message SignatureInfo {
-  required Avatar avatar = 5;
-  required Equipment equipment = 1;
+  optional Avatar avatar = 5;
+  optional Equipment equipment = 1;
   optional string game_id = 2;
   optional string game_name = 3;
   optional string player = 4;

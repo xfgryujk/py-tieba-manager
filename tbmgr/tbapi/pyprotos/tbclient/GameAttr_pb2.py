@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/GameAttr.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x17tbclient/GameAttr.proto\x12\x08tbclient\x1a\x1ctbclient/SignatureInfo.proto\"]\n\x08GameAttr\x12\x0f\n\x07is_open\x18\x03 \x01(\t\x12/\n\x0esignature_info\x18\x02 \x02(\x0b\x32\x17.tbclient.SignatureInfo\x12\x0f\n\x07user_id\x18\x01 \x01(\t')
+  serialized_pb=_b('\n\x17tbclient/GameAttr.proto\x12\x08tbclient\x1a\x1ctbclient/SignatureInfo.proto\"]\n\x08GameAttr\x12\x0f\n\x07is_open\x18\x03 \x01(\t\x12/\n\x0esignature_info\x18\x02 \x01(\x0b\x32\x17.tbclient.SignatureInfo\x12\x0f\n\x07user_id\x18\x01 \x01(\t')
   ,
   dependencies=[tbclient_dot_SignatureInfo__pb2.DESCRIPTOR,])
 
@@ -43,7 +43,7 @@ _GAMEATTR = _descriptor.Descriptor(
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='signature_info', full_name='tbclient.GameAttr.signature_info', index=1,
-      number=2, type=11, cpp_type=10, label=2,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

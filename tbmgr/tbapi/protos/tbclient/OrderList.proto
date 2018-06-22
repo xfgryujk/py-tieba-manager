@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package tbclient;
+
+message OrderList {
+  optional string activity_desc = 15;
+  optional string activity_url = 16;
+  optional string button_name = 17;
+  optional int64 create_time = 10;
+  optional int64 finish_time = 11;
+  optional int64 money = 19;
+  optional string order_id = 1;
+  optional string preg_field = 21;
+  optional uint32 scene_id = 18;
+  optional int64 scores = 20;
+  optional int32 status = 7;
+  optional string title = 12;
+}

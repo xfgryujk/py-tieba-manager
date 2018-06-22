@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message Group {
+  optional int32 group_count = 2;
+  optional int32 hide_recommend_group = 1;
+}

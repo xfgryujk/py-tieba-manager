@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message CommonForum {
+  optional string common_forum = 1;
+}

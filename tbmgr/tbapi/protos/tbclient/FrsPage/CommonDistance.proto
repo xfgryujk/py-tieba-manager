@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message CommonDistance {
+  optional uint32 distance = 1;
+  optional uint32 is_hide = 3;
+  optional uint32 time = 2;
+}

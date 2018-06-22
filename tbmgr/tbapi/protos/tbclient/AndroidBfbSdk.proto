@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+message AndroidBfbSdk {
+  optional string activity_no = 3;
+  optional string order_no = 4;
+  optional string return_url = 5;
+  optional string sign = 6;
+  optional int32 sign_method = 7;
+  optional int32 sp_no = 1;
+  optional string version = 2;
+}

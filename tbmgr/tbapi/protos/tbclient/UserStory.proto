@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient;
+
+message UserStory {
+  optional uint32 has_read = 4;
+  optional string portrait = 3;
+  optional int64 user_id = 1;
+  optional string user_name = 2;
+}

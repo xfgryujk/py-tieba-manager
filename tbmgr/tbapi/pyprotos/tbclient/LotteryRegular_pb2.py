@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/LotteryRegular.proto',
   package='tbclient',
   syntax='proto2',
-  serialized_pb=_b('\n\x1dtbclient/LotteryRegular.proto\x12\x08tbclient\"1\n\x0eLotteryRegular\x12\x0e\n\x06\x63hange\x18\x02 \x03(\x05\x12\x0f\n\x07regular\x18\x01 \x01(\t')
+  serialized_pb=_b('\n\x1dtbclient/LotteryRegular.proto\x12\x08tbclient\"1\n\x0eLotteryRegular\x12\x0e\n\x06\x63hance\x18\x02 \x03(\x05\x12\x0f\n\x07regular\x18\x01 \x01(\t')
 )
 
 
@@ -33,7 +33,7 @@ _LOTTERYREGULAR = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='change', full_name='tbclient.LotteryRegular.change', index=0,
+      name='chance', full_name='tbclient.LotteryRegular.chance', index=0,
       number=2, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,

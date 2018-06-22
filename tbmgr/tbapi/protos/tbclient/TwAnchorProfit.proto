@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/TwAnchorProfitItem.proto";
+
+message TwAnchorProfit {
+  repeated TwAnchorProfitItem profit_list = 1;
+}

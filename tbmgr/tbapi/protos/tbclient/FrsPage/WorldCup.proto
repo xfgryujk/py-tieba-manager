@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/WorldCupGame.proto";
+import "tbclient/FrsPage/WorldCupLottery.proto";
+import "tbclient/FrsPage/WorldCupNews.proto";
+import "tbclient/FrsPage/WorldCupPk.proto";
+
+message WorldCup {
+  optional WorldCupGame game = 4;
+  optional WorldCupLottery lottery = 3;
+  optional WorldCupNews news = 1;
+  optional WorldCupPk pk = 2;
+}

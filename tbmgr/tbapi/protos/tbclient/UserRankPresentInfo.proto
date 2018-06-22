@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+message UserRankPresentInfo {
+  optional string portrait = 5;
+  optional uint32 present_num = 3;
+  optional uint64 present_scores = 4;
+  optional uint32 user_id = 1;
+  optional string user_name = 2;
+}

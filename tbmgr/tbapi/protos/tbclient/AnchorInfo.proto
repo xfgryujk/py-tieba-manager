@@ -23,6 +23,6 @@ message AnchorInfo {
   optional string publisherPortrait = 11;
   optional int32 start_time = 3;
   optional int32 status = 4;
-  required ZhiBoInfoTW twzhibo_info = 20;
+  optional ZhiBoInfoTW twzhibo_info = 20;
   optional int32 type = 19;
 }

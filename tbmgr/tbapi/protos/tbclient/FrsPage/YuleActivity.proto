@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message YuleActivity {
+  optional string activity_all_icon = 4;
+  optional string activity_half_icon = 5;
+  optional int64 activity_id = 1;
+  optional int32 activity_type = 2;
+  optional string activity_url = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsPage/RecmForumInfo.proto";
+
+message Info {
+  optional int32 post_num = 2;
+  repeated RecmForumInfo recm_forum_list = 3;
+  optional int32 user_num = 1;
+}

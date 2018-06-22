@@ -8,8 +8,8 @@ import "tbclient/Portrait.proto";
 import "tbclient/Props.proto";
 
 message MparrProps {
-  required AvatarFrame avatarframe = 1;
-  required Level level = 3;
-  required Portrait portrait = 2;
-  repeated Props props = 4;  
+  optional AvatarFrame avatarframe = 1;
+  optional Level level = 3;
+  optional Portrait portrait = 2;
+  repeated Props props = 4;
 }

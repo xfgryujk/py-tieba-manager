@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message GodBanner {
+  optional string intro = 3;
+  optional string link_url = 2;
+  optional string pic_url = 1;
+}

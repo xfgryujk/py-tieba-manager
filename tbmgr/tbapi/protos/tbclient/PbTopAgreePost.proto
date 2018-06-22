@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/Post.proto";
+
+message PbTopAgreePost {
+  optional string forum_top_list = 4;
+  repeated int64 post_id_list = 3;
+  repeated Post post_list = 1;
+}

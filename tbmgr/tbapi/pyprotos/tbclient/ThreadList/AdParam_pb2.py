@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tbclient/ThreadList/AdParam.proto',
   package='tbclient.ThreadList',
   syntax='proto2',
-  serialized_pb=_b('\n!tbclient/ThreadList/AdParam.proto\x12\x13tbclient.ThreadList\"S\n\x07\x41\x64Param\x12\x12\n\nload_count\x18\x01 \x01(\x05\x12\x15\n\rrefresh_count\x18\x02 \x01(\x05\x12\x1d\n\x10yoga_lib_version\x18\x03 \x01(\t:\x03\x31.0')
+  serialized_pb=_b('\n!tbclient/ThreadList/AdParam.proto\x12\x13tbclient.ThreadList\"4\n\x07\x41\x64Param\x12\x12\n\nload_count\x18\x01 \x01(\x05\x12\x15\n\rrefresh_count\x18\x02 \x01(\x05')
 )
 
 
@@ -46,13 +46,6 @@ _ADPARAM = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='yoga_lib_version', full_name='tbclient.ThreadList.AdParam.yoga_lib_version', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=True, default_value=_b("1.0").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -66,7 +59,7 @@ _ADPARAM = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=58,
-  serialized_end=141,
+  serialized_end=110,
 )
 
 DESCRIPTOR.message_types_by_name['AdParam'] = _ADPARAM

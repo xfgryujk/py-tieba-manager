@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/GodBanner.proto";
+
+message BannerInfo {
+  repeated GodBanner god_banner_list = 1;
+  optional string god_good_url = 2;
+  optional string god_rank_url = 3;
+}

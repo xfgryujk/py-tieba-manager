@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/EsportUser.proto";
+
+message EsportRank {
+  optional int32 rank = 2;
+  optional string text = 4;
+  optional string title = 1;
+  optional string url = 5;
+  optional EsportUser user = 3;
+}

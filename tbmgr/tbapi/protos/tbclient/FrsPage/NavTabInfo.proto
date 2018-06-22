@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+import "tbclient/FrsTabInfo.proto";
+
+message NavTabInfo {
+  repeated FrsTabInfo head = 3;
+  repeated FrsTabInfo menu = 2;
+  repeated FrsTabInfo tab = 1;
+}

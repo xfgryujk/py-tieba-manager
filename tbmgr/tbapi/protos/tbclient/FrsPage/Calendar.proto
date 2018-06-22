@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.FrsPage;
+
+message Calendar {
+  optional int32 rank = 3;
+  optional int32 sign_type = 4;
+}

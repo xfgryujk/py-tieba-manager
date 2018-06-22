@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient;
+
+message ConcernUser {
+  optional string portrait = 2;
+  optional uint64 user_id = 3;
+  optional string user_name = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient;
+
+import "tbclient/ChannelPage.proto";
+import "tbclient/ChannelVideoInfo.proto";
+
+message VideoList {
+  repeated ChannelVideoInfo list = 1;
+  optional ChannelPage page = 2;
+}
