@@ -25,6 +25,8 @@ from aiohttp.payload import get_payload
 
 from .pyprotos.tbclient.FrsPage.FrsPageReqIdl_pb2 import FrsPageReqIdl
 from .pyprotos.tbclient.FrsPage.FrsPageResIdl_pb2 import FrsPageResIdl
+from .pyprotos.tbclient.PbFloor.PbFloorReqIdl_pb2 import PbFloorReqIdl
+from .pyprotos.tbclient.PbFloor.PbFloorResIdl_pb2 import PbFloorResIdl
 from .pyprotos.tbclient.PbPage.PbPageReqIdl_pb2 import PbPageReqIdl
 from .pyprotos.tbclient.PbPage.PbPageResIdl_pb2 import PbPageResIdl
 
@@ -100,12 +102,13 @@ class TbClient:
             print(thread.title)
         print(len(res.data.thread_list))
 
-    async def get_posts(self, fid, tid, page=1):
+    async def get_posts(self, fid, tid, page=1, with_sub_post=False):
         """取帖子列表
         :param fid: 贴吧ID
         :param tid: 主题ID
         :param page: 页数
-        :return: Post list
+        :param with_sub_post: 是否同时取楼中楼列表
+        :return: Post list, SubPost list
         """
         req = PbPageReqIdl()
         req.data.forum_id = fid
@@ -113,7 +116,8 @@ class TbClient:
         req.data.pn = page
         req.data.rn = 30
         # 带楼中楼
-        req.data.with_floor = 1
+        req.data.with_floor = 1 if with_sub_post else 0
+        req.data.floor_rn = 5
         res = PbPageResIdl()
         async with self.post_protobuf(self.URL_PREFIX + '/c/f/pb/page?cmd=302001',
                                       req) as r:
@@ -125,7 +129,27 @@ class TbClient:
             # print(post.content)
             print(post.floor, ''.join(content.text for content in post.content))
 
-    # TODO 获取楼中楼
+    async def get_sub_posts(self, tid, pid, page=1):
+        """取楼中楼列表
+        :param tid: 主题ID
+        :param pid: 帖子ID
+        :param page: 页数
+        :return:
+        """
+        req = PbFloorReqIdl()
+        req.data.kz = tid
+        req.data.pid = pid
+        req.data.pn = page
+        res = PbFloorResIdl()
+        async with self.post_protobuf(self.URL_PREFIX + '/c/f/pb/floor?cmd=302002',
+                                      req) as r:
+            res.ParseFromString(await r.read())
+
+        # TODO 解析楼中楼
+        # print(res)
+        for index, sub_post in enumerate(res.data.subpost_list):
+            print(index + 1, ''.join(content.text for content in sub_post.content))
+
     # TODO 封号
     # TODO 拉黑
     # TODO 删主题
@@ -141,5 +165,6 @@ def test():
         'BDUSS': ''
     }, loop)
     # loop.run_until_complete(client.get_threads('一个极其隐秘只有xfgryujk知道的地方', 1))
-    loop.run_until_complete(client.get_posts(309740, 5010576625, 1))
+    # loop.run_until_complete(client.get_posts(309740, 5010576625, 1))
+    loop.run_until_complete(client.get_sub_posts(5010576625, 108473589139, 1))
     loop.run_until_complete(client.uninit())

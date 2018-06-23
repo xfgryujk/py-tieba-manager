@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package tbclient.PbFloor;
+
+import "tbclient/Anti.proto";
+import "tbclient/Page.proto";
+import "tbclient/Post.proto";
+import "tbclient/SimpleForum.proto";
+import "tbclient/SubPostList.proto";
+import "tbclient/ThreadInfo.proto";
+
+message DataRes {
+  optional Anti anti = 2;
+  optional SimpleForum forum = 6;
+  optional Page page = 1;
+  optional Post post = 3;
+  optional int32 server_time = 7;
+  repeated SubPostList subpost_list = 4;
+  optional ThreadInfo thread = 5;
+}

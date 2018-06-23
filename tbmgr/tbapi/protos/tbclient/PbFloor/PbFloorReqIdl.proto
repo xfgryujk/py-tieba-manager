@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient.PbFloor;
+
+import "tbclient/PbFloor/DataReq.proto";
+
+message PbFloorReqIdl {
+  optional DataReq data = 1;
+}

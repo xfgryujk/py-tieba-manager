@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient.PbFloor;
+
+import "tbclient/Error.proto";
+import "tbclient/PbFloor/DataRes.proto";
+
+message PbFloorResIdl {
+  optional DataRes data = 2;
+  optional Error error = 1;
+}
