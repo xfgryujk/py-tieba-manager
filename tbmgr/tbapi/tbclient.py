@@ -19,6 +19,8 @@
 """
 
 import hashlib
+import logging
+from enum import Enum
 
 from aiohttp import ClientSession, MultipartWriter
 from aiohttp.payload import get_payload
@@ -29,6 +31,24 @@ from .pyprotos.tbclient.PbFloor.PbFloorReqIdl_pb2 import PbFloorReqIdl
 from .pyprotos.tbclient.PbFloor.PbFloorResIdl_pb2 import PbFloorResIdl
 from .pyprotos.tbclient.PbPage.PbPageReqIdl_pb2 import PbPageReqIdl
 from .pyprotos.tbclient.PbPage.PbPageResIdl_pb2 import PbPageResIdl
+
+logger = logging.getLogger(__name__)
+
+
+class TbError(Exception):
+    """贴吧请求返回的错误
+    """
+
+    def __init__(self, code, msg):
+        super().__init__(f'错误代码{code}：{msg}')
+        self.code = int(code)
+        self.msg = msg
+
+
+class BanDuration(str, Enum):
+    _1 = '1'
+    _3 = '3'
+    _10 = '10'
 
 
 class TbClient:
@@ -41,9 +61,41 @@ class TbClient:
     def __init__(self, cookies: dict, loop=None):
         self._session = ClientSession(loop=loop, cookies=cookies,
                                       headers={'User-Agent': 'bdtb for Android 9.4.8.4'})
+        self._user_name = ''
+        self._bduss = cookies.get('BDUSS', cookies.get('bduss', ''))
+        if not self._bduss:
+            logger.warning('Cookie中未指定BDUSS！')
+        # 防CSRF用的口令号
+        self._tbs = ''
+
+    async def init(self):
+        """获取用户信息
+        :exception TbError: 获取失败
+        """
+        async with self.post(self.URL_PREFIX + '/c/s/login', {
+            'bdusstoken': self._bduss,
+        }) as r:
+            res = await r.json(content_type=None)
+            if res['error_code'] != '0':
+                raise TbError(res['error_code'], res['error_msg'])
+
+            self._user_name = res['user']['name']
+            self._tbs = res['anti']['tbs']
 
     async def uninit(self):
         await self._session.close()
+
+    @property
+    def user_name(self):
+        return self._user_name
+
+    @property
+    def bduss(self):
+        return self._bduss
+
+    @property
+    def tbs(self):
+        return self._tbs
 
     @staticmethod
     def __add_sign(data):
@@ -56,6 +108,22 @@ class TbClient:
                          ) + 'tiebaclient!!!'
         data['sign'] = hashlib.md5(buffer.encode('utf-8')).hexdigest()
 
+    def post(self, url, data=None, need_tbs=False):
+        """客户端POST请求，会自动加上一些参数
+        :param url: URL
+        :param data: body参数
+        :param need_tbs: 添加tbs
+        :return: 同aiohttp的post
+        """
+        data = {key: value if isinstance(value, str) else str(value)
+                for key, value in data.items()
+                } if data is not None else {}
+        if need_tbs:
+            data['tbs'] = self._tbs
+        self.__add_sign(data)
+
+        return self._session.post(url, data=data)
+
     def post_protobuf(self, url, protobuf_msg, data=None):
         """客户端POST请求protobuf版，会自动加上一些参数和头部
         :param url: URL
@@ -63,7 +131,9 @@ class TbClient:
         :param data: body其他参数
         :return: 同aiohttp的post
         """
-        data = data.copy() if data is not None else {}
+        data = {key: value if isinstance(value, str) else str(value)
+                for key, value in data.items()
+                } if data is not None else {}
         self.__add_sign(data)
 
         with MultipartWriter('form-data') as mp:
@@ -134,7 +204,7 @@ class TbClient:
         :param tid: 主题ID
         :param pid: 帖子ID
         :param page: 页数
-        :return:
+        :return: SubPost list
         """
         req = PbFloorReqIdl()
         req.data.kz = tid
@@ -150,7 +220,30 @@ class TbClient:
         for index, sub_post in enumerate(res.data.subpost_list):
             print(index + 1, ''.join(content.text for content in sub_post.content))
 
-    # TODO 封号
+    async def ban_user(self, fid, forum_name, user_name, duration: BanDuration,
+                       reason=''):
+        """封号
+        :param fid: 贴吧ID
+        :param forum_name: 贴吧名
+        :param user_name: 用户名
+        :param duration: 封禁时长
+        :param reason: 封禁原因
+        """
+        async with self.post(self.URL_PREFIX + '/c/c/bawu/commitprison', {
+            'fid':     fid,
+            'word':    forum_name,
+            'un':      user_name,
+            'day':     duration,
+            'reason':  reason,
+            'z':       '1111111111',  # 主题ID，可以乱取
+            # 'post_id': pid,
+            'ntn':     'banid'
+        }, True) as r:
+            res = await r.json(content_type=None)
+
+            # TODO 解析结果
+            print(res)
+
     # TODO 拉黑
     # TODO 删主题
     # TODO 删帖子
@@ -164,7 +257,10 @@ def test():
     client = TbClient({
         'BDUSS': ''
     }, loop)
+    loop.run_until_complete(client.init())
     # loop.run_until_complete(client.get_threads('一个极其隐秘只有xfgryujk知道的地方', 1))
     # loop.run_until_complete(client.get_posts(309740, 5010576625, 1))
-    loop.run_until_complete(client.get_sub_posts(5010576625, 108473589139, 1))
+    # loop.run_until_complete(client.get_sub_posts(5010576625, 108473589139, 1))
+    # loop.run_until_complete(client.ban_user(309740, '一个极其隐秘只有xfgryujk知道的地方',
+    #                                         '和谐我的没J8', BanDuration._1))
     loop.run_until_complete(client.uninit())
