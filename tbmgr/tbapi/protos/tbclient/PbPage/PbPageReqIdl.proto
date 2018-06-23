@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+import "tbclient/PbPage/DataReq.proto";
+
+message PbPageReqIdl {
+  optional DataReq data = 1;
+}

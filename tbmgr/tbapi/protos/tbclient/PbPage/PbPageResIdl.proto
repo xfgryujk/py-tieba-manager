@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+import "tbclient/Error.proto";
+import "tbclient/PbPage/DataRes.proto";
+
+message PbPageResIdl {
+  optional DataRes data = 2;
+  optional Error error = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+import "tbclient/GuessLikeThreadInfo.proto";
+
+message GuessLikeStruct {
+  repeated GuessLikeThreadInfo thread_list = 2;
+  optional string title = 1;
+}

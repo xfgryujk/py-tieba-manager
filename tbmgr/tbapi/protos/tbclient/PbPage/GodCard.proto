@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+message GodCard {
+  optional string button_text = 6;
+  optional string button_url = 7;
+  optional string pic_url = 5;
+  optional string portrait = 2;
+  optional uint32 show_floor = 8;
+  optional string text = 4;
+  optional string time_ex = 3;
+  optional string user_name = 1;
+}

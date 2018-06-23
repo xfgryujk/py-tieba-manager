@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+message AdParam {
+  optional int32 load_count = 1;
+  optional int32 refresh_count = 2;
+}

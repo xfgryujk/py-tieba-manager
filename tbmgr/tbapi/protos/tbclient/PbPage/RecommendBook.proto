@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+message RecommendBook {
+  optional string book_cover = 6;
+  optional string book_id = 4;
+  repeated string book_tips = 8;
+  optional string book_title = 7;
+  optional uint32 book_type = 5;
+  optional string botton_text = 9;
+  optional string recommend_text = 1;
+  optional string subscript_icon = 10;
+  optional string suggest_text = 2;
+  optional string suggest_url = 3;
+}

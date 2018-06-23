@@ -1,0 +1,61 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+import "tbclient/AppPosInfo.proto";
+import "tbclient/CommonReq.proto";
+import "tbclient/PbPage/AdParam.proto";
+
+message DataReq {
+  optional AdParam ad_param = 58;
+  optional AppPosInfo app_pos = 53;
+  optional int32 arround = 22;
+  optional int32 back = 3;
+  optional int32 banner = 21;
+  optional CommonReq common = 25;
+  optional string da_idfa = 42;
+  optional string feed_nid = 55;
+  optional uint64 fid = 45;
+  optional int32 floor_rn = 9;
+  optional int64 forum_id = 56;
+  optional uint32 from_smart_frs = 54;
+  optional int32 is_comm_reverse = 33;
+  optional int32 is_jumpfloor = 34;
+  optional int32 issdk = 31;
+  optional string jfrom = 46;
+  optional uint64 jid = 44;
+  optional int32 jumpfloor_num = 35;
+  optional int64 kz = 4;
+  optional int32 last = 23;
+  optional string lastids = 26;
+  optional int32 lz = 5;
+  optional int32 mark = 2;
+  optional int32 message_id = 11;
+  optional string msg_click = 24;
+  optional int32 need_log = 59;
+  optional int32 need_repost_recommend_forum = 57;
+  optional string obj_locate = 51;
+  optional string obj_param1 = 52;
+  optional string obj_source = 50;
+  optional int32 pb_rn = 1;
+  optional int64 pid = 7;
+  optional string platform = 43;
+  optional int32 pn = 18;
+  optional int32 q_type = 17;
+  optional string query_word = 32;
+  optional int32 rn = 13;
+  optional int32 s_model = 12;
+  optional double scr_dip = 16;
+  optional int32 scr_h = 15;
+  optional int32 scr_w = 14;
+  optional string st_from = 27;
+  optional string st_link = 28;
+  optional int32 st_stat = 29;
+  optional int64 st_task = 30;
+  optional string st_type = 19;
+  optional int32 thread_type = 20;
+  optional int32 weipost = 10;
+  optional int32 with_floor = 8;
+  optional string yuelaou_locate = 47;
+  optional string yuelaou_params = 48;
+}

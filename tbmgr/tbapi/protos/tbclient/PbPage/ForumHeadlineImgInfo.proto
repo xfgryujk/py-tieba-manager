@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+message ForumHeadlineImgInfo {
+  optional string img_url = 2;
+  optional int64 img_user_id = 4;
+  optional string img_user_name = 1;
+  optional int32 rank_num = 3;
+  optional string rank_up_info = 6;
+  optional string rank_url = 5;
+}

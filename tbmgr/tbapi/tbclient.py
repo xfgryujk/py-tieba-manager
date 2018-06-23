@@ -25,6 +25,8 @@ from aiohttp.payload import get_payload
 
 from .pyprotos.tbclient.FrsPage.FrsPageReqIdl_pb2 import FrsPageReqIdl
 from .pyprotos.tbclient.FrsPage.FrsPageResIdl_pb2 import FrsPageResIdl
+from .pyprotos.tbclient.PbPage.PbPageReqIdl_pb2 import PbPageReqIdl
+from .pyprotos.tbclient.PbPage.PbPageResIdl_pb2 import PbPageResIdl
 
 
 class TbClient:
@@ -35,8 +37,7 @@ class TbClient:
     URL_PREFIX = 'http://c.tieba.baidu.com'
 
     def __init__(self, cookies: dict, loop=None):
-        self._session = ClientSession(loop=loop,
-                                      cookies=cookies,
+        self._session = ClientSession(loop=loop, cookies=cookies,
                                       headers={'User-Agent': 'bdtb for Android 9.4.8.4'})
 
     async def uninit(self):
@@ -99,6 +100,38 @@ class TbClient:
             print(thread.title)
         print(len(res.data.thread_list))
 
+    async def get_posts(self, fid, tid, page=1):
+        """取帖子列表
+        :param fid: 贴吧ID
+        :param tid: 主题ID
+        :param page: 页数
+        :return: Post list
+        """
+        req = PbPageReqIdl()
+        req.data.forum_id = fid
+        req.data.kz = tid
+        req.data.pn = page
+        req.data.rn = 30
+        # 带楼中楼
+        req.data.with_floor = 1
+        res = PbPageResIdl()
+        async with self.post_protobuf(self.URL_PREFIX + '/c/f/pb/page?cmd=302001',
+                                      req) as r:
+            res.ParseFromString(await r.read())
+
+        # TODO 解析帖子
+        # print(res)
+        for post in res.data.post_list:
+            # print(post.content)
+            print(post.floor, ''.join(content.text for content in post.content))
+
+    # TODO 获取楼中楼
+    # TODO 封号
+    # TODO 拉黑
+    # TODO 删主题
+    # TODO 删帖子
+    # TODO 删楼中楼
+
 
 def test():
     from asyncio import get_event_loop
@@ -107,5 +140,6 @@ def test():
     client = TbClient({
         'BDUSS': ''
     }, loop)
-    loop.run_until_complete(client.get_threads('一个极其隐秘只有xfgryujk知道的地方', 1))
+    # loop.run_until_complete(client.get_threads('一个极其隐秘只有xfgryujk知道的地方', 1))
+    loop.run_until_complete(client.get_posts(309740, 5010576625, 1))
     loop.run_until_complete(client.uninit())

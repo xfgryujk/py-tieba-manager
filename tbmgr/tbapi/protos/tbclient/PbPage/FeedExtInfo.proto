@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+message FeedExtInfo {
+  repeated string feed_bar = 2;
+  repeated string feed_tab = 1;
+}

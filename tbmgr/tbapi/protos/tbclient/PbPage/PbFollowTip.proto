@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+message PbFollowTip {
+  optional uint32 is_toast_tip = 1;
+  optional string tip_text = 2;
+}

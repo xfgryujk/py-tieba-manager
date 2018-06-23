@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+message AppealInfo {
+  optional string appeal_url = 2;
+  optional string source = 1;
+}

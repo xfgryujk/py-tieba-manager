@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+message NewsInfo {
+  optional string button_text = 7;
+  optional string news_icon = 5;
+  optional string news_link = 1;
+  optional uint32 news_type = 4;
+  optional uint32 position = 3;
+  optional string subtitle = 6;
+  optional string summary = 2;
+}

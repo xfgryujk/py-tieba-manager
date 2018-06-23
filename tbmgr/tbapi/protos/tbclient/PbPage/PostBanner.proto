@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+message PostBanner {
+  optional string banner_name = 2;
+  optional string banner_pic = 1;
+  optional uint32 banner_position = 3;
+  optional string banner_url = 5;
+  optional uint32 client_type = 6;
+  optional uint32 link_type = 4;
+}

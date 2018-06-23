@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tbclient.PbPage;
+
+message AddPost {
+  optional int32 already_count = 3;
+  optional int32 create_time = 1;
+  optional string last_addition_content = 5;
+  optional int32 last_addition_time = 6;
+  optional string post_id = 2;
+  optional int32 total_count = 4;
+  optional string warn_msg = 7;
+}
