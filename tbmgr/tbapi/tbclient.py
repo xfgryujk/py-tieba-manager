@@ -178,7 +178,7 @@ class TbClient:
         :param fid: 贴吧ID
         :param tid: 主题ID
         :param page: 页数
-        :param with_sub_post: 是否同时取楼中楼列表
+        :param with_sub_post: 是否同时取评论列表
         :return: Post list, SubPost list
         """
         req = PbPageReqIdl()
@@ -186,7 +186,7 @@ class TbClient:
         req.data.kz = tid
         req.data.pn = page
         req.data.rn = 30
-        # 带楼中楼
+        # 带评论
         req.data.with_floor = 1 if with_sub_post else 0
         req.data.floor_rn = 5
         res = PbPageResIdl()
@@ -201,7 +201,7 @@ class TbClient:
             print(post.floor, ''.join(content.text for content in post.content))
 
     async def get_sub_posts(self, tid, pid, page=1):
-        """取楼中楼列表
+        """取评论列表
         :param tid: 主题ID
         :param pid: 帖子ID
         :param page: 页数
@@ -216,7 +216,7 @@ class TbClient:
                                       req) as r:
             res.ParseFromString(await r.read())
 
-        # TODO 解析楼中楼
+        # TODO 解析评论
         # print(res)
         for index, sub_post in enumerate(res.data.subpost_list):
             print(index + 1, ''.join(content.text for content in sub_post.content))
@@ -298,7 +298,25 @@ class TbClient:
             if res['error_code'] != '0':
                 raise TbError(res['error_code'], res['error_msg'])
 
-    # TODO 删楼中楼
+    async def delete_sub_post(self, fid, forum_name, tid, cid):
+        """删除评论
+        :param fid: 贴吧ID
+        :param forum_name: 贴吧名
+        :param tid: 主题ID
+        :param cid: 评论ID
+        :exception TbError: 获取失败
+        """
+        async with self.post(self.URL_PREFIX + '/c/c/bawu/delpost', {
+            'fid':     fid,
+            'word':    forum_name,
+            'z':       tid,
+            'pid':     cid,
+            'isfloor': '1'
+        }, True) as r:
+            res = await r.json(content_type=None)
+
+            if res['error_code'] != '0':
+                raise TbError(res['error_code'], res['error_msg'])
 
 
 def test():
@@ -318,6 +336,8 @@ def test():
     #                                               81741779))
     # loop.run_until_complete(client.delete_thread(309740, '一个极其隐秘只有xfgryujk知道的地方',
     #                                              4426261107))
-    loop.run_until_complete(client.delete_post(309740, '一个极其隐秘只有xfgryujk知道的地方',
-                                               4426261107, 120456310061))
+    # loop.run_until_complete(client.delete_post(309740, '一个极其隐秘只有xfgryujk知道的地方',
+    #                                            4426261107, 120456310061))
+    # loop.run_until_complete(client.delete_sub_post(309740, '一个极其隐秘只有xfgryujk知道的地方',
+    #                                                4426261107, 120456312698))
     loop.run_until_complete(client.uninit())
