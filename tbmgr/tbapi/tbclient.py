@@ -262,7 +262,24 @@ class TbClient:
             if res['errno'] != 0:
                 raise TbError(res['errno'], res['errmsg'])
 
-    # TODO 删主题
+    async def delete_thread(self, fid, forum_name, tid):
+        """删除主题
+        :param fid: 贴吧ID
+        :param forum_name: 贴吧名
+        :param tid: 主题ID
+        :exception TbError: 获取失败
+        """
+        async with self.post(self.URL_PREFIX + '/c/c/bawu/delthread', {
+            'fid':  fid,
+            'word': forum_name,
+            'z':    tid
+        }, True) as r:
+            res = await r.json(content_type=None)
+
+            print(res)
+            if res['error_code'] != '0':
+                raise TbError(res['error_code'], res['error_msg'])
+
     # TODO 删帖子
     # TODO 删楼中楼
 
@@ -280,6 +297,8 @@ def test():
     # loop.run_until_complete(client.get_sub_posts(5010576625, 108473589139, 1))
     # loop.run_until_complete(client.ban_user(309740, '一个极其隐秘只有xfgryujk知道的地方',
     #                                         '和谐我的没J8', BanDuration._1))
-    loop.run_until_complete(client.add_black_list('一个极其隐秘只有xfgryujk知道的地方',
-                                                  81741779))
+    # loop.run_until_complete(client.add_black_list('一个极其隐秘只有xfgryujk知道的地方',
+    #                                               81741779))
+    loop.run_until_complete(client.delete_thread(309740, '一个极其隐秘只有xfgryujk知道的地方',
+                                                 4426261107))
     loop.run_until_complete(client.uninit())
