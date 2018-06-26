@@ -108,7 +108,7 @@ class TbClient:
                          ) + 'tiebaclient!!!'
         data['sign'] = hashlib.md5(buffer.encode('utf-8')).hexdigest()
 
-    def post(self, url, data=None, need_tbs=False):
+    def post(self, url, data=None, need_tbs=False, **kwargs):
         """客户端POST请求，会自动加上一些参数
         :param url: URL
         :param data: body参数
@@ -122,9 +122,9 @@ class TbClient:
             data['tbs'] = self._tbs
         self.__add_sign(data)
 
-        return self._session.post(url, data=data)
+        return self._session.post(url, data=data, **kwargs)
 
-    def post_protobuf(self, url, protobuf_msg, data=None):
+    def post_protobuf(self, url, protobuf_msg, data=None, **kwargs):
         """客户端POST请求protobuf版，会自动加上一些参数和头部
         :param url: URL
         :param protobuf_msg: protobuf message，一般是XXXReqIdl
@@ -146,7 +146,8 @@ class TbClient:
             part.set_content_disposition('form-data', name='data', filename='file')
             mp.append_payload(part)
 
-            return self._session.post(url, data=mp, headers={'x_bd_data_type': 'protobuf'})
+            return self._session.post(url, data=mp, headers={'x_bd_data_type': 'protobuf'},
+                                      **kwargs)
 
     async def get_threads(self, forum_name, page=1):
         """取主题列表
@@ -241,10 +242,26 @@ class TbClient:
         }, True) as r:
             res = await r.json(content_type=None)
 
-            # TODO 解析结果
-            print(res)
+            if res['error_code'] != '0':
+                raise TbError(res['error_code'], res['error_msg'])
 
-    # TODO 拉黑
+    async def add_black_list(self, forum_name, user_id):
+        """拉黑
+        :param forum_name: 贴吧名
+        :param user_id: 用户ID
+        :exception TbError: 获取失败
+        """
+        # 客户端没有拉黑API
+        async with self.post('http://tieba.baidu.com/bawu2/platform/addBlack', {
+            'word':    forum_name,
+            'user_id': user_id,
+            'ie':      'utf-8'
+        }, True) as r:
+            res = await r.json(content_type=None)
+
+            if res['errno'] != 0:
+                raise TbError(res['errno'], res['errmsg'])
+
     # TODO 删主题
     # TODO 删帖子
     # TODO 删楼中楼
@@ -263,4 +280,6 @@ def test():
     # loop.run_until_complete(client.get_sub_posts(5010576625, 108473589139, 1))
     # loop.run_until_complete(client.ban_user(309740, '一个极其隐秘只有xfgryujk知道的地方',
     #                                         '和谐我的没J8', BanDuration._1))
+    loop.run_until_complete(client.add_black_list('一个极其隐秘只有xfgryujk知道的地方',
+                                                  81741779))
     loop.run_until_complete(client.uninit())
