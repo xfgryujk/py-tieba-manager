@@ -117,8 +117,8 @@ class TbClient:
         :param data: body参数
         :param need_tbs: 添加tbs
         :return: 同aiohttp的post
-        :exception aiohttp.ClientResponseError : HTTP请求失败
-        :exception class aiohttp.ClientConnectionError : 连接失败
+        :exception aiohttp.ClientResponseError: HTTP请求失败
+        :exception aiohttp.ClientConnectionError: 连接失败
         """
         data = {key: value if isinstance(value, str) else str(value)
                 for key, value in data.items()
@@ -135,8 +135,8 @@ class TbClient:
         :param protobuf_msg: protobuf message，一般是XXXReqIdl
         :param data: body其他参数
         :return: 同aiohttp的post
-        :exception aiohttp.ClientResponseError : HTTP请求失败
-        :exception class aiohttp.ClientConnectionError : 连接失败
+        :exception aiohttp.ClientResponseError: HTTP请求失败
+        :exception aiohttp.ClientConnectionError: 连接失败
         """
         data = {key: value if isinstance(value, str) else str(value)
                 for key, value in data.items()
@@ -162,8 +162,8 @@ class TbClient:
         :param page: 页数
         :return: Thread list
         :exception TbError: 获取失败
-        :exception aiohttp.ClientResponseError : HTTP请求失败
-        :exception class aiohttp.ClientConnectionError : 连接失败
+        :exception aiohttp.ClientResponseError: HTTP请求失败
+        :exception aiohttp.ClientConnectionError: 连接失败
         """
         req = FrsPageReqIdl()
         req.data.kw = forum_name
@@ -190,8 +190,8 @@ class TbClient:
         :param with_sub_post: 是否同时取评论列表
         :return: Post list, SubPost list list
         :exception TbError: 获取失败
-        :exception aiohttp.ClientResponseError : HTTP请求失败
-        :exception class aiohttp.ClientConnectionError : 连接失败
+        :exception aiohttp.ClientResponseError: HTTP请求失败
+        :exception aiohttp.ClientConnectionError: 连接失败
         """
         req = PbPageReqIdl()
         req.data.forum_id = fid
@@ -225,8 +225,8 @@ class TbClient:
         :param pid: 帖子ID
         :param page: 页数
         :return: SubPost list
-        :exception aiohttp.ClientResponseError : HTTP请求失败
-        :exception class aiohttp.ClientConnectionError : 连接失败
+        :exception aiohttp.ClientResponseError: HTTP请求失败
+        :exception aiohttp.ClientConnectionError: 连接失败
         """
         req = PbFloorReqIdl()
         req.data.kz = tid
@@ -253,8 +253,8 @@ class TbClient:
         :param duration: 封禁时长
         :param reason: 封禁原因
         :exception TbError: 封禁失败
-        :exception aiohttp.ClientResponseError : HTTP请求失败
-        :exception class aiohttp.ClientConnectionError : 连接失败
+        :exception aiohttp.ClientResponseError: HTTP请求失败
+        :exception aiohttp.ClientConnectionError: 连接失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/commitprison', {
             'fid':     fid,
@@ -275,8 +275,8 @@ class TbClient:
         :param forum_name: 贴吧名
         :param user_id: 用户ID
         :exception TbError: 拉黑失败
-        :exception aiohttp.ClientResponseError : HTTP请求失败
-        :exception class aiohttp.ClientConnectionError : 连接失败
+        :exception aiohttp.ClientResponseError: HTTP请求失败
+        :exception aiohttp.ClientConnectionError: 连接失败
         """
         # 客户端没有拉黑API
         async with self.post('http://tieba.baidu.com/bawu2/platform/addBlack', {
@@ -294,8 +294,8 @@ class TbClient:
         :param forum_name: 贴吧名
         :param tid: 主题ID
         :exception TbError: 删除失败
-        :exception aiohttp.ClientResponseError : HTTP请求失败
-        :exception class aiohttp.ClientConnectionError : 连接失败
+        :exception aiohttp.ClientResponseError: HTTP请求失败
+        :exception aiohttp.ClientConnectionError: 连接失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/delthread', {
             'fid':  fid,
@@ -313,8 +313,8 @@ class TbClient:
         :param tid: 主题ID
         :param pid: 帖子ID
         :exception TbError: 删除失败
-        :exception aiohttp.ClientResponseError : HTTP请求失败
-        :exception class aiohttp.ClientConnectionError : 连接失败
+        :exception aiohttp.ClientResponseError: HTTP请求失败
+        :exception aiohttp.ClientConnectionError: 连接失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/delpost', {
             'fid':  fid,
@@ -333,8 +333,8 @@ class TbClient:
         :param tid: 主题ID
         :param cid: 评论ID
         :exception TbError: 删除失败
-        :exception aiohttp.ClientResponseError : HTTP请求失败
-        :exception class aiohttp.ClientConnectionError : 连接失败
+        :exception aiohttp.ClientResponseError: HTTP请求失败
+        :exception aiohttp.ClientConnectionError: 连接失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/delpost', {
             'fid':     fid,
