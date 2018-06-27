@@ -21,6 +21,7 @@
 import hashlib
 import logging
 from enum import Enum
+from typing import List, Tuple
 
 from aiohttp import ClientSession, MultipartWriter
 from aiohttp.payload import get_payload
@@ -31,8 +32,9 @@ from .pyprotos.tbclient.PbFloor.PbFloorReqIdl_pb2 import PbFloorReqIdl
 from .pyprotos.tbclient.PbFloor.PbFloorResIdl_pb2 import PbFloorResIdl
 from .pyprotos.tbclient.PbPage.PbPageReqIdl_pb2 import PbPageReqIdl
 from .pyprotos.tbclient.PbPage.PbPageResIdl_pb2 import PbPageResIdl
+from .tbtypes import Thread, Post, SubPost
 
-logger = logging.getLogger(__name__)
+_logger = logging.getLogger(__name__)
 
 
 class TbError(Exception):
@@ -64,7 +66,7 @@ class TbClient:
         self._user_name = ''
         self._bduss = cookies.get('BDUSS', cookies.get('bduss', ''))
         if not self._bduss:
-            logger.warning('Cookie中未指定BDUSS！')
+            _logger.warning('Cookie中未指定BDUSS！')
         # 防CSRF用的口令号
         self._tbs = ''
 
@@ -149,11 +151,12 @@ class TbClient:
             return self._session.post(url, data=mp, headers={'x_bd_data_type': 'protobuf'},
                                       **kwargs)
 
-    async def get_threads(self, forum_name, page=1):
+    async def get_threads(self, forum_name, page=1) -> List[Thread]:
         """取主题列表
         :param forum_name: 贴吧名
         :param page: 页数
         :return: Thread list
+        :exception TbError: 获取失败
         """
         req = FrsPageReqIdl()
         req.data.kw = forum_name
@@ -165,21 +168,23 @@ class TbClient:
         res = FrsPageResIdl()
         async with self.post_protobuf(self.URL_PREFIX + '/c/f/frs/page?cmd=301001',
                                       req) as r:
+            # 偶尔出现400 Bad Request？
+            # print(r.status, r.reason)
             res.ParseFromString(await r.read())
+            if res.error.errorno != 0:
+                raise TbError(res.error.errorno, res.error.errmsg)
 
-        # TODO 解析主题
-        # print(res)
-        for thread in res.data.thread_list:
-            print(thread.title)
-        print(len(res.data.thread_list))
+        return [Thread(thread) for thread in res.data.thread_list]
 
-    async def get_posts(self, fid, tid, page=1, with_sub_post=False):
+    async def get_posts(self, fid, tid, page=1, with_sub_post=False
+                        ) -> Tuple[List[Post], List[List[SubPost]]]:
         """取帖子列表
         :param fid: 贴吧ID
         :param tid: 主题ID
         :param page: 页数
         :param with_sub_post: 是否同时取评论列表
         :return: Post list, SubPost list
+        :exception TbError: 获取失败
         """
         req = PbPageReqIdl()
         req.data.forum_id = fid
@@ -193,14 +198,21 @@ class TbClient:
         async with self.post_protobuf(self.URL_PREFIX + '/c/f/pb/page?cmd=302001',
                                       req) as r:
             res.ParseFromString(await r.read())
+            if res.error.errorno != 0:
+                raise TbError(res.error.errorno, res.error.errmsg)
 
-        # TODO 解析帖子
-        # print(res)
-        for post in res.data.post_list:
-            # print(post.content)
-            print(post.floor, ''.join(content.text for content in post.content))
+        # 抓包时用户在user_list里？
+        # users = {user.id: user for user in res.data.user_list}
+        posts = [Post(post, tid, post.author) for post in res.data.post_list]
+        sub_posts = [
+            [
+                SubPost(sub_post, tid, post.id, post.floor, sub_post.author)
+                for sub_post in post.sub_post_list.sub_post_list
+            ] for post in res.data.post_list
+        ]
+        return posts, sub_posts
 
-    async def get_sub_posts(self, tid, pid, page=1):
+    async def get_sub_posts(self, tid, pid, page=1) -> List[SubPost]:
         """取评论列表
         :param tid: 主题ID
         :param pid: 帖子ID
@@ -216,10 +228,10 @@ class TbClient:
                                       req) as r:
             res.ParseFromString(await r.read())
 
-        # TODO 解析评论
-        # print(res)
-        for index, sub_post in enumerate(res.data.subpost_list):
-            print(index + 1, ''.join(content.text for content in sub_post.content))
+        return [
+            SubPost(sub_post, tid, pid, res.data.post.floor, sub_post.author)
+            for sub_post in res.data.subpost_list
+        ]
 
     async def ban_user(self, fid, forum_name, user_name, duration: BanDuration,
                        reason=''):
@@ -229,6 +241,7 @@ class TbClient:
         :param user_name: 用户名
         :param duration: 封禁时长
         :param reason: 封禁原因
+        :exception TbError: 封禁失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/commitprison', {
             'fid':     fid,
@@ -241,7 +254,6 @@ class TbClient:
             'ntn':     'banid'
         }, True) as r:
             res = await r.json(content_type=None)
-
             if res['error_code'] != '0':
                 raise TbError(res['error_code'], res['error_msg'])
 
@@ -249,7 +261,7 @@ class TbClient:
         """拉黑
         :param forum_name: 贴吧名
         :param user_id: 用户ID
-        :exception TbError: 获取失败
+        :exception TbError: 拉黑失败
         """
         # 客户端没有拉黑API
         async with self.post('http://tieba.baidu.com/bawu2/platform/addBlack', {
@@ -258,7 +270,6 @@ class TbClient:
             'ie':      'utf-8'
         }, True) as r:
             res = await r.json(content_type=None)
-
             if res['errno'] != 0:
                 raise TbError(res['errno'], res['errmsg'])
 
@@ -267,7 +278,7 @@ class TbClient:
         :param fid: 贴吧ID
         :param forum_name: 贴吧名
         :param tid: 主题ID
-        :exception TbError: 获取失败
+        :exception TbError: 删除失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/delthread', {
             'fid':  fid,
@@ -275,7 +286,6 @@ class TbClient:
             'z':    tid
         }, True) as r:
             res = await r.json(content_type=None)
-
             if res['error_code'] != '0':
                 raise TbError(res['error_code'], res['error_msg'])
 
@@ -285,7 +295,7 @@ class TbClient:
         :param forum_name: 贴吧名
         :param tid: 主题ID
         :param pid: 帖子ID
-        :exception TbError: 获取失败
+        :exception TbError: 删除失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/delpost', {
             'fid':  fid,
@@ -294,7 +304,6 @@ class TbClient:
             'pid':  pid
         }, True) as r:
             res = await r.json(content_type=None)
-
             if res['error_code'] != '0':
                 raise TbError(res['error_code'], res['error_msg'])
 
@@ -304,7 +313,7 @@ class TbClient:
         :param forum_name: 贴吧名
         :param tid: 主题ID
         :param cid: 评论ID
-        :exception TbError: 获取失败
+        :exception TbError: 删除失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/delpost', {
             'fid':     fid,
@@ -314,7 +323,6 @@ class TbClient:
             'isfloor': '1'
         }, True) as r:
             res = await r.json(content_type=None)
-
             if res['error_code'] != '0':
                 raise TbError(res['error_code'], res['error_msg'])
 
@@ -326,10 +334,10 @@ def test():
     client = TbClient({
         'BDUSS': ''
     }, loop)
-    loop.run_until_complete(client.init())
-    # loop.run_until_complete(client.get_threads('一个极其隐秘只有xfgryujk知道的地方', 1))
-    # loop.run_until_complete(client.get_posts(309740, 5010576625, 1))
-    # loop.run_until_complete(client.get_sub_posts(5010576625, 108473589139, 1))
+    # loop.run_until_complete(client.init())
+    threads = loop.run_until_complete(client.get_threads('一个极其隐秘只有xfgryujk知道的地方', 1))
+    posts, sub_posts = loop.run_until_complete(client.get_posts(309740, 5010576625, 1, True))
+    sub_posts2 = loop.run_until_complete(client.get_sub_posts(5010576625, 108473589139, 1))
     # loop.run_until_complete(client.ban_user(309740, '一个极其隐秘只有xfgryujk知道的地方',
     #                                         '和谐我的没J8', BanDuration._1))
     # loop.run_until_complete(client.add_black_list('一个极其隐秘只有xfgryujk知道的地方',
