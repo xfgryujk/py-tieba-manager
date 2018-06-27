@@ -62,7 +62,8 @@ class TbClient:
 
     def __init__(self, cookies: dict, loop=None):
         self._session = ClientSession(loop=loop, cookies=cookies,
-                                      headers={'User-Agent': 'bdtb for Android 9.4.8.4'})
+                                      headers={'User-Agent': 'bdtb for Android 9.4.8.4'},
+                                      raise_for_status=True)
         self._user_name = ''
         self._bduss = cookies.get('BDUSS', cookies.get('bduss', ''))
         if not self._bduss:
@@ -116,6 +117,8 @@ class TbClient:
         :param data: body参数
         :param need_tbs: 添加tbs
         :return: 同aiohttp的post
+        :exception aiohttp.ClientResponseError : HTTP请求失败
+        :exception class aiohttp.ClientConnectionError : 连接失败
         """
         data = {key: value if isinstance(value, str) else str(value)
                 for key, value in data.items()
@@ -132,6 +135,8 @@ class TbClient:
         :param protobuf_msg: protobuf message，一般是XXXReqIdl
         :param data: body其他参数
         :return: 同aiohttp的post
+        :exception aiohttp.ClientResponseError : HTTP请求失败
+        :exception class aiohttp.ClientConnectionError : 连接失败
         """
         data = {key: value if isinstance(value, str) else str(value)
                 for key, value in data.items()
@@ -157,6 +162,8 @@ class TbClient:
         :param page: 页数
         :return: Thread list
         :exception TbError: 获取失败
+        :exception aiohttp.ClientResponseError : HTTP请求失败
+        :exception class aiohttp.ClientConnectionError : 连接失败
         """
         req = FrsPageReqIdl()
         req.data.kw = forum_name
@@ -168,8 +175,6 @@ class TbClient:
         res = FrsPageResIdl()
         async with self.post_protobuf(self.URL_PREFIX + '/c/f/frs/page?cmd=301001',
                                       req) as r:
-            # 偶尔出现400 Bad Request？
-            # print(r.status, r.reason)
             res.ParseFromString(await r.read())
             if res.error.errorno != 0:
                 raise TbError(res.error.errorno, res.error.errmsg)
@@ -183,8 +188,10 @@ class TbClient:
         :param tid: 主题ID
         :param page: 页数
         :param with_sub_post: 是否同时取评论列表
-        :return: Post list, SubPost list
+        :return: Post list, SubPost list list
         :exception TbError: 获取失败
+        :exception aiohttp.ClientResponseError : HTTP请求失败
+        :exception class aiohttp.ClientConnectionError : 连接失败
         """
         req = PbPageReqIdl()
         req.data.forum_id = fid
@@ -218,6 +225,8 @@ class TbClient:
         :param pid: 帖子ID
         :param page: 页数
         :return: SubPost list
+        :exception aiohttp.ClientResponseError : HTTP请求失败
+        :exception class aiohttp.ClientConnectionError : 连接失败
         """
         req = PbFloorReqIdl()
         req.data.kz = tid
@@ -227,6 +236,8 @@ class TbClient:
         async with self.post_protobuf(self.URL_PREFIX + '/c/f/pb/floor?cmd=302002',
                                       req) as r:
             res.ParseFromString(await r.read())
+            if res.error.errorno != 0:
+                raise TbError(res.error.errorno, res.error.errmsg)
 
         return [
             SubPost(sub_post, tid, pid, res.data.post.floor, sub_post.author)
@@ -242,6 +253,8 @@ class TbClient:
         :param duration: 封禁时长
         :param reason: 封禁原因
         :exception TbError: 封禁失败
+        :exception aiohttp.ClientResponseError : HTTP请求失败
+        :exception class aiohttp.ClientConnectionError : 连接失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/commitprison', {
             'fid':     fid,
@@ -262,6 +275,8 @@ class TbClient:
         :param forum_name: 贴吧名
         :param user_id: 用户ID
         :exception TbError: 拉黑失败
+        :exception aiohttp.ClientResponseError : HTTP请求失败
+        :exception class aiohttp.ClientConnectionError : 连接失败
         """
         # 客户端没有拉黑API
         async with self.post('http://tieba.baidu.com/bawu2/platform/addBlack', {
@@ -279,6 +294,8 @@ class TbClient:
         :param forum_name: 贴吧名
         :param tid: 主题ID
         :exception TbError: 删除失败
+        :exception aiohttp.ClientResponseError : HTTP请求失败
+        :exception class aiohttp.ClientConnectionError : 连接失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/delthread', {
             'fid':  fid,
@@ -296,6 +313,8 @@ class TbClient:
         :param tid: 主题ID
         :param pid: 帖子ID
         :exception TbError: 删除失败
+        :exception aiohttp.ClientResponseError : HTTP请求失败
+        :exception class aiohttp.ClientConnectionError : 连接失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/delpost', {
             'fid':  fid,
@@ -314,6 +333,8 @@ class TbClient:
         :param tid: 主题ID
         :param cid: 评论ID
         :exception TbError: 删除失败
+        :exception aiohttp.ClientResponseError : HTTP请求失败
+        :exception class aiohttp.ClientConnectionError : 连接失败
         """
         async with self.post(self.URL_PREFIX + '/c/c/bawu/delpost', {
             'fid':     fid,
@@ -335,9 +356,9 @@ def test():
         'BDUSS': ''
     }, loop)
     # loop.run_until_complete(client.init())
-    threads = loop.run_until_complete(client.get_threads('一个极其隐秘只有xfgryujk知道的地方', 1))
-    posts, sub_posts = loop.run_until_complete(client.get_posts(309740, 5010576625, 1, True))
-    sub_posts2 = loop.run_until_complete(client.get_sub_posts(5010576625, 108473589139, 1))
+    # threads = loop.run_until_complete(client.get_threads('一个极其隐秘只有xfgryujk知道的地方', 1))
+    # posts, sub_posts = loop.run_until_complete(client.get_posts(309740, 5010576625, 1, True))
+    # sub_posts2 = loop.run_until_complete(client.get_sub_posts(5010576625, 108473589139, 1))
     # loop.run_until_complete(client.ban_user(309740, '一个极其隐秘只有xfgryujk知道的地方',
     #                                         '和谐我的没J8', BanDuration._1))
     # loop.run_until_complete(client.add_black_list('一个极其隐秘只有xfgryujk知道的地方',
