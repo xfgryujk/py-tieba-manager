@@ -34,31 +34,31 @@ class AbstractPost:
 
     @property
     def tid(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     @property
     def author_id(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     @property
     def author_name(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     @property
     def author_show_name(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     @property
     def author_portrait_url(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     @property
     def create_time(self) -> datetime:
-        raise NotImplemented
+        raise NotImplementedError
 
     @property
     def html_content(self):
-        raise NotImplemented
+        raise NotImplementedError
 
 
 class Thread(AbstractPost):
@@ -102,7 +102,7 @@ class Thread(AbstractPost):
     @property
     def html_content(self):
         # TODO 解析内容
-        raise NotImplemented
+        raise NotImplementedError
 
     @property
     def title(self):
@@ -111,7 +111,7 @@ class Thread(AbstractPost):
     @property
     def abstract(self):
         # TODO 解析摘要
-        raise NotImplemented
+        raise NotImplementedError
 
     @property
     def last_responder_id(self):
@@ -174,7 +174,7 @@ class Post(AbstractPost):
     @property
     def html_content(self):
         # TODO 解析内容
-        raise NotImplemented
+        raise NotImplementedError
 
     @property
     def pid(self):
@@ -239,7 +239,7 @@ class SubPost(AbstractPost):
     @property
     def html_content(self):
         # TODO 解析内容
-        raise NotImplemented
+        raise NotImplementedError
 
     @property
     def cid(self):
