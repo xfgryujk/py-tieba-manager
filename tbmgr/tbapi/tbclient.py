@@ -356,7 +356,9 @@ def test():
         'BDUSS': ''
     }, loop)
     # loop.run_until_complete(client.init())
-    # threads = loop.run_until_complete(client.get_threads('一个极其隐秘只有xfgryujk知道的地方', 1))
+    threads = loop.run_until_complete(client.get_threads('一个极其隐秘只有xfgryujk知道的地方', 1))
+    for thread in threads:
+        print(repr(thread))
     # posts, sub_posts = loop.run_until_complete(client.get_posts(309740, 5010576625, 1, True))
     # sub_posts2 = loop.run_until_complete(client.get_sub_posts(5010576625, 108473589139, 1))
     # loop.run_until_complete(client.ban_user(309740, '一个极其隐秘只有xfgryujk知道的地方',
