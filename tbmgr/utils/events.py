@@ -15,22 +15,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""主程序入口
-
-执行方式：
-
-    python tbmgr/__main__.py
-    python -m tbmgr
+"""定义事件类
 """
 
-import os
-import sys
-# 防止直接执行本文件时找不到模块
-pardir = os.path.dirname(os.path.dirname(__file__))
-if pardir not in sys.path:
-    sys.path.insert(0, pardir)
-from tbmgr import main
+from .event import Event
 
 
-if __name__ == '__main__':
-    main()
+class TbmExitingEvent(Event):
+    """做退出前清理，不可取消
+    """
+
+    IS_CANCELLABLE = False
+    IS_HANDLERS_COROUTINE = True

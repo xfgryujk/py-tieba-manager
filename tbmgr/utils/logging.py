@@ -20,6 +20,7 @@
 
 import logging
 import os
+import sys
 from logging import getLogger, Formatter, Handler, StreamHandler, LogRecord
 from logging.handlers import RotatingFileHandler
 from time import strftime
@@ -51,8 +52,9 @@ class _ColoredConsoleHandler(StreamHandler):
     """根据等级记录彩色日志的Handler
     """
 
-    # 让Windows控制台支持彩色
-    os.system('color >nul 2>nul')
+    if sys.platform == 'win32':
+        # 让Windows控制台支持彩色
+        os.system('color >nul 2>nul')
 
     def __init__(self):
         super().__init__(None)
