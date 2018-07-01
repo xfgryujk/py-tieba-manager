@@ -40,12 +40,12 @@ def main():
     loop = get_event_loop()
     # 初始化信号
     try:
-        loop.add_signal_handler(signal.SIGINT, _on_ask_exit)
-        loop.add_signal_handler(signal.SIGTERM, _on_ask_exit)
+        loop.add_signal_handler(signal.SIGINT, exit)
+        loop.add_signal_handler(signal.SIGTERM, exit)
     except NotImplementedError:
         # Windows中loop.add_signal_handler()未实现
-        signal.signal(signal.SIGINT, lambda signum, frame: loop.call_soon(_on_ask_exit))
-        signal.signal(signal.SIGTERM, lambda signum, frame: loop.call_soon(_on_ask_exit))
+        signal.signal(signal.SIGINT, lambda signum, frame: loop.call_soon(exit))
+        signal.signal(signal.SIGTERM, lambda signum, frame: loop.call_soon(exit))
 
     # test()
 
@@ -57,10 +57,11 @@ def is_exiting():
     return _is_exiting
 
 
-def _on_ask_exit():
-    """用户按下Ctrl + C（收到SIGINT）或收到SIGTERM时调用
+def exit_():
+    """退出本程序
 
-    在Windows中事件循环会阻塞在select()，直到有新的事件才会收到信号
+    一般在用户按下Ctrl + C（收到SIGINT）或收到SIGTERM时调用
+    在Windows中事件循环会阻塞在select()，直到有新的事件（比如网络传输）才会收到信号
     """
     _logger.warning('收到退出信号')
     global _is_exiting
@@ -78,13 +79,3 @@ async def _cleanup():
     # 停止事件循环
     loop = get_event_loop()
     loop.call_soon(loop.stop)
-
-
-@event_handler(TbmExitingEvent)
-async def on_exit_test(evt: TbmExitingEvent):
-    _logger.debug('退出事件测试1')
-
-
-@event_handler(TbmExitingEvent)
-async def on_exit_test(evt: TbmExitingEvent):
-    _logger.debug('退出事件测试2')

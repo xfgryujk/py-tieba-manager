@@ -19,7 +19,7 @@
 
 监听事件：
 
-    @event.event_handler(EventType)  # 或者event.add_handler(handler)
+    @event.event_handler(EventType)  # 或者event.add_handler(handler, EventType)
     def handler(evt: EventType):
         ...  # 处理事件
         evt.cancel()  # （可选）取消事件，有些事件不可被取消
@@ -49,7 +49,7 @@ class Event:
 
     # 此事件能被取消
     IS_CANCELLABLE = True
-    # 此事件的处理器必须是协程函数
+    # 此事件的处理器是协程函数
     IS_HANDLERS_COROUTINE = False
 
     def __init__(self):
@@ -75,6 +75,7 @@ class EventBus:
     """
 
     def __init__(self):
+        # 事件类 -> 处理器set
         self._handlers: Dict[Type[Event], Set[Callable[[Event], Union[None, Coroutine]]]] = {}
 
     def add_handler(self, handler: Callable[[Event], Union[None, Coroutine]],
@@ -84,8 +85,10 @@ class EventBus:
         :param handler: 处理器，接收一个事件参数，可以是任何可调用的对象，包括协程函数
         :param event_class: 要监听的事件类
         """
-        assert not event_class.IS_HANDLERS_COROUTINE or iscoroutinefunction(handler),\
-            f'事件"{event_class.__qualname__}"的处理器必须是协程函数'
+        if event_class.IS_HANDLERS_COROUTINE:
+            assert iscoroutinefunction(handler), f'事件"{event_class.__qualname__}"的处理器必须是协程函数'
+        else:
+            assert not iscoroutinefunction(handler), f'事件"{event_class.__qualname__}"的处理器必须不是协程函数'
         self._handlers.setdefault(event_class, set())
         self._handlers[event_class].add(handler)
 
@@ -114,8 +117,7 @@ class EventBus:
         assert not event.IS_HANDLERS_COROUTINE, f'对事件"{type(event).__qualname__}"，请使用async_post_event()'
         handlers = self._handlers.get(type(event), set())
         for handler in handlers:
-            if not iscoroutinefunction(handler):
-                handler(event)
+            handler(event)
         return not event.is_cancelled
 
     async def async_post_event(self, event: Event, loop=None):
@@ -130,9 +132,7 @@ class EventBus:
         assert event.IS_HANDLERS_COROUTINE, f'对事件"{type(event).__qualname__}"，请使用post_event()'
         handlers = self._handlers.get(type(event), None)
         if handlers is not None:
-            await gather(*(
-                handler(event) for handler in handlers if iscoroutinefunction(handler)
-            ), loop=loop)
+            await gather(*(handler(event) for handler in handlers), loop=loop)
         return not event.is_cancelled
 
 
