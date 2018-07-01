@@ -15,21 +15,21 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""主程序入口
-
-执行方式：
-python tbmgr/__main__.py
-python -m tbmgr
+"""主程序
 """
 
-import os
-import sys
-# 防止直接执行本文件时找不到模块
-pardir = os.path.dirname(os.path.dirname(__file__))
-if pardir not in sys.path:
-    sys.path.insert(0, pardir)
-from tbmgr import main
+import tbmgr.utils.logging as tbmlogging
+import tbmgr.webui as webui
+# from tbmgr.tbapi.tbclient import test
 
 
-if __name__ == '__main__':
-    main()
+def main():
+    tbmlogging.init()
+    import logging
+    logger = logging.getLogger('test')
+    logger.debug('debug msg')
+    logger.info('info msg')
+    logger.warning('warning msg')
+    logger.error('error msg')
+    # test()
+    # webui.serve_forever()

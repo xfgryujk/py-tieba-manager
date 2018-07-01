@@ -1,2 +1,2 @@
 # py-tieba-manager
-占个位，还没开始开发
+[百度贴吧](https://tieba.baidu.com/)吧务管理工具

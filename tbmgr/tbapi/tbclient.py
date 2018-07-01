@@ -71,7 +71,7 @@ class TbClient:
         # 防CSRF用的口令号
         self._tbs = ''
 
-    async def init(self):
+    async def init_user_info(self):
         """获取用户信息
         :exception TbError: 获取失败
         """
@@ -85,7 +85,9 @@ class TbClient:
             self._user_name = res['user']['name']
             self._tbs = res['anti']['tbs']
 
-    async def uninit(self):
+    async def close(self):
+        """关闭aiohttp session，必须手动调用
+        """
         await self._session.close()
 
     @property
@@ -355,7 +357,7 @@ def test():
     client = TbClient({
         'BDUSS': ''
     }, loop)
-    # loop.run_until_complete(client.init())
+    # loop.run_until_complete(client.init_user_info())
     threads = loop.run_until_complete(client.get_threads('一个极其隐秘只有xfgryujk知道的地方', 1))
     for thread in threads:
         print(repr(thread))
@@ -371,4 +373,4 @@ def test():
     #                                            4426261107, 120456310061))
     # loop.run_until_complete(client.delete_sub_post(309740, '一个极其隐秘只有xfgryujk知道的地方',
     #                                                4426261107, 120456312698))
-    loop.run_until_complete(client.uninit())
+    loop.run_until_complete(client.close())
