@@ -20,6 +20,7 @@
 
 import logging
 import signal
+import sys
 from asyncio import get_event_loop, ensure_future
 
 from . import configs
@@ -34,15 +35,15 @@ _is_exiting = False
 
 
 def main():
+    # 初始化异常处理
+    sys.excepthook = _except_hook
     # 初始化日志模块
     tbmlogging.init()
-
     # 初始化配置
     configs.init()
 
-    loop = get_event_loop()
-
     # 初始化信号处理
+    loop = get_event_loop()
     try:
         loop.add_signal_handler(signal.SIGINT, exit_)
         loop.add_signal_handler(signal.SIGTERM, exit_)
@@ -56,6 +57,8 @@ def main():
 
 
 def is_exiting():
+    """已收到退出信号，正在进行退出前清理
+    """
     return _is_exiting
 
 
@@ -81,3 +84,10 @@ async def _cleanup():
     # 停止事件循环
     loop = get_event_loop()
     loop.call_soon(loop.stop)
+
+
+def _except_hook(type_, value, traceback):
+    """异常处理hook，见sys.excepthook
+    """
+    _logger.exception('遇到未处理的异常，请将以下信息发到xfgryujk@126.com帮助调试：', exc_info=value)
+    sys.__excepthook__(type_, value, traceback)
