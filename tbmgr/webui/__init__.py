@@ -18,10 +18,15 @@
 """web UI模块
 """
 
+import logging
 import os
 
 from tornado.ioloop import IOLoop
 from tornado.web import Application, StaticFileHandler
+
+from ..configs import get_global_config
+
+_logger = logging.getLogger(__name__)
 
 WEB_ROOT = os.path.join(os.path.dirname(__file__), 'tbmgr', 'dist')
 
@@ -47,5 +52,9 @@ SETTINGS = {
 
 def serve_forever():
     app = Application(ROUTES, **SETTINGS)
-    app.listen(8102)
+    global_config = get_global_config()
+    host = '0.0.0.0' if global_config.allow_remote_connect else '127.0.0.1'
+    app.listen(global_config.web_ui_port, host)
+    _logger.info('web UI服务器启动，正在监听%s:%d，请访问"http://127.0.0.1:%d/"',
+                 host, global_config.web_ui_port, global_config.web_ui_port)
     IOLoop.current().start()

@@ -26,7 +26,7 @@ from logging.handlers import RotatingFileHandler
 from time import strftime
 from typing import List, Union
 
-LOG_DIR = os.path.join('data', 'log')
+LOG_DIR = os.path.join('data', 'logs')
 os.makedirs(LOG_DIR, exist_ok=True)
 
 # 最近的日志，新的日志索引小

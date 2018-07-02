@@ -22,11 +22,11 @@ import logging
 import signal
 from asyncio import get_event_loop, ensure_future
 
+from . import configs
 from . import webui
-from .utils.event import async_post_event, event_handler
-from .utils.events import TbmExitingEvent
+from .events import TbmExitingEvent
 from .utils import logging as tbmlogging
-# from .tbapi.tbclient import test
+from .utils.event import async_post_event, event_handler
 
 _logger = logging.getLogger(__name__)
 
@@ -37,17 +37,19 @@ def main():
     # 初始化日志模块
     tbmlogging.init()
 
+    # 初始化配置
+    configs.init()
+
     loop = get_event_loop()
-    # 初始化信号
+
+    # 初始化信号处理
     try:
-        loop.add_signal_handler(signal.SIGINT, exit)
-        loop.add_signal_handler(signal.SIGTERM, exit)
+        loop.add_signal_handler(signal.SIGINT, exit_)
+        loop.add_signal_handler(signal.SIGTERM, exit_)
     except NotImplementedError:
         # Windows中loop.add_signal_handler()未实现
-        signal.signal(signal.SIGINT, lambda signum, frame: loop.call_soon(exit))
-        signal.signal(signal.SIGTERM, lambda signum, frame: loop.call_soon(exit))
-
-    # test()
+        signal.signal(signal.SIGINT, lambda signum, frame: loop.call_soon(exit_))
+        signal.signal(signal.SIGTERM, lambda signum, frame: loop.call_soon(exit_))
 
     # 启动web UI服务器
     webui.serve_forever()

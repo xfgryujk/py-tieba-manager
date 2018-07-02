@@ -18,7 +18,7 @@
 """定义事件类
 """
 
-from .event import Event
+from .utils.event import Event
 
 
 class TbmExitingEvent(Event):

@@ -23,8 +23,9 @@ import io
 import logging
 from datetime import datetime
 from enum import IntEnum
-from typing import List
+from typing import Sequence, Union
 
+from .pyprotos.tbclient.Abstract_pb2 import Abstract
 from .pyprotos.tbclient.Media_pb2 import Media
 from .pyprotos.tbclient.PbContent_pb2 import PbContent
 from .pyprotos.tbclient.Post_pb2 import Post as RawPost
@@ -84,7 +85,7 @@ def _html_escape(text):
     return html.escape(text).replace('\n', '<br>')
 
 
-def _pb_content_to_html(pb_content: List[PbContent]):
+def _pb_content_to_html(pb_content: Sequence[Union[PbContent, Abstract]]):
     buffer = io.StringIO()
     for content in pb_content:
         if content.type == ContentType.TEXT:
@@ -122,7 +123,7 @@ def _pb_content_to_html(pb_content: List[PbContent]):
     return buffer.getvalue()
 
 
-def _media_to_html(media: List[Media]):
+def _media_to_html(media: Sequence[Media]):
     buffer = io.StringIO()
     for content in media:
         if content.type == ContentType.IMAGE:

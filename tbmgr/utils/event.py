@@ -70,16 +70,19 @@ class Event:
             raise NotImplementedError
 
 
+# 类型别名
+Handler = Callable[[Event], Union[None, Coroutine]]
+
+
 class EventBus:
     """事件总线，负责管理事件处理器、发送事件
     """
 
     def __init__(self):
         # 事件类 -> 处理器set
-        self._handlers: Dict[Type[Event], Set[Callable[[Event], Union[None, Coroutine]]]] = {}
+        self._handlers: Dict[Type[Event], Set[Handler]] = {}
 
-    def add_handler(self, handler: Callable[[Event], Union[None, Coroutine]],
-                    event_class: Type[Event]):
+    def add_handler(self, handler: Handler, event_class: Type[Event]):
         """添加事件处理器
 
         :param handler: 处理器，接收一个事件参数，可以是任何可调用的对象，包括协程函数
@@ -92,8 +95,7 @@ class EventBus:
         self._handlers.setdefault(event_class, set())
         self._handlers[event_class].add(handler)
 
-    def remove_handler(self, handler: Callable[[Event], Union[None, Coroutine]],
-                       event_class: Type[Event]=None):
+    def remove_handler(self, handler: Handler, event_class: Type[Event]=None):
         """移除事件处理器
 
         :param handler: 处理器
