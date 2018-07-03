@@ -20,6 +20,7 @@
 
 import json
 from functools import partial
+from typing import Union, List
 
 import trafaret as t
 
@@ -28,17 +29,46 @@ OptionalKey = partial(t.Key, optional=True)
 
 class Config:
     """表示一个配置文件，可以以属性方式访问配置
+
+    以'_'开头的属性不会被当做配置的一部分
+    可以继承
+    可以嵌套，如：
+
+        STRUCT = t.Dict({
+            OptionalKey('nested_config', {}): Config
+        })
+
+    或者
+
+        STRUCT = t.Dict({
+            OptionalKey('nested_config', {}): t.Dict >> Config
+        })
+
+    配置类型最好都是JSON支持的类型，如要使用其他类型可以用property
     """
 
-    # 配置结构
+    # 配置结构，见trafaret文档
     STRUCT = t.Dict()
-    __slots__ = ()
+    # 子类必须在此声明配置key
+    __slots__ = ('_fields',)
 
-    def __init__(self, value: dict):
-        value = self.STRUCT.check(value)
+    def __init__(self, raw: dict):
+        # 此配置所有已知key
+        self._fields = set()
         for cls in type(self).__mro__:
-            for name in getattr(cls, '__slots__', ()):
-                setattr(self, name, value[name])
+            self._fields.update(
+                filter(lambda field: not field.startswith('_'),
+                       getattr(cls, '__slots__', ()))
+            )
+
+        # 移除未知的key，防止check()出错
+        for key in list(raw.keys()):
+            if key not in self._fields:
+                del raw[key]
+
+        raw = self.STRUCT.check(raw)
+        for name in self._fields:
+            setattr(self, name, raw[name])
 
     def __repr__(self):
         return repr(self.to_dict())
@@ -58,7 +88,18 @@ class Config:
         return cls(json.loads(s))
 
     def to_dict(self):
-        return {name: getattr(self, name) for name in self.__slots__}
+        res = {name: getattr(self, name) for name in self._fields}
+        # 遍历dict和list组成的树，把Config转为dict
+        queue: List[Union[dict, list]] = [res]
+        while queue:
+            node = queue.pop(0)
+            for index, value in (node.items() if isinstance(node, dict)
+                                 else enumerate(node)):
+                if isinstance(value, Config):
+                    node[index] = value.to_dict()
+                elif isinstance(value, (dict, list)):
+                    queue.append(value)
+        return res
 
     def save(self, filename):
         with open(filename, 'w', encoding='utf-8') as f:
