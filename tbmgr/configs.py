@@ -33,9 +33,9 @@ class GlobalConfig(Config):
     """全局配置
     """
 
-    is_first_run = {OptionalKey('is_first_run', True): t.Bool}                   # 第一次启动
-    web_ui_port = {OptionalKey('web_ui_port', 8102): t.Int}                      # web UI端口
-    allow_remote_connect = {OptionalKey('allow_remote_connect', False): t.Bool}  # 允许远程连接web UI
+    is_first_run = {OptionalKey(True): t.Bool}           # 第一次启动
+    web_ui_port = {OptionalKey(8102): t.Int}             # web UI端口
+    allow_remote_connect = {OptionalKey(False): t.Bool}  # 允许远程连接web UI
 
 
 _global_config: GlobalConfig = None

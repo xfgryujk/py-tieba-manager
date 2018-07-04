@@ -19,12 +19,14 @@
 """
 
 import json
-from functools import partial
 from typing import Union, List, Dict, Any, Tuple
 
 import trafaret as t
 
-OptionalKey = partial(t.Key, optional=True)
+
+class OptionalKey(t.Key):
+    def __init__(self, default, name=None):
+        super().__init__(name, default, True)
 
 
 class ConfigMeta(type):
@@ -40,11 +42,16 @@ class ConfigMeta(type):
                 field_key, field_checker = list(value.items())[0]
                 if isinstance(field_key, t.Key):
                     del namespace[key]
+
                     field_key: t.Key
+                    # 默认name和类属性名一样
+                    if field_key.name is None:
+                        field_key.name = key
                     # 统一设置to_name，以后就不用判断to_name是否为None了
                     if field_key.to_name is None:
-                        field_key.to_name = field_key.name
-                    assert field_key.to_name == key, f'{field_key.to_name} != {key} 配置key.to_name必须和变量名一样'
+                        field_key.to_name = key
+                    assert field_key.to_name == key, f'{field_key.to_name} != {key} 配置key.to_name必须和类属性名一样'
+
                     fields.add(field_key.to_name)
                     cls_struct[field_key] = field_checker
 
@@ -69,15 +76,15 @@ class Config(metaclass=ConfigMeta):
     配置类型最好都是JSON支持的类型，如要使用其他类型可以用property
     配置以类属性的方式声明，如：
 
-        name = {OptionalKey('name', 0): t.Int}
+        name = {OptionalKey(0): t.Int}
 
     支持嵌套，如：
 
-        nested_config = {OptionalKey('nested_config', {}): Config}
+        nested_config = {OptionalKey({}): Config}
 
     或者
 
-        nested_config = {OptionalKey('nested_config', {}): t.Dict >> Config}
+        nested_config = {OptionalKey({}): t.Dict >> Config}
 
     """
 
