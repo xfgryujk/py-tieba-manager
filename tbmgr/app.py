@@ -93,6 +93,8 @@ class TiebaManager(Singleton):
         """
         _logger.warning('正在进行退出前清理')
         await async_post_event(CleanupEvent())
+        # 保存账号
+        await UserPool.get_instance().uninit()
         # 停止事件循环
         loop = get_event_loop()
         loop.call_soon(loop.stop)

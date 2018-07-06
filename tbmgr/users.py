@@ -20,6 +20,7 @@
 
 import logging
 import os
+from typing import Dict, List
 
 import trafaret as t
 
@@ -29,7 +30,7 @@ from .utils.singleton import Singleton
 
 _logger = logging.getLogger(__name__)
 
-USER_DIR = os.path.join('data', 'users')
+USER_DIR = os.path.join('data', 'configs', 'users')
 os.makedirs(USER_DIR, exist_ok=True)
 
 
@@ -43,7 +44,8 @@ class UserPool(Singleton):
 
     def __init__(self):
         # user_name -> TbClient
-        self._clients = {}
+        self._clients: Dict[str, TbClient] = {}
+        self._clients_for_crawling: List[TbClient] = []
 
     async def init(self):
         """载入保存的账号
@@ -58,6 +60,17 @@ class UserPool(Singleton):
                 except TbError as e:
                     _logger.warning('载入账号"%s"失败，%s', user_name, e)
 
+    async def uninit(self):
+        """保存账号，关闭client
+        """
+        for client in self._clients.values():
+            os.makedirs(os.path.join(USER_DIR, client.user_name), exist_ok=True)
+            CookieConfig(cookie=client.cookie_str
+                         ).save(os.path.join(USER_DIR, client.user_name, 'cookie.json'))
+            await client.close()
+        self._clients.clear()
+        self._clients_for_crawling.clear()
+
     async def add_user(self, cookie):
         """添加账号
 
@@ -67,13 +80,24 @@ class UserPool(Singleton):
         client = TbClient(cookie)
         await client.init_user_info()
         self._clients[client.user_name] = client
+        self._clients_for_crawling.append(client)
 
     def remove_user(self, user_name):
         """删除账号
         """
         try:
+            client = self._clients[user_name]
             del self._clients[user_name]
-        except ValueError:
+            self._clients_for_crawling.remove(client)
+        except (KeyError, ValueError):
             pass
 
-    # TODO get_user
+    def get_user_for_crawling(self):
+        """
+        :return: 用来爬数据的账号
+        """
+        client = self._clients_for_crawling.pop(0)
+        self._clients_for_crawling.append(client)
+        return client
+
+    # TODO get_user_for_operating
