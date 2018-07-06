@@ -21,7 +21,8 @@
 import hashlib
 import logging
 from enum import Enum
-from typing import List, Tuple
+from http.cookies import SimpleCookie
+from typing import List, Tuple, Union
 
 from aiohttp import ClientSession, MultipartWriter
 from aiohttp.payload import get_payload
@@ -60,12 +61,14 @@ class TbClient:
     # 客户端居然不用HTTPS，差评
     URL_PREFIX = 'http://c.tieba.baidu.com'
 
-    def __init__(self, cookies: dict, loop=None):
+    def __init__(self, cookies: Union[str, dict, SimpleCookie], loop=None):
+        if isinstance(cookies, str):
+            cookies = SimpleCookie(cookies)
         self._session = ClientSession(loop=loop, cookies=cookies,
                                       headers={'User-Agent': 'bdtb for Android 9.4.8.4'},
                                       raise_for_status=True)
         self._user_name = ''
-        self._bduss = cookies.get('BDUSS', cookies.get('bduss', ''))
+        self._bduss = cookies.get('BDUSS', cookies.get('bduss', '')).value
         if not self._bduss:
             _logger.warning('Cookie中未指定BDUSS！')
         # 防CSRF用的口令号
@@ -90,6 +93,10 @@ class TbClient:
         """关闭aiohttp session，必须手动调用
         """
         await self._session.close()
+
+    @property
+    def cookie_str(self):
+        return self._session.cookie_jar.filter_cookies().output(header='', sep=';').lstrip()
 
     @property
     def user_name(self):
@@ -182,8 +189,10 @@ class TbClient:
         async with self.post_protobuf(self.URL_PREFIX + '/c/f/frs/page?cmd=301001',
                                       req) as r:
             res.ParseFromString(await r.read())
-            if res.error.errorno != 0:
-                raise TbError(res.error.errorno, res.error.errmsg)
+        if res.error.errorno != 0:
+            raise TbError(res.error.errorno, res.error.errmsg)
+        if res.anti.tbs:
+            self._tbs = res.anti.tbs
 
         return [Thread(thread) for thread in res.data.thread_list]
 
@@ -212,8 +221,10 @@ class TbClient:
         async with self.post_protobuf(self.URL_PREFIX + '/c/f/pb/page?cmd=302001',
                                       req) as r:
             res.ParseFromString(await r.read())
-            if res.error.errorno != 0:
-                raise TbError(res.error.errorno, res.error.errmsg)
+        if res.error.errorno != 0:
+            raise TbError(res.error.errorno, res.error.errmsg)
+        if res.anti.tbs:
+            self._tbs = res.anti.tbs
 
         # 抓包时用户在user_list里？
         # users = {user.id: user for user in res.data.user_list}
@@ -244,8 +255,10 @@ class TbClient:
         async with self.post_protobuf(self.URL_PREFIX + '/c/f/pb/floor?cmd=302002',
                                       req) as r:
             res.ParseFromString(await r.read())
-            if res.error.errorno != 0:
-                raise TbError(res.error.errorno, res.error.errmsg)
+        if res.error.errorno != 0:
+            raise TbError(res.error.errorno, res.error.errmsg)
+        if res.anti.tbs:
+            self._tbs = res.anti.tbs
 
         return [
             SubPost(sub_post, tid, pid, res.data.post.floor, sub_post.author)
@@ -276,8 +289,8 @@ class TbClient:
             'ntn':     'banid'
         }, True) as r:
             res = await r.json(content_type=None)
-            if res['error_code'] != '0':
-                raise TbError(res['error_code'], res['error_msg'])
+        if res['error_code'] != '0':
+            raise TbError(res['error_code'], res['error_msg'])
 
     async def add_black_list(self, forum_name, user_id):
         """拉黑
@@ -295,8 +308,8 @@ class TbClient:
             'ie':      'utf-8'
         }, True) as r:
             res = await r.json(content_type=None)
-            if res['errno'] != 0:
-                raise TbError(res['errno'], res['errmsg'])
+        if res['errno'] != 0:
+            raise TbError(res['errno'], res['errmsg'])
 
     async def delete_thread(self, fid, forum_name, tid):
         """删除主题
@@ -314,8 +327,8 @@ class TbClient:
             'z':    tid
         }, True) as r:
             res = await r.json(content_type=None)
-            if res['error_code'] != '0':
-                raise TbError(res['error_code'], res['error_msg'])
+        if res['error_code'] != '0':
+            raise TbError(res['error_code'], res['error_msg'])
 
     async def delete_post(self, fid, forum_name, tid, pid):
         """删除帖子
@@ -335,8 +348,8 @@ class TbClient:
             'pid':  pid
         }, True) as r:
             res = await r.json(content_type=None)
-            if res['error_code'] != '0':
-                raise TbError(res['error_code'], res['error_msg'])
+        if res['error_code'] != '0':
+            raise TbError(res['error_code'], res['error_msg'])
 
     async def delete_sub_post(self, fid, forum_name, tid, cid):
         """删除评论
@@ -357,8 +370,8 @@ class TbClient:
             'isfloor': '1'
         }, True) as r:
             res = await r.json(content_type=None)
-            if res['error_code'] != '0':
-                raise TbError(res['error_code'], res['error_msg'])
+        if res['error_code'] != '0':
+            raise TbError(res['error_code'], res['error_msg'])
 
 
 def test():

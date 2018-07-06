@@ -36,7 +36,6 @@ class SingletonMeta(type):
 
     def get_instance(cls):
         if cls.__instance is None:
-            print(cls.__init_params)
             cls.__instance = super().__call__(**cls.__init_params)
             del cls.__init_params
         return cls.__instance

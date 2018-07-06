@@ -25,6 +25,7 @@ from asyncio import get_event_loop, ensure_future
 
 from . import configs
 from . import webui
+from .users import UserPool
 from .events import AskExitEvent, CleanupEvent, BeforeExitEvent
 from .utils import logging as tbmlogging
 from .utils.event import post_event, async_post_event
@@ -47,6 +48,8 @@ class TiebaManager(Singleton):
         tbmlogging.init()
         # 初始化配置
         configs.init()
+        # 初始化账号
+        ensure_future(UserPool.get_instance().init())
         # 初始化信号处理
         loop = get_event_loop()
         try:
