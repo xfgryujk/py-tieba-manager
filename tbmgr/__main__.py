@@ -32,8 +32,8 @@ import sys
 pardir = os.path.dirname(os.path.dirname(__file__))
 if pardir not in sys.path:
     sys.path.insert(0, pardir)
-from tbmgr import main
+from tbmgr import TiebaManager
 
 
 if __name__ == '__main__':
-    main()
+    TiebaManager.get_instance().main()

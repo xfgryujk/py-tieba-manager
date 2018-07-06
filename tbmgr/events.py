@@ -21,9 +21,23 @@
 from .utils.event import Event
 
 
-class TbmExitingEvent(Event):
+class AskExitEvent(Event):
+    """TiebaManager.exit()被调用时触发，可以取消
+    """
+
+
+class CleanupEvent(Event):
     """做退出前清理，不可取消
+
+    这是异步事件，可以在这个事件内停止协程
     """
 
     IS_CANCELLABLE = False
     IS_HANDLERS_COROUTINE = True
+
+
+class BeforeExitEvent(Event):
+    """TiebaManager.main()返回前触发，此时事件循环已停止
+    """
+
+    IS_CANCELLABLE = False

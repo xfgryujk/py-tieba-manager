@@ -18,3 +18,5 @@
 """贴吧API模块
 """
 
+from .tbclient import BanDuration, TbClient, TbError
+from .tbtypes import AbstractPost, ContentType, Post, SubPost, Thread

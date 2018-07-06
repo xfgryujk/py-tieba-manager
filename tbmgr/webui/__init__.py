@@ -26,6 +26,8 @@ from tornado.web import Application, StaticFileHandler
 
 from ..configs import get_global_config
 
+__all__ = ['WEB_ROOT', 'ROUTES', 'SETTINGS', 'serve_forever']
+
 _logger = logging.getLogger(__name__)
 
 WEB_ROOT = os.path.join(os.path.dirname(__file__), 'tbmgr', 'dist')
