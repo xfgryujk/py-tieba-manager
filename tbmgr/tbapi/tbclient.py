@@ -55,7 +55,9 @@ class BanDuration(str, Enum):
 
 
 class TbClient:
-    """一个TbClient代表一个账号
+    """提供基本的API，没有错误处理，没有事件，忽略白名单设置
+
+    一个TbClient代表一个账号
     """
 
     # 客户端居然不用HTTPS，差评
