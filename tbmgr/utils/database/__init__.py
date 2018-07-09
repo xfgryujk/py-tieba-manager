@@ -15,25 +15,30 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""主程序入口
-
-执行方式：
-
-    cd py-tieba-manager
-    python tbmgr/__main__.py
-    或 python -m tbmgr
-
-** 需要Python 3.6或更高版本 **
+"""数据库基本定义
 """
 
-import os
-import sys
-# 防止直接执行本文件时找不到模块
-pardir = os.path.dirname(os.path.dirname(__file__))
-if pardir not in sys.path:
-    sys.path.insert(0, pardir)
-from tbmgr import TiebaManager  # noqa
+from typing import Type
+
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, scoped_session, Session as _Session
+
+from .migration import upgrade_to_latest
+from ...configs import get_global_config
+
+__all__ = ['OrmBase', 'Session', 'init']
+
+OrmBase = declarative_base()
+
+# 不要使用from database import Session！应该使用import database
+Session: Type[_Session] = None
 
 
-if __name__ == '__main__':
-    TiebaManager.get_instance().main()
+def init():
+    """创建Session类，升级数据库
+    """
+    engine = create_engine(get_global_config().database_url)
+    global Session
+    Session = scoped_session(sessionmaker(bind=engine))
+    upgrade_to_latest()

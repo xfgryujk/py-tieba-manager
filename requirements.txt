@@ -1,5 +1,7 @@
 protobuf==3.5.2.post1
 aiohttp==3.2.1
+alembic==0.9.10
 selenium==3.13.0
+sqlalchemy==1.2.9
 tornado==5.0.2
 trafaret==1.1.1

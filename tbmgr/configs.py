@@ -36,6 +36,7 @@ class GlobalConfig(Config):
     is_first_run = {OptionalKey(True): t.Bool}           # 第一次启动
     web_ui_port = {OptionalKey(8102): t.Int}             # web UI端口
     allow_remote_connect = {OptionalKey(False): t.Bool}  # 允许远程连接web UI
+    database_url = {OptionalKey('sqlite:///data/database.db'): t.String}  # 数据库URL，见SQLAlchemy文档
 
 
 _global_config: GlobalConfig = None

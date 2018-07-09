@@ -25,8 +25,9 @@ from asyncio import get_event_loop, ensure_future
 
 from . import configs
 from . import webui
-from .users import UserPool
 from .events import AskExitEvent, CleanupEvent, BeforeExitEvent
+from .users import UserPool
+from .utils import database
 from .utils import logging as tbmlogging
 from .utils.event import post_event, async_post_event
 from .utils.singleton import Singleton
@@ -42,12 +43,16 @@ class TiebaManager(Singleton):
         self._is_exiting = False
 
     def main(self):
+        """初始化顺序很重要，不能乱改
+        """
         # 初始化异常处理
         sys.excepthook = self._except_hook
         # 初始化日志模块
         tbmlogging.init()
         # 初始化配置
         configs.init()
+        # 初始化数据库
+        database.init()
         # 初始化账号
         ensure_future(UserPool.get_instance().init())
         # 初始化信号处理

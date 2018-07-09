@@ -15,25 +15,21 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""主程序入口
-
-执行方式：
-
-    cd py-tieba-manager
-    python tbmgr/__main__.py
-    或 python -m tbmgr
-
-** 需要Python 3.6或更高版本 **
+"""数据库迁移
 """
 
 import os
-import sys
-# 防止直接执行本文件时找不到模块
-pardir = os.path.dirname(os.path.dirname(__file__))
-if pardir not in sys.path:
-    sys.path.insert(0, pardir)
-from tbmgr import TiebaManager  # noqa
+
+from alembic.command import upgrade
+from alembic.config import Config
+
+from ...configs import get_global_config
+
+SCRIPT_LOCATION = os.path.dirname(__file__)
 
 
-if __name__ == '__main__':
-    TiebaManager.get_instance().main()
+def upgrade_to_latest():
+    config = Config()
+    config.set_main_option('script_location', SCRIPT_LOCATION)
+    config.set_main_option('sqlalchemy.url', get_global_config().database_url)
+    upgrade(config, 'head')
