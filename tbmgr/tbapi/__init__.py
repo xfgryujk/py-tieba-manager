@@ -19,4 +19,5 @@
 """
 
 from .tbclient import BanDuration, TbClient, TbError
-from .tbtypes import AbstractPost, ContentType, Post, SubPost, Thread
+from .tbtypes import AbstractPost, Post, SubPost, Thread
+from .wrapper import User, Forum, ForumUserInfo, OrmThread, OrmPost, OrmSubPost, TbClientWrapper

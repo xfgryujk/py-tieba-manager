@@ -21,7 +21,7 @@
 import hashlib
 import logging
 from enum import Enum
-from http.cookies import SimpleCookie
+from http.cookies import SimpleCookie, Morsel
 from typing import List, Tuple, Union
 
 from aiohttp import ClientSession, MultipartWriter
@@ -70,7 +70,8 @@ class TbClient:
                                       headers={'User-Agent': 'bdtb for Android 9.4.8.4'},
                                       raise_for_status=True)
         self._user_name = ''
-        self._bduss = cookies.get('BDUSS', cookies.get('bduss', '')).value
+        bduss = cookies.get('BDUSS', cookies.get('bduss', ''))
+        self._bduss = bduss.value if isinstance(bduss, Morsel) else bduss
         if not self._bduss:
             _logger.warning('Cookie中未指定BDUSS！')
         # 防CSRF用的口令号
@@ -193,8 +194,8 @@ class TbClient:
             res.ParseFromString(await r.read())
         if res.error.errorno != 0:
             raise TbError(res.error.errorno, res.error.errmsg)
-        if res.anti.tbs:
-            self._tbs = res.anti.tbs
+        if res.data.anti.tbs:
+            self._tbs = res.data.anti.tbs
 
         return [Thread(thread) for thread in res.data.thread_list]
 
@@ -225,8 +226,8 @@ class TbClient:
             res.ParseFromString(await r.read())
         if res.error.errorno != 0:
             raise TbError(res.error.errorno, res.error.errmsg)
-        if res.anti.tbs:
-            self._tbs = res.anti.tbs
+        if res.data.anti.tbs:
+            self._tbs = res.data.anti.tbs
 
         # 抓包时用户在user_list里？
         # users = {user.id: user for user in res.data.user_list}
@@ -259,8 +260,8 @@ class TbClient:
             res.ParseFromString(await r.read())
         if res.error.errorno != 0:
             raise TbError(res.error.errorno, res.error.errmsg)
-        if res.anti.tbs:
-            self._tbs = res.anti.tbs
+        if res.data.anti.tbs:
+            self._tbs = res.data.anti.tbs
 
         return [
             SubPost(sub_post, tid, pid, res.data.post.floor, sub_post.author)

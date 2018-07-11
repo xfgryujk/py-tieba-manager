@@ -52,7 +52,16 @@ class TiebaManager(Singleton):
         # 初始化配置
         configs.init()
         # 初始化数据库
+
+        # TODO 测试完后移除
+        from .tbapi.wrapper import test
+
         database.init()
+
+        # TODO 测试完后移除
+        test()
+        exit()
+
         # 初始化账号
         ensure_future(UserPool.get_instance().init())
         # 初始化信号处理

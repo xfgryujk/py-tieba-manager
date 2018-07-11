@@ -18,7 +18,7 @@
 """数据库基本定义
 """
 
-from typing import Type
+from typing import Type, Union
 
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
@@ -30,15 +30,14 @@ from ...configs import get_global_config
 __all__ = ['OrmBase', 'Session', 'init']
 
 OrmBase = declarative_base()
-
-# 不要使用from database import Session！应该使用import database
-Session: Type[_Session] = None
+Session: Union[scoped_session, Type[_Session]] = scoped_session(sessionmaker())
 
 
 def init():
-    """创建Session类，升级数据库
+    """配置Session类，升级数据库
     """
     engine = create_engine(get_global_config().database_url)
-    global Session
-    Session = scoped_session(sessionmaker(bind=engine))
-    upgrade_to_latest()
+    Session.configure(bind=engine)
+    # upgrade_to_latest()
+    # TODO 等结构稳定后改用升级数据库
+    OrmBase.metadata.create_all(engine)
